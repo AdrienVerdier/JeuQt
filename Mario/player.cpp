@@ -43,23 +43,20 @@ void Player::keyPressEvent(QKeyEvent *event){
             set_debut_saut(pos().y());
             timer = new QTimer(this);
             QObject::connect(timer,SIGNAL(timeout()),this,SLOT(jump()));
-            timer->start(50);
+            timer->start(30);
         }
-    }
-    else if (event->key() == Qt::Key_Down){
-        setPos(x(),y()+10);
     }
 }
 
 void Player::jump(){
-    if (pos().y() > 300)
+    if (pos().y() > 250)
         setPos(x(),y()-10);
     else
     {
         timer->stop();
         timer = new QTimer(this);
         QObject::connect(timer,SIGNAL(timeout()),this,SLOT(descente()));
-        timer->start(50);
+        timer->start(30);
     }
 }
 
