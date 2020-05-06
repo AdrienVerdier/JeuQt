@@ -12,8 +12,18 @@ void Player::set_debut_saut(int debut_saut)
     this->debut_saut = debut_saut;
 }
 
-Player::Player(QGraphicsItem *parent): QGraphicsRectItem(parent){
+bool Player::get_en_l_air() const
+{
+    return this->en_l_air;
+}
 
+void Player::set_en_l_air(bool en_l_air)
+{
+    this->en_l_air = en_l_air;
+}
+
+Player::Player(QGraphicsItem *parent): QGraphicsRectItem(parent){
+    set_en_l_air(false);
 }
 
 void Player::keyPressEvent(QKeyEvent *event){
@@ -27,11 +37,14 @@ void Player::keyPressEvent(QKeyEvent *event){
         setPos(x()+10,y());
     }
     else if (event->key() == Qt::Key_Up){
-
-        set_debut_saut(pos().y());
-        timer = new QTimer(this);
-        QObject::connect(timer,SIGNAL(timeout()),this,SLOT(jump()));
-        timer->start(50);
+        if(!get_en_l_air())
+        {
+            set_en_l_air(true);
+            set_debut_saut(pos().y());
+            timer = new QTimer(this);
+            QObject::connect(timer,SIGNAL(timeout()),this,SLOT(jump()));
+            timer->start(50);
+        }
     }
     else if (event->key() == Qt::Key_Down){
         setPos(x(),y()+10);
@@ -54,5 +67,8 @@ void Player::descente(){
     if (pos().y() < 500)
         setPos(x(),y()+10);
     else
+    {
         timer->stop();
+        set_en_l_air(false);
+    }
 }
