@@ -2,5 +2,9 @@
     <qresource prefix="/son">
         <file>son/musique-mario-bros-officielle.mp3</file>
     </qresource>
-    <qresource prefix="/images"/>
+    <qresource prefix="/images">
+        <file>images/sky.png</file>
+        <file>images/ground.png</file>
+        <file>images/mario.png</file>
+    </qresource>
 </RCC>

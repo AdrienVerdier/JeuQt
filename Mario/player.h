@@ -5,8 +5,10 @@
 #include <QObject>
 #include <QGraphicsItem>
 #include <QTimer>
+#include <QScrollBar>
 
-class Player:public QObject, public QGraphicsRectItem{
+
+class Player:public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
 
@@ -15,14 +17,26 @@ public:
     bool get_en_l_air() const;
     void set_en_l_air(bool en_l_air);
     Player(QGraphicsItem * parent=0);
-    void keyPressEvent(QKeyEvent * event);
+    QTimer* getTimer();
+    void setImg();
+    void sauter();
+
+
 private :
     int debut_saut;
     bool en_l_air;
     QTimer *timer;
+    int currentPixmap;
+    QList<QPixmap> pixmaps;
+    QTimer timerAnim;
+
 public slots:
     void jump();
     void descente();
+    void changeImage();
+
+
+
 };
 
 #endif // PLAYER_H
