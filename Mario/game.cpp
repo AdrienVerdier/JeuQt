@@ -2,6 +2,7 @@
 #include <QTimer>
 #include <QGraphicsTextItem>
 #include <QFont>
+#include <QMediaPlayer>
 
 Game::Game(QWidget *parent){
     // create the scene
@@ -26,4 +27,7 @@ Game::Game(QWidget *parent){
     // add the player to the scene
     scene->addItem(player);
 
+    //QMediaPlayer * music = new QMediaPlayer();
+    //music->setMedia(QUrl("ressource.qrc:/son/musique-mario-bros-officielle.mp3"));
+    //music->play();
 }

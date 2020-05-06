@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/son">
+        <file>son/musique-mario-bros-officielle.mp3</file>
+    </qresource>
+    <qresource prefix="/images"/>
+</RCC>
