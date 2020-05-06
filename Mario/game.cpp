@@ -11,35 +11,65 @@ void Game::setQscrollBar(QScrollBar *b){
     scroll = b;
 }
 
+void Game::gauche(){
+    if (player->pos().x() > 0)
+    player->setPos(player->pos().x()-10,player->pos().y());
+    if(player->pos().x()>=640 && player->pos().x()<=7380){
+        m_sky->setPos(m_sky->pos().x()-10,m_sky->pos().y());
+        this->scroll->setValue( scroll->value()-10);
 
-void Game::keyPressEvent(QKeyEvent *event){
-    // move the player left and right
-    if (event->key() == Qt::Key_Left){
-        if (player->pos().x() > 0)
-        player->setPos(player->pos().x()-10,player->pos().y());
-        if(player->pos().x()>=640 && player->pos().x()<=7380){
-            m_sky->setPos(m_sky->pos().x()-10,m_sky->pos().y());
-            this->scroll->setValue( scroll->value()-10);
-
-        }
-    }
-    else if (event->key() == Qt::Key_Right){
-        if (player->pos().x() + 100 < 8000)
-        player->setPos(player->pos().x()+10,player->pos().y());
-
-        if(player->pos().x()>=640 && player->pos().x()<=7380){
-            this->scroll->setValue( scroll->value()+10);
-            m_sky->setPos(m_sky->pos().x()+10,m_sky->pos().y());
-        }
-
-    }
-    else if (event->key() == Qt::Key_Up){
-        player->sauter();
     }
 }
 
+void Game::droite(){
+    if (player->pos().x() + 100 < 8000)
+    player->setPos(player->pos().x()+10,player->pos().y());
 
+    if(player->pos().x()>=640 && player->pos().x()<=7380){
+        this->scroll->setValue( scroll->value()+10);
+        m_sky->setPos(m_sky->pos().x()+10,m_sky->pos().y());
+    }
+}
 
+void Game::keyPressEvent( QKeyEvent * keyEvent )
+{
+    if(keyEvent->key() == Qt::Key_Up && !keyEvent->isAutoRepeat())
+    {
+        keyPressed |= Key_Up;
+    }
+    if (keyEvent->key() == Qt::Key_Right && !keyEvent->isAutoRepeat())
+    {
+        keyPressed |= Key_Right;
+    }
+    if (keyEvent->key() == Qt::Key_Down && !keyEvent->isAutoRepeat())
+    {
+        keyPressed |= Key_Down;
+    }
+    if (keyEvent->key() == Qt::Key_Left && !keyEvent->isAutoRepeat())
+    {
+        keyPressed |= Key_Left;
+    }
+}
+
+ void Game::keyReleaseEvent( QKeyEvent * keyEvent )
+ {
+    if(keyEvent->key() == Qt::Key_Up && !keyEvent->isAutoRepeat())
+    {
+        keyPressed &= ~Key_Up;
+    }
+    if (keyEvent->key() == Qt::Key_Right && !keyEvent->isAutoRepeat())
+    {
+        keyPressed &= ~Key_Right;
+    }
+    if (keyEvent->key() == Qt::Key_Down && !keyEvent->isAutoRepeat())
+    {
+        keyPressed &= ~Key_Down;
+    }
+    if (keyEvent->key() == Qt::Key_Left && !keyEvent->isAutoRepeat())
+    {
+        keyPressed &= ~Key_Left;
+    }
+ }
 
 
 
@@ -88,4 +118,22 @@ Game::Game(QWidget *parent){
     //QMediaPlayer * music = new QMediaPlayer();
     //music->setMedia(QUrl("ressource.qrc:/son/musique-mario-bros-officielle.mp3"));
     //music->play();
+
+    keyPressed = No_Key;
+    m_timer = new QTimer(this);
+    connect(m_timer, SIGNAL(timeout()), this, SLOT(keyTimer()));
+    m_timer->start(30);
 }
+
+void Game::keyTimer(){
+
+    if(keyPressed & Key_Up)
+        player->sauter();
+    if(keyPressed & Key_Left)
+        gauche();
+    if(keyPressed & Key_Right)
+        droite();
+
+
+}
+

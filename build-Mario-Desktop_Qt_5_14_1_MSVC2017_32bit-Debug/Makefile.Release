@@ -55,6 +55,7 @@ SOURCES       = ..\Mario\backgrounditem.cpp \
 		..\Mario\main.cpp \
 		..\Mario\mainwindow.cpp \
 		..\Mario\player.cpp release\qrc_res.cpp \
+		release\moc_game.cpp \
 		release\moc_mainwindow.cpp \
 		release\moc_player.cpp
 OBJECTS       = release\backgrounditem.obj \
@@ -63,6 +64,7 @@ OBJECTS       = release\backgrounditem.obj \
 		release\mainwindow.obj \
 		release\player.obj \
 		release\qrc_res.obj \
+		release\moc_game.obj \
 		release\moc_mainwindow.obj \
 		release\moc_player.obj
 
@@ -150,7 +152,7 @@ all: Makefile.Release  release\Mario.exe
 
 release\Mario.exe: D:\Logiciels\Qt\5.14.1\msvc2017\lib\Qt5Multimedia.lib D:\Logiciels\Qt\5.14.1\msvc2017\lib\Qt5Widgets.lib D:\Logiciels\Qt\5.14.1\msvc2017\lib\Qt5Gui.lib D:\Logiciels\Qt\5.14.1\msvc2017\lib\Qt5Network.lib D:\Logiciels\Qt\5.14.1\msvc2017\lib\Qt5Core.lib D:\Logiciels\Qt\5.14.1\msvc2017\lib\qtmain.lib ui_mainwindow.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-release\backgrounditem.obj release\game.obj release\main.obj release\mainwindow.obj release\player.obj release\qrc_res.obj release\moc_mainwindow.obj release\moc_player.obj
+release\backgrounditem.obj release\game.obj release\main.obj release\mainwindow.obj release\player.obj release\qrc_res.obj release\moc_game.obj release\moc_mainwindow.obj release\moc_player.obj
 $(LIBS)
 <<
 
@@ -163,7 +165,7 @@ dist:
 	$(ZIP) Mario.zip $(SOURCES) $(DIST) ..\Mario\Mario.pro D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\spec_pre.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\common\angle.conf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\common\windows-desktop.conf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\win32\windows_vulkan_sdk.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\common\windows-vulkan.conf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\common\msvc-desktop.conf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\qconfig.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3danimation.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3danimation_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dcore.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dcore_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dextras.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dextras_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dinput.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dinput_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dlogic.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dlogic_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquick.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquick_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquickanimation.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquickextras.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquickinput.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquickrender.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3drender.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_3drender_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_axbase.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_axbase_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_axcontainer.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_axcontainer_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_axserver.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_axserver_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_bluetooth.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_bluetooth_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_bodymovin_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_bootstrap_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_charts.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_charts_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_concurrent.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_concurrent_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_core.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_core_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_datavisualization.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_datavisualization_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_dbus.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_dbus_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_designer.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_designer_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_designercomponents_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_edid_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_egl_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_fb_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_gamepad.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_gamepad_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_gui.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_gui_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_help.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_help_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_location.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_location_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_multimedia.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_multimedia_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_multimediawidgets.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_network.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_network_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_networkauth.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_networkauth_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_nfc.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_nfc_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_opengl.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_opengl_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_openglextensions.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_openglextensions_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_positioning.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_positioning_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_positioningquick.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_positioningquick_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_printsupport.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_printsupport_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_purchasing.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_purchasing_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qml.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qml_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qmldebug_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qmlmodels.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qmltest.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qmltest_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick3d.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick3d_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick3dassetimport.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick3dassetimport_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick3drender.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick3drender_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick3druntimerender.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick3druntimerender_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick3dutils.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick3dutils_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quick_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quickcontrols2.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quickparticles_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quickshapes_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quicktemplates2.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quickwidgets.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_remoteobjects.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_remoteobjects_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_repparser.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_repparser_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_script.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_script_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_scripttools.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_scripttools_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_scxml.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_scxml_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_sensors.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_sensors_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_serialbus.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_serialbus_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_serialport.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_serialport_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_sql.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_sql_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_svg.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_svg_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_testlib.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_testlib_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_texttospeech.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_texttospeech_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_theme_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_uiplugin.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_uitools.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_uitools_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_virtualkeyboard.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_virtualkeyboard_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_vulkan_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webchannel.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webchannel_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webengine.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webengine_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webenginecore.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webenginecore_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webenginewidgets.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webenginewidgets_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_websockets.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_websockets_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webview.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_webview_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_widgets.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_widgets_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_winextras.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_winextras_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_xml.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_xml_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_xmlpatterns.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\qt_functions.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\qt_config.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\win32-msvc\qmake.conf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\spec_post.prf .qmake.stash D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\exclusive_builds.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\common\msvc-version.conf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\toolchain.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\default_pre.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\win32\default_pre.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\resolve_config.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\exclusive_builds_post.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\default_post.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\build_pass.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\qml_debug.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\precompile_header.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\warn_on.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\qt.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\resources_functions.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\resources.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\moc.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\win32\opengl.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\uic.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\qmake_use.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\file_copies.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\win32\windows.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\testcase_targets.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\exceptions.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\yacc.prf D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\lex.prf ..\Mario\Mario.pro ..\Mario\res.qrc D:\Logiciels\Qt\5.14.1\msvc2017\lib\Qt5Multimedia.prl D:\Logiciels\Qt\5.14.1\msvc2017\lib\Qt5Widgets.prl D:\Logiciels\Qt\5.14.1\msvc2017\lib\Qt5Gui.prl D:\Logiciels\Qt\5.14.1\msvc2017\lib\Qt5Network.prl D:\Logiciels\Qt\5.14.1\msvc2017\lib\Qt5Core.prl D:\Logiciels\Qt\5.14.1\msvc2017\lib\qtmain.prl   ..\Mario\res.qrc ..\Mario\res.qrc ..\Mario\res.qrc D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\data\dummy.cpp ..\Mario\backgrounditem.h ..\Mario\game.h ..\Mario\mainwindow.h ..\Mario\player.h  ..\Mario\backgrounditem.cpp ..\Mario\game.cpp ..\Mario\main.cpp ..\Mario\mainwindow.cpp ..\Mario\player.cpp ..\Mario\mainwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\backgrounditem.obj release\game.obj release\main.obj release\mainwindow.obj release\player.obj release\qrc_res.obj release\moc_mainwindow.obj release\moc_player.obj
+	-$(DEL_FILE) release\backgrounditem.obj release\game.obj release\main.obj release\mainwindow.obj release\player.obj release\qrc_res.obj release\moc_game.obj release\moc_mainwindow.obj release\moc_player.obj
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -213,9 +215,141 @@ compiler_moc_predefs_clean:
 release\moc_predefs.h: D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\data\dummy.cpp
 	cl -BxD:\Logiciels\Qt\5.14.1\msvc2017\bin\qmake.exe -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E D:\Logiciels\Qt\5.14.1\msvc2017\mkspecs\features\data\dummy.cpp 2>NUL >release\moc_predefs.h
 
-compiler_moc_header_make_all: release\moc_mainwindow.cpp release\moc_player.cpp
+compiler_moc_header_make_all: release\moc_game.cpp release\moc_mainwindow.cpp release\moc_player.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_player.cpp
+	-$(DEL_FILE) release\moc_game.cpp release\moc_mainwindow.cpp release\moc_player.cpp
+release\moc_game.cpp: ..\Mario\game.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\QGraphicsView \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qgraphicsview.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qtwidgetsglobal.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qtguiglobal.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qglobal.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qconfig-bootstrapped.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qconfig.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qtcore-config.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qsystemdetection.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qprocessordetection.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qcompilerdetection.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qtypeinfo.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qsysinfo.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qlogging.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qflags.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qatomic.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qbasicatomic.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qatomic_bootstrap.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qgenericatomic.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qatomic_cxx11.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qatomic_msvc.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qglobalstatic.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qmutex.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qnumeric.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qversiontagging.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qtgui-config.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qtwidgets-config.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qmetatype.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qbytearray.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qrefcount.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qnamespace.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qarraydata.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qvarlengtharray.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qcontainerfwd.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qalgorithms.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qcontainertools_impl.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qhashfunctions.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qstring.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qchar.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qstringliteral.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qstringalgorithms.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qstringview.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qstringbuilder.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qpair.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qobjectdefs.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qobjectdefs_impl.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qpainter.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qrect.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qmargins.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qsize.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qpoint.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qscopedpointer.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qpixmap.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qpaintdevice.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qwindowdefs.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qwindowdefs_win.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qcolor.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qrgb.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qstringlist.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qlist.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qiterator.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qvector.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qbytearraylist.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qregexp.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qstringmatcher.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qrgba64.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qsharedpointer.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qshareddata.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qhash.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qsharedpointer_impl.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qobject.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qcoreevent.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qobject_impl.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qimage.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qpixelformat.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qtransform.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qmatrix.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qpolygon.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qregion.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qdatastream.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qiodevice.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qline.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qpainterpath.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qtextoption.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qpen.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qbrush.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qfontinfo.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qfont.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qfontmetrics.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qscrollarea.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractscrollarea.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qframe.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qwidget.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qpalette.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qsizepolicy.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qcursor.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qkeysequence.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qevent.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qvariant.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qmap.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qdebug.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qtextstream.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qlocale.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qset.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qcontiguouscache.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qurl.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qurlquery.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qfile.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qfiledevice.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qvector2d.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\qtouchdevice.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qgraphicsscene.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\QWidget \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\QGraphicsScene \
+		..\Mario\player.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\QGraphicsRectItem \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qgraphicsitem.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\QObject \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\QGraphicsItem \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\QTimer \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qtimer.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtCore\qbasictimer.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\QScrollBar \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qscrollbar.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractslider.h \
+		..\Mario\backgrounditem.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\QGraphicsPixmapItem \
+		release\moc_predefs.h \
+		D:\Logiciels\Qt\5.14.1\msvc2017\bin\moc.exe
+	D:\Logiciels\Qt\5.14.1\msvc2017\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/pinot/JeuQt/build-Mario-Desktop_Qt_5_14_1_MSVC2017_32bit-Debug/release/moc_predefs.h -ID:/Logiciels/Qt/5.14.1/msvc2017/mkspecs/win32-msvc -IC:/Users/pinot/JeuQt/Mario -ID:/Logiciels/Qt/5.14.1/msvc2017/include -ID:/Logiciels/Qt/5.14.1/msvc2017/include/QtMultimedia -ID:/Logiciels/Qt/5.14.1/msvc2017/include/QtWidgets -ID:/Logiciels/Qt/5.14.1/msvc2017/include/QtGui -ID:/Logiciels/Qt/5.14.1/msvc2017/include/QtANGLE -ID:/Logiciels/Qt/5.14.1/msvc2017/include/QtNetwork -ID:/Logiciels/Qt/5.14.1/msvc2017/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" ..\Mario\game.h -o release\moc_game.cpp
+
 release\moc_mainwindow.cpp: ..\Mario\mainwindow.h \
 		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\QMainWindow \
 		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtWidgets\qmainwindow.h \
@@ -1082,6 +1216,8 @@ release\player.obj: ..\Mario\player.cpp ..\Mario\player.h \
 		D:\Logiciels\Qt\5.14.1\msvc2017\include\QtGui\QKeyEvent
 
 release\qrc_res.obj: release\qrc_res.cpp 
+
+release\moc_game.obj: release\moc_game.cpp 
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
 
