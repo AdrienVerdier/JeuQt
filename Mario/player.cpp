@@ -32,6 +32,24 @@ QTimer* Player::getTimer(){
 }
 
 void Player::setImg(){
+
+    connect(&timerAnim, SIGNAL(timeout()), SLOT(changeImage()));
+    timerAnim.start(50);
+    changeImage();
+}
+
+void Player::animImmo(){
+    QImage img;
+    img.load(":images/images/mario.png");
+    int subImageWidth = img.width() / 21;
+    pixmaps.clear();
+    currentPixmap = 0;
+    QImage subImage = img.copy( 0,0,subImageWidth , img.height());
+    pixmaps.push_back(QPixmap::fromImage(subImage));
+
+}
+
+void Player::animMarcheGauche(){
     QImage img;
     img.load(":images/images/mario.png");
     int subImageWidth = img.width() / 21;
@@ -39,14 +57,25 @@ void Player::setImg(){
     currentPixmap = 0;
     for (int i = 0; i < 21; i++)
     {
-        QImage subImage = img.copy(i * subImageWidth,0,subImageWidth , img.height());
+        QImage subImage = img.copy(i * subImageWidth+10,0,subImageWidth , img.height());
+        subImage = subImage.mirrored(true,false);
         pixmaps.push_back(QPixmap::fromImage(subImage));
     }
-
-    connect(&timerAnim, SIGNAL(timeout()), SLOT(changeImage()));
-    timerAnim.start(100);
-    changeImage();
 }
+
+void Player::animMarcheDroite(){
+    QImage img;
+    img.load(":images/images/mario.png");
+    int subImageWidth = img.width() / 21;
+    pixmaps.clear();
+    currentPixmap = 0;
+    for (int i = 0; i < 21; i++)
+    {
+        QImage subImage = img.copy(i * subImageWidth+10,0,subImageWidth , img.height());
+        pixmaps.push_back(QPixmap::fromImage(subImage));
+    }
+}
+
 
 void Player::changeImage()
 {

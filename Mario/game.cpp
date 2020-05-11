@@ -19,6 +19,11 @@ void Game::gauche(){
         this->scroll->setValue( scroll->value()-10);
 
     }
+    if(!gaucheb){
+        player->animMarcheGauche();
+        gaucheb = true;
+        droiteb=false;
+    }
 }
 
 void Game::droite(){
@@ -28,6 +33,11 @@ void Game::droite(){
     if(player->pos().x()>=640 && player->pos().x()<=7380){
         this->scroll->setValue( scroll->value()+10);
         m_sky->setPos(m_sky->pos().x()+10,m_sky->pos().y());
+    }
+    if(!droiteb){
+        player->animMarcheDroite();
+        droiteb=true;
+        gaucheb=false;
     }
 }
 
@@ -101,9 +111,9 @@ Game::Game(QWidget *parent){
     // create the player
     player = new Player();
 
+
+    player->animImmo();
     player->setImg();
-
-
 
 
 
@@ -127,12 +137,28 @@ Game::Game(QWidget *parent){
 
 void Game::keyTimer(){
 
-    if(keyPressed & Key_Up)
+    if(keyPressed & Key_Up){
         player->sauter();
-    if(keyPressed & Key_Left)
+
+
+    }
+    if(keyPressed & Key_Left){
         gauche();
-    if(keyPressed & Key_Right)
+
+    }
+
+    if(keyPressed & Key_Right){
         droite();
+
+    }
+    if(!keyPressed){
+        if(droiteb || gaucheb){
+            player->animImmo();
+            droiteb = false;
+            gaucheb = false;
+        }
+        //player->animImmo();
+    }
 
 
 }

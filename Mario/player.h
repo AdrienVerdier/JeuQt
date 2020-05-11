@@ -20,6 +20,9 @@ public:
     QTimer* getTimer();
     void setImg();
     void sauter();
+    void animImmo();
+    void animMarcheGauche();
+    void animMarcheDroite();
 
 
 private :

@@ -25,10 +25,9 @@ private:
         void gauche();
         void droite();
        QScrollBar *scroll;
-       bool left;
-       bool right;
-       bool jump;
-
+       bool animMarche;
+        bool droiteb = false;
+        bool gaucheb = false;
        enum keys
        {
            No_Key      = 0x00,
