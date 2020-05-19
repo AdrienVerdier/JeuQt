@@ -5,6 +5,8 @@
 #include <QMediaPlayer>
 #include <QKeyEvent>
 #include <QTimer>
+#include <QLabel>
+
 
 
 void Game::setQscrollBar(QScrollBar *b){
@@ -98,7 +100,13 @@ Game::Game(QWidget *parent){
     scene->addItem(m_ground);
 
 
+    QLabel* label = new QLabel("HUD!", 0);
+    label->setStyleSheet("QLabel{background: transparent; color: red; font: 40px;}");
+    label->setFixedSize(100, 44);
+    label->move(0, 0);
 
+    hud = scene->addWidget(label);
+   // hud->setPos(mapToScene(100, 10));
 
     show();
     // make the newly created scene the scene to visualize (since Game is a QGraphicsView Widget,

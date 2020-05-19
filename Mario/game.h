@@ -18,6 +18,7 @@ public:
     Player * player;
     BackgroundItem *m_sky;
     BackgroundItem *m_ground;
+    QGraphicsProxyWidget *hud;
     void setQscrollBar(QScrollBar *b);
 
 
