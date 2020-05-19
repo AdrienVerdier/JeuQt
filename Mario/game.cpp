@@ -6,7 +6,9 @@
 #include <QKeyEvent>
 #include <QTimer>
 #include <QLabel>
-
+#include <QGraphicsProxyWidget>
+#include <QGraphicsWidget>
+#include <QGraphicsProxyWidget>
 
 
 void Game::setQscrollBar(QScrollBar *b){
@@ -18,6 +20,7 @@ void Game::gauche(){
     player->setPos(player->pos().x()-10,player->pos().y());
     if(player->pos().x()>=640 && player->pos().x()<=7380){
         m_sky->setPos(m_sky->pos().x()-10,m_sky->pos().y());
+        hud->setPos(hud->pos().x()-10,hud->pos().y());
         this->scroll->setValue( scroll->value()-10);
 
     }
@@ -35,6 +38,8 @@ void Game::droite(){
     if(player->pos().x()>=640 && player->pos().x()<=7380){
         this->scroll->setValue( scroll->value()+10);
         m_sky->setPos(m_sky->pos().x()+10,m_sky->pos().y());
+        hud->setPos(hud->pos().x()+10,hud->pos().y());
+
     }
     if(!droiteb){
         player->animMarcheDroite();
@@ -105,8 +110,20 @@ Game::Game(QWidget *parent){
     label->setFixedSize(100, 44);
     label->move(0, 0);
 
-    hud = scene->addWidget(label);
-   // hud->setPos(mapToScene(100, 10));
+
+    scene2 = new QGraphicsScene();
+    scene2->setSceneRect(0,0,1280,700); // make the scene 800x600 instead of infinity by infinity (default)
+
+    scene2->addWidget(label);
+    QGraphicsView *v = new QGraphicsView();
+    v->setStyleSheet("background: transparent");
+    v->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    v->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    v->setScene(scene2);
+
+
+    hud = scene->addWidget(v);
+    hud->setPos(mapToScene(0, 0));
 
     show();
     // make the newly created scene the scene to visualize (since Game is a QGraphicsView Widget,
@@ -144,6 +161,7 @@ Game::Game(QWidget *parent){
 }
 
 void Game::keyTimer(){
+
 
     if(keyPressed & Key_Up){
         player->sauter();

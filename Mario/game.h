@@ -15,10 +15,12 @@ public:
     void keyPressEvent( QKeyEvent * keyEvent);
     void keyReleaseEvent(  QKeyEvent * keyEvent );
     QGraphicsScene * scene;
+    QGraphicsScene * scene2;
     Player * player;
+    QGraphicsProxyWidget *hud;
     BackgroundItem *m_sky;
     BackgroundItem *m_ground;
-    QGraphicsProxyWidget *hud;
+
     void setQscrollBar(QScrollBar *b);
 
 
