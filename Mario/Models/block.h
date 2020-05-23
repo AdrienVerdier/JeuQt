@@ -1,8 +1,9 @@
 #ifndef BLOCK_H
 #define BLOCK_H
 
+#include "static_entity.h"
 
-class Block
+class Block  : Static_Entity
 {
 public:
     Block();

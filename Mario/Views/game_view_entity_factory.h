@@ -6,9 +6,10 @@
 
 class Game_View_Entity_Factory
 {
-public:
-    Game_View_Entity_Factory();
-    Game_View_Entity create(Entity entity);
+    public:
+        Game_View_Entity_Factory();
+        Game_View_Entity create(Entity entity);
+
 };
 
 #endif // GAME_VIEW_ENTITY_FACTORY_H

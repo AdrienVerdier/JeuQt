@@ -19,7 +19,7 @@ public:
 private:
     int step_frame;
     int state_Before;
-    Qmap<int,Qlist<QString>> map_state_step_picture;
+    QMap<int,QList<QString>> map_state_step_picture;
 
 };
 

@@ -10,5 +10,6 @@ Entity::Entity()
 
 
 void Entity::accept(Interface_Visitor visitor) {
+
     visitor.paint(this);
 }
