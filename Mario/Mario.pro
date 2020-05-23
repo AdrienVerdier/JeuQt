@@ -17,17 +17,36 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    backgrounditem.cpp \
-    game.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    player.cpp
+    Main.cpp \
+    Models/alive_entity.cpp \
+    Models/block.cpp \
+    Models/entity.cpp \
+    Models/goomba.cpp \
+    Models/ground.cpp \
+    Models/interface_visitable.cpp \
+    Models/interface_visitor.cpp \
+    Models/mario.cpp \
+    Models/peach.cpp \
+    Models/static_entity.cpp \
+    Views/game_view.cpp \
+    Views/game_view_entity.cpp \
+    Views/game_view_factory.cpp \
+    mainwindow.cpp
 
 HEADERS += \
-    backgrounditem.h \
-    game.h \
-    mainwindow.h \
-    player.h
+    Models/alive_entity.h \
+    Models/block.h \
+    Models/entity.h \
+    Models/goomba.h \
+    Models/ground.h \
+    Models/interface_visitable.h \
+    Models/interface_visitor.h \
+    Models/mario.h \
+    Models/peach.h \
+    Models/static_entity.h \
+    Views/game_view.h \
+    Views/game_view_entity.h \
+    Views/game_view_factory.h
 
 FORMS += \
     mainwindow.ui
