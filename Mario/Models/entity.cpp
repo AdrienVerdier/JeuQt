@@ -1,15 +1,17 @@
 #include "entity.h"
+#include "interface_visitor.h"
 
 Entity::Entity()
 {
     coord_x = 0;
     coord_y = 0;
     collision = true;
+    display = true;
 
 }
 
 
-void Entity::accept(Interface_Visitor visitor) {
+void Entity::accept(Interface_Visitor *visitor) {
 
-    visitor.paint(this);
+   visitor->paint(this);
 }

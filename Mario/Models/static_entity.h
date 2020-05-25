@@ -3,13 +3,13 @@
 
 #include "entity.h"
 
-class Static_Entity :Entity
+class Static_Entity :public Entity
 {
 public:
     Static_Entity();
 
 private:
-    int state;
+
 };
 
 #endif // STATIC_ENTITY_H

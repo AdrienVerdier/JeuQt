@@ -31,7 +31,7 @@ SOURCES += \
     Views/game_view.cpp \
     Views/game_view_entity.cpp \
     Views/game_view_factory.cpp \
-    mainwindow.cpp
+
 
 HEADERS += \
     Models/alive_entity.h \
@@ -49,7 +49,7 @@ HEADERS += \
     Views/game_view_factory.h
 
 FORMS += \
-    mainwindow.ui
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

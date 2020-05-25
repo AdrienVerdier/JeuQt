@@ -3,7 +3,7 @@
 
 #include "alive_entity.h"
 
-class Goomba : Alive_Entity
+class Goomba : public Alive_Entity
 {
 public:
     Goomba();

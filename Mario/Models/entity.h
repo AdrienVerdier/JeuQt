@@ -1,9 +1,13 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+
 #include "interface_visitable.h"
 
-class Entity : Interface_Visitable
+class Interface_Visitor;
+class Interface_Visitable;
+
+class Entity : public Interface_Visitable
 {
     public:
 
@@ -33,9 +37,17 @@ class Entity : Interface_Visitable
             coord_y = value;
         }
 
+
+        inline int getState() const{
+            return state;
+        }
+        inline void setState(int value){
+            state = value;
+        }
+
         void update();
 
-        void accept(Interface_Visitor visitor) override;
+        void accept(Interface_Visitor *visitor);
 
         inline void setDisplay(bool d){
             display = d;
@@ -45,11 +57,12 @@ class Entity : Interface_Visitable
             return display;
         }
 
-    private:
+    protected:
         bool display;
         bool collision;
         int coord_x;
         int coord_y;
+        int state;
 
 
 };

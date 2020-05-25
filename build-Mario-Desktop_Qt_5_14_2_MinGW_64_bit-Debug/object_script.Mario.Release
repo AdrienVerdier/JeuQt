@@ -1,0 +1,15 @@
+release/Main.o
+release/alive_entity.o
+release/block.o
+release/entity.o
+release/goomba.o
+release/ground.o
+release/interface_visitable.o
+release/interface_visitor.o
+release/mario.o
+release/peach.o
+release/static_entity.o
+release/game_view.o
+release/game_view_entity.o
+release/game_view_factory.o
+release/qrc_res.o

@@ -3,7 +3,7 @@
 
 #include "alive_entity.h"
 
-class Mario : Alive_Entity
+class Mario : public Alive_Entity
 {
 public:
     Mario();

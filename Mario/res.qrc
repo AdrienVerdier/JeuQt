@@ -6,5 +6,15 @@
         <file>images/sky.png</file>
         <file>images/ground.png</file>
         <file>images/mario.png</file>
+        <file>images/Mario/Idle.png</file>
+        <file>images/Mario/Jump.png</file>
+        <file>images/Mario/Shoot.png</file>
+        <file>images/Mario/Walk1.png</file>
+        <file>images/Mario/Walk2.png</file>
+        <file>images/Mario/Walk3.png</file>
+        <file>images/Mario/Walk4.png</file>
+        <file>images/Mario/Walk5.png</file>
+        <file>images/Mario/Walk6.png</file>
+        <file>images/Characters_Animations_Pattern.json</file>
     </qresource>
 </RCC>

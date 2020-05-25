@@ -3,13 +3,13 @@
 
 #include "entity.h"
 
-class Alive_Entity : Entity
+class Alive_Entity : public Entity
 {
 public:
     Alive_Entity();
 
 private:
-    int state;
+
 };
 
 #endif // ALIVE_ENTITY_H

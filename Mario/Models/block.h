@@ -3,7 +3,7 @@
 
 #include "static_entity.h"
 
-class Block  : Static_Entity
+class Block  : public Static_Entity
 {
 public:
     Block();

@@ -3,7 +3,7 @@
 
 #include "alive_entity.h"
 
-class Peach : Alive_Entity
+class Peach : public Alive_Entity
 {
 public:
     Peach();

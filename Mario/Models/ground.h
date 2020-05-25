@@ -4,7 +4,7 @@
 #include "static_entity.h"
 
 
-class Ground : Static_Entity
+class Ground : public Static_Entity
 {
 public:
     Ground();
