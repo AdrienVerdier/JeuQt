@@ -13,6 +13,7 @@ class Game_View : public QGraphicsScene, public Interface_Visitor
     public:
         Game_View(QWidget *parent = 0 );
         void paint(Entity *entity);
+        QMap<Entity*,QList<Entity*>> get_list_collides();
     private :
         Game_View_Factory entity_factory;
         QMap<Entity*, Game_View_Entity*> map_Entity_GameViewEntity;

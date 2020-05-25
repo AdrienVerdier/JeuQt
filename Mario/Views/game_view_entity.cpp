@@ -38,7 +38,7 @@ QRectF Game_View_Entity::boundingRect() const
 
 void Game_View_Entity::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-
+    //painter->rotate(10);
     painter->drawPixmap(0,0,picture.width(),picture.height(),picture);
 
 

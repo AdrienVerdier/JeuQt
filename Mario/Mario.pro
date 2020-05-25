@@ -31,6 +31,7 @@ SOURCES += \
     Views/game_view.cpp \
     Views/game_view_entity.cpp \
     Views/game_view_factory.cpp \
+    Views/viewtest.cpp
 
 
 HEADERS += \
@@ -46,7 +47,8 @@ HEADERS += \
     Models/static_entity.h \
     Views/game_view.h \
     Views/game_view_entity.h \
-    Views/game_view_factory.h
+    Views/game_view_factory.h \
+    Views/viewtest.h
 
 FORMS += \
 

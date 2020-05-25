@@ -1,5 +1,6 @@
 #include "game_view.h"
-#include <QDebug>
+
+
 
 Game_View::Game_View(QWidget *parent)
 {
@@ -25,4 +26,22 @@ void Game_View::paint(Entity *entity){
         }
 
     }
+}
+
+QMap<Entity*, QList<Entity*>> Game_View::get_list_collides()
+{
+    QMap<Entity*, QList<Entity*>> list_collides;
+    foreach(Entity *entity, map_Entity_GameViewEntity.keys())
+    {
+        foreach(Entity *collideswith, map_Entity_GameViewEntity.keys())
+        {
+            if(entity != collideswith)
+            {
+                if(map_Entity_GameViewEntity[entity]->collidesWithItem( map_Entity_GameViewEntity[collideswith]))
+                    list_collides[entity].push_back(collideswith);
+            }
+
+        }
+    }
+    return list_collides;
 }
