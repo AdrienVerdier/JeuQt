@@ -10,6 +10,7 @@ class Mario : public Alive_Entity
 {
 public:
     Mario();
+    void setInputs(Controls *c);
     void collision(Entity* entity, int position);
     void collision(Block* entity, int position);
     void collision(Goomba* entity, int position);
