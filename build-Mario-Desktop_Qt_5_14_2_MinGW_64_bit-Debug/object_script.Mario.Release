@@ -1,3 +1,5 @@
+release/global_views_controller.o
+release/level_controller.o
 release/Main.o
 release/alive_entity.o
 release/block.o
@@ -6,12 +8,15 @@ release/goomba.o
 release/ground.o
 release/interface_visitable.o
 release/interface_visitor.o
+release/level.o
 release/mario.o
 release/peach.o
 release/static_entity.o
 release/game_view.o
 release/game_view_entity.o
 release/game_view_factory.o
+release/global_view.o
 release/viewtest.o
 release/qrc_res.o
+release/moc_level_controller.o
 release/moc_viewtest.o

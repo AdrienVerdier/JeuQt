@@ -17,6 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Controllers/global_views_controller.cpp \
+    Controllers/level_controller.cpp \
     Main.cpp \
     Models/alive_entity.cpp \
     Models/block.cpp \
@@ -25,16 +27,20 @@ SOURCES += \
     Models/ground.cpp \
     Models/interface_visitable.cpp \
     Models/interface_visitor.cpp \
+    Models/level.cpp \
     Models/mario.cpp \
     Models/peach.cpp \
     Models/static_entity.cpp \
     Views/game_view.cpp \
     Views/game_view_entity.cpp \
     Views/game_view_factory.cpp \
+    Views/global_view.cpp \
     Views/viewtest.cpp
 
 
 HEADERS += \
+    Controllers/global_views_controller.h \
+    Controllers/level_controller.h \
     Models/alive_entity.h \
     Models/block.h \
     Models/entity.h \
@@ -42,12 +48,14 @@ HEADERS += \
     Models/ground.h \
     Models/interface_visitable.h \
     Models/interface_visitor.h \
+    Models/level.h \
     Models/mario.h \
     Models/peach.h \
     Models/static_entity.h \
     Views/game_view.h \
     Views/game_view_entity.h \
     Views/game_view_factory.h \
+    Views/global_view.h \
     Views/viewtest.h
 
 FORMS += \

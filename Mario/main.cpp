@@ -1,18 +1,19 @@
 #include <QApplication>
 #include <QGraphicsView>
 
-#include "Views/viewtest.h"
+#include "Controllers/global_views_controller.h"
 
 
 
 
 
-ViewTest *v;
+Global_Views_Controller * global_controller;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    v = new ViewTest();
-    v->show();
+    global_controller = new Global_Views_Controller();
+    global_controller->display_Level();
+    global_controller->getView()->show();
 
     return a.exec();
 }
