@@ -3,6 +3,7 @@
 
 Level::Level()
 {
+
     entity_list = new QList<Entity*>();
 
     /*\     AJOUTS TEMPORAIRES    \*/
@@ -12,7 +13,7 @@ Level::Level()
     m->setCoordX(100);
     m->setCoordY(100);
     m->setState(1);
-    entity_list->push_back(m);
+    player = m;
 
 
     Mario * m2 = new Mario();
@@ -27,5 +28,10 @@ Level::Level()
 
 QList<Entity *> *Level::get_entity_list()
 {
- return entity_list;
+    return entity_list;
+}
+
+Mario *Level::getPlayer()
+{
+  return player;
 }

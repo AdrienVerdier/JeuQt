@@ -15,6 +15,8 @@ Level_Controller::Level_Controller()
     foreach(Entity *entity, *level->get_entity_list()){
         current_entity_list.push_back(entity);
     }
+    current_entity_list.push_back(level->getPlayer());
+    level->getPlayer()->setInputs(game_view->get_Keys());
 
 
     m_timer = new QTimer(this);
@@ -34,9 +36,11 @@ void Level_Controller::update_view()
         game_view->paint(entity);
     }
 
+
 }
 
 void Level_Controller::update_lvl()
 {
+
     update_view();
 }

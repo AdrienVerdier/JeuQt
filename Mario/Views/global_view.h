@@ -5,7 +5,7 @@
 #include <QObject>
 #include <QGraphicsView>
 #include <QGraphicsScene>
-
+#include "../Tools/controls.h"
 
 class Global_View :  public QGraphicsView
 {

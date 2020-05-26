@@ -4,3 +4,9 @@ Mario::Mario()
 {
 
 }
+
+void Mario::setInputs(Controls *c)
+{
+    input = c;
+
+}

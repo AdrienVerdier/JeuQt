@@ -1,10 +1,11 @@
 #include "game_view.h"
-
+#include <QKeyEvent>
 
 
 Game_View::Game_View(QWidget *parent)
 {
     setSceneRect(0,0,1280,720);
+    controls = new Controls();
 
 
 }
@@ -44,4 +45,58 @@ QMap<Entity*, QList<Entity*>> Game_View::get_list_collides()
         }
     }
     return list_collides;
+}
+
+void Game_View::keyPressEvent(QKeyEvent *keyEvent)
+{
+    if(keyEvent->key()== Qt::Key_Up && !keyEvent->isAutoRepeat())
+    {
+       controls->up = true;
+    }
+    if(keyEvent->key()== Qt::Key_Right && !keyEvent->isAutoRepeat())
+    {
+       controls->right = true;
+    }
+    if(keyEvent->key()== Qt::Key_Down && !keyEvent->isAutoRepeat())
+    {
+       controls->down = true;
+    }
+    if(keyEvent->key()== Qt::Key_Left && !keyEvent->isAutoRepeat())
+    {
+       controls->left = true;
+    }
+    if(keyEvent->key()== Qt::Key_Space && !keyEvent->isAutoRepeat())
+    {
+       controls->up = true;
+    }
+}
+
+
+void Game_View::keyReleaseEvent(QKeyEvent *keyEvent)
+{
+    if(keyEvent->key()== Qt::Key_Up && !keyEvent->isAutoRepeat())
+    {
+       controls->up = false;
+    }
+    if(keyEvent->key()== Qt::Key_Right && !keyEvent->isAutoRepeat())
+    {
+       controls->right = false;
+    }
+    if(keyEvent->key()== Qt::Key_Down && !keyEvent->isAutoRepeat())
+    {
+       controls->down = false;
+    }
+    if(keyEvent->key()== Qt::Key_Left && !keyEvent->isAutoRepeat())
+    {
+       controls->left = false;
+    }
+    if(keyEvent->key()== Qt::Key_Space && !keyEvent->isAutoRepeat())
+    {
+       controls->up = false;
+    }
+}
+
+Controls *Game_View::get_Keys()
+{
+    return controls;
 }

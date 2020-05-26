@@ -31,6 +31,7 @@ SOURCES += \
     Models/mario.cpp \
     Models/peach.cpp \
     Models/static_entity.cpp \
+    Tools/controls.cpp \
     Views/game_view.cpp \
     Views/game_view_entity.cpp \
     Views/game_view_factory.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     Models/mario.h \
     Models/peach.h \
     Models/static_entity.h \
+    Tools/controls.h \
     Views/game_view.h \
     Views/game_view_entity.h \
     Views/game_view_factory.h \
