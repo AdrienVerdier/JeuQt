@@ -14,6 +14,8 @@ class Entity : public Interface_Visitable
         Entity();
         Entity(int coord_x ,int coord_y):coord_x(coord_x),coord_y(coord_y){ collision = true;}
 
+        inline int getDistanceOn_X(Entity* entity){return entity->coord_x - this->coord_x;}
+        inline int getDistanceOn_Y(Entity* entity){return entity->coord_y - this->coord_y;}
 
         inline bool getCollision() const{
             return collision;
@@ -45,7 +47,7 @@ class Entity : public Interface_Visitable
             state = value;
         }
 
-        void update();
+        virtual void update();
 
         void accept(Interface_Visitor *visitor);
 

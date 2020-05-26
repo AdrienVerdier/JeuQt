@@ -8,8 +8,12 @@ class Alive_Entity : public Entity
 public:
     Alive_Entity();
 
-private:
-
+protected:
+    bool move_to_left;
+    bool move_to_right;
+    bool move_to_down;
+    bool move_to_up;
+    bool state_dead;
 };
 
 #endif // ALIVE_ENTITY_H
