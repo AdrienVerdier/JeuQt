@@ -35,12 +35,16 @@ void Mario::collisionSpec(Block *entity, int position)
     switch (position) {
         case 0 :
             this->move_to_up = false;
+            break;
         case 1:
             this->move_to_right = false;
+            break;
         case 2:
             this->move_to_down = false;
+            break;
         case 3:
             this->move_to_left = false;
+            break;
     }
 }
 

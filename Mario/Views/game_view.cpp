@@ -49,10 +49,17 @@ QMap<Entity*, QMap<Entity*,int>> Game_View::get_list_collides()
                         else if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"])list_collides[entity][collideswith] = 1; //Collision RIGHT
                         else list_collides[entity][collideswith] = 3; //Collision LEFT
                     }
-                    if(E1["Bas"] >= E2["Haut"] && E1["Bas"] > E2["Bas"]){
+                    else if(E1["Bas"] >= E2["Haut"] && E1["Bas"] < E2["Bas"]){
                         if(E1["Bas"]-E2["Haut"]<=10) list_collides[entity][collideswith] = 2; //Collision BOTTOM
                         else if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"])list_collides[entity][collideswith] = 1; //Collision RIGHT
                         else list_collides[entity][collideswith] = 3; //Collision LEFT
+                    }
+                    else{
+                        if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"])list_collides[entity][collideswith] = 1; //Collision RIGHT
+                        else if(E1["Gauche"]<=E2["Droite"] && E1["Gauche"]>E2["Gauche"]){
+
+                            list_collides[entity][collideswith] = 3; //Collision LEFT
+                        }
                     }
 
                 }
@@ -67,6 +74,8 @@ QMap<Entity*, QMap<Entity*,int>> Game_View::get_list_collides()
 
 void Game_View::fillPoints(Game_View_Entity *e1, Game_View_Entity *e2)
 {
+    E1.clear();
+    E2.clear();
     E1["Haut"]= e1->y();
     E1["Bas"] = e1->y()+e1->boundingRect().height();
     E1["Gauche"] = e1->x();
