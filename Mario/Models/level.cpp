@@ -12,7 +12,7 @@ Level::Level()
     Mario * m = new Mario();
     m->setDisplay(true);
     m->setCoordX(50);
-    m->setCoordY(550);
+    m->setCoordY(530);
     m->setState(1);
     player = m;
 
@@ -37,6 +37,16 @@ Level::Level()
     b2->setCoordY(570);
     b2->setState(0);
     entity_list->push_back(b2);
+
+    for(int i=0;i<20;i++){
+        entity_list->push_back(new Block());
+        entity_list->last()->setDisplay(true);
+        entity_list->last()->setCoordX(i*25);
+        entity_list->last()->setCoordY(595);
+        entity_list->last()->setState(0);
+
+
+    }
 
 }
 
