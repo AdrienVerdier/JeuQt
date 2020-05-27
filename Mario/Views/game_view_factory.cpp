@@ -1,5 +1,6 @@
 #include "game_view_factory.h"
 #include<QDebug>
+#include <typeinfo>  //for 'typeid' to work
 
 
 Game_View_Factory::Game_View_Factory()

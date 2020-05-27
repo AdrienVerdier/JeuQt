@@ -30,7 +30,7 @@ ViewTest::ViewTest(QWidget *parent)
 
     g->paint(m);
     g->paint(m2);
-    QMap<Entity*,QList<Entity*>> list = g->get_list_collides();
+    //QMap<Entity*,QList<Entity*>> list = g->get_list_collides();
     show();
 
     m_timer = new QTimer(this);

@@ -7,6 +7,8 @@ class Static_Entity :public Entity
 {
 public:
     Static_Entity();
+    void collision(Entity* entity, int position)  override;
+    void update() override;
 
 private:
 

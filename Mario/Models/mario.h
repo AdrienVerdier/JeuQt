@@ -11,9 +11,10 @@ class Mario : public Alive_Entity
 public:
     Mario();
     void setInputs(Controls *c);
-    void collision(Entity* entity, int position);
-    void collision(Block* entity, int position);
-    void collision(Goomba* entity, int position);
+    void collision(Entity* entity, int position)  override;
+    void update() override;
+    void collisionSpec(Block* entity, int position);
+    void collisionSpec(Goomba* entity, int position);
 
 private:
     Controls *input;

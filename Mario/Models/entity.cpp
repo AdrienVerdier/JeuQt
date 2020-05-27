@@ -5,7 +5,7 @@ Entity::Entity()
 {
     coord_x = 0;
     coord_y = 0;
-    collision = true;
+    collision_active = true;
     display = true;
 
 }

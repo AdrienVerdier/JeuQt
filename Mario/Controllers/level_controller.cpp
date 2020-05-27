@@ -2,6 +2,8 @@
 #include "../Views/game_view.h"
 #include <QTimer>
 #include <QObject>
+#include<QDebug>
+
 
 Level_Controller::Level_Controller()
 {
@@ -21,7 +23,7 @@ Level_Controller::Level_Controller()
 
     m_timer = new QTimer(this);
     QObject::connect(m_timer,SIGNAL(timeout()),this,SLOT(update_lvl()));
-    m_timer->start(80);
+    m_timer->start(15);
 
 }
 
@@ -43,4 +45,20 @@ void Level_Controller::update_lvl()
 {
 
     update_view();
+    collision_List =  game_view->get_list_collides();
+    foreach(Entity *entity, collision_List.keys())
+    {
+        foreach(Entity *collideswith, collision_List[entity].keys())
+        {
+               entity->collision(collideswith,collision_List[entity][collideswith]);
+        }
+    }
+    foreach(Entity *entity,current_entity_list){
+        entity->update();
+    }
+
+    /*\ Pour le moment on update l'ensemble des objets du niveau, par la suite il faudra mettre current_entity_list à jour selon les coordonnées de Mario et les objets morts ou nouveaux) \*/
+
+
+
 }

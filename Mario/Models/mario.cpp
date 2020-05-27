@@ -13,11 +13,19 @@ void Mario::setInputs(Controls *c)
 
 void Mario::collision(Entity *entity, int position)
 {
-    if (typeid (Block).name() == typeid(*entity).name()) collision((Block*)entity, position);
-    if (typeid (Goomba).name() == typeid(*entity).name()) collision((Goomba*)entity, position);
+    if (typeid (Block).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
+    if (typeid (Goomba).name() == typeid(*entity).name()) collisionSpec((Goomba*)entity, position);
 }
 
-void Mario::collision(Block *entity, int position)
+void Mario::update()
+{
+    if(input->right) coord_x+= 5;
+    if(input->left) coord_x-= 5;
+    if(!input->left && !input->right ) state= 0;
+    else state = 1;
+}
+
+void Mario::collisionSpec(Block *entity, int position)
 {
     switch (position) {
         case 0 :
@@ -31,7 +39,7 @@ void Mario::collision(Block *entity, int position)
     }
 }
 
-void Mario::collision(Goomba *entity, int position)
+void Mario::collisionSpec(Goomba *entity, int position)
 {
     switch (position) {
         case 0 :

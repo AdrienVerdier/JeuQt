@@ -13,7 +13,7 @@ class Game_View : public QGraphicsScene, public Interface_Visitor
     public:
         Game_View(QWidget *parent = 0 );
         void paint(Entity *entity);
-        QMap<Entity*,QList<Entity*>> get_list_collides();
+        QMap<Entity*, QMap<Entity*,int>> get_list_collides();
         void keyPressEvent(QKeyEvent * keyEvent);
         void keyReleaseEvent(QKeyEvent * keyEvent);
         Controls * get_Keys();
@@ -21,6 +21,10 @@ class Game_View : public QGraphicsScene, public Interface_Visitor
         Game_View_Factory entity_factory;
         QMap<Entity*, Game_View_Entity*> map_Entity_GameViewEntity;
         Controls *controls;
+        QMap<QString,int> E1;
+        QMap<QString,int> E2;
+
+        void fillPoints(Game_View_Entity *e1, Game_View_Entity *e2);
 
 };
 

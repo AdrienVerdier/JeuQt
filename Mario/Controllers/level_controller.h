@@ -3,6 +3,7 @@
 #include "../Models/level.h"
 #include <QObject>
 #include <QTimer>
+#include <QMap>
 
 
 class Game_View;
@@ -18,6 +19,7 @@ private:
     Level * level;
     QList<Entity*> current_entity_list;// liste d'entity "courante" --> entity ayant un state à 1 et celles étant passé à 0
     QTimer *m_timer;
+    QMap<Entity*, QMap<Entity*,int>> collision_List;
 
     void update_view();
 

@@ -25,6 +25,7 @@ public:
 private:
     int step_frame;
     int state_Before;
+    int cpt_tempo;
     QMap<int,QList<QString>> map_state_step_picture;
     QPixmap picture;
 

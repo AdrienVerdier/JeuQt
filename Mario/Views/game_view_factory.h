@@ -1,6 +1,10 @@
 #ifndef GAME_VIEW_FACTORY_H
 #define GAME_VIEW_FACTORY_H
 
+
+#include "../Models/goomba.h"
+#include "../Models/block.h"
+#include "../Models/peach.h"
 #include "../Models/mario.h"
 #include "game_view_entity.h"
 #include <QFile>
