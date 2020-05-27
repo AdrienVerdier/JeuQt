@@ -4,6 +4,7 @@
 #include "entity.h"
 #include <QList>
 #include "mario.h"
+#include "block.h"
 
 class Level
 {

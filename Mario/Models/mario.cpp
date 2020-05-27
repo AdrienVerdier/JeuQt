@@ -19,7 +19,7 @@ void Mario::collision(Entity *entity, int position)
 
 void Mario::update()
 {
-    if(input->right) coord_x+= 5;
+    if(input->right && move_to_right) coord_x+= 5;
     if(input->left) coord_x-= 5;
     if(!input->left && !input->right ) state= 0;
     else state = 1;

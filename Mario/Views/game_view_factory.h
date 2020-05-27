@@ -20,6 +20,7 @@ public:
     Game_View_Factory();
     Game_View_Entity* create(Entity *e);
     Game_View_Entity* create(Mario *m);
+    Game_View_Entity* create(Block *b);
 
 };
 

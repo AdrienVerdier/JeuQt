@@ -16,5 +16,6 @@
         <file>images/Mario/Walk5.png</file>
         <file>images/Mario/Walk6.png</file>
         <file>images/Characters_Animations_Pattern.json</file>
+        <file>images/Blocks/Block.png</file>
     </qresource>
 </RCC>

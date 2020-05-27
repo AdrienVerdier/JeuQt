@@ -12,6 +12,7 @@ release/level.o
 release/mario.o
 release/peach.o
 release/static_entity.o
+release/controls.o
 release/game_view.o
 release/game_view_entity.o
 release/game_view_factory.o

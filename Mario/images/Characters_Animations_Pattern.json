@@ -4,5 +4,8 @@
 		 "1" : [":images/images/Mario/Walk1.png",":images/images/Mario/Walk2.png",":images/images/Mario/Walk3.png",":images/images/Mario/Walk4.png",":images/images/Mario/Walk5.png",":images/images/Mario/Walk6.png"],
 		 "2" : [":images/images/Mario/Shoot.png"],
 		 "3" : [":images/images/Mario/Jump.png"]
+	},
+	"block" :{
+		"0" : [":images/images/Blocks/Block.png"]
 	}
 }

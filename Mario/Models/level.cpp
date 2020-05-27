@@ -1,5 +1,6 @@
 #include "level.h"
 #include "mario.h"
+#include "block.h"
 
 Level::Level()
 {
@@ -23,6 +24,12 @@ Level::Level()
     m2->setState(1);
     entity_list->push_back(m2);
 */
+    Block * b = new Block();
+    b->setDisplay(true);
+    b->setCoordX(200);
+    b->setCoordY(570);
+    b->setState(0);
+    entity_list->push_back(b);
 
 }
 
