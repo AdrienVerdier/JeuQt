@@ -83,6 +83,7 @@ void Mario::collisionSpec(Block *entity, int position)
 
 void Mario::collisionSpec(Goomba *entity, int position)
 {
+    move_to_down = false;
     switch (position) {
         case 0 :
             this->state_dead = true;

@@ -18,13 +18,6 @@ Level::Level()
     m->setState(1);
     player = m;
 
-    Goomba* g = new Goomba();
-    g->setCoordX(200);
-    g->setCoordY(200);
-    g->setState(0);
-    g->setDisplay(true);
-    entity_list->push_back(g);
-
     QImage level_img;
     level_img.load(":images/images/Niveau/Niv1.png");
 
@@ -35,6 +28,14 @@ Level::Level()
             QColor clrCurrent( level_img.pixel( col, row ) );
             if(clrCurrent.red() == 185 && clrCurrent.green()==122 &&clrCurrent.blue()==87){
                 entity_list->push_back(new Block());
+                entity_list->last()->setDisplay(true);
+                entity_list->last()->setCoordX(col-10);
+                entity_list->last()->setCoordY(row-10);
+                entity_list->last()->setState(0);
+
+            }
+            if(clrCurrent.red() == 255 && clrCurrent.green()==201 &&clrCurrent.blue()==14){
+                entity_list->push_back(new Goomba());
                 entity_list->last()->setDisplay(true);
                 entity_list->last()->setCoordX(col-10);
                 entity_list->last()->setCoordY(row-10);

@@ -3,11 +3,13 @@
 
 #include "alive_entity.h"
 
+class Mario;
 class Goomba : public Alive_Entity
 {
 public:
     Goomba();
     void collision(Entity* entity, int position)  override;
+    void collisionSpec(Mario* entity, int position);
     void update() override;
 };
 

@@ -1,6 +1,7 @@
 #include "game_view.h"
 #include <QKeyEvent>
 #include "../Models/mario.h"
+#include "../Models/goomba.h"
 #include<QDebug>
 #include <QRectF>
 

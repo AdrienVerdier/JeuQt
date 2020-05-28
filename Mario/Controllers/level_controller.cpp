@@ -51,7 +51,7 @@ void Level_Controller::update_lvl()
     {
         foreach(Entity *collideswith, collision_List[entity].keys())
         {
-               entity->collision(collideswith,collision_List[entity][collideswith]);
+                entity->collision(collideswith,collision_List[entity][collideswith]);
         }
     }
     foreach(Entity *entity,current_entity_list){
