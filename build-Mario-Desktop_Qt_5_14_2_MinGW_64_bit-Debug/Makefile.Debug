@@ -182,6 +182,7 @@ debug/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/ground.png \
 		../Mario/images/mario.png \
 		../Mario/images/Characters_Animations_Pattern.json \
+		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/Block.png \
 		../Mario/images/Mario/Walk6.png \
 		../Mario/images/Mario/Walk1.png \
@@ -201,6 +202,7 @@ debug/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/ground.png \
 		../Mario/images/mario.png \
 		../Mario/images/Characters_Animations_Pattern.json \
+		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/Block.png \
 		../Mario/images/Mario/Walk6.png \
 		../Mario/images/Mario/Walk1.png \
@@ -220,6 +222,7 @@ debug/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/ground.png \
 		../Mario/images/mario.png \
 		../Mario/images/Characters_Animations_Pattern.json \
+		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/Block.png \
 		../Mario/images/Mario/Walk6.png \
 		../Mario/images/Mario/Walk1.png \
@@ -990,7 +993,50 @@ debug/level.o: ../Mario/Models/level.cpp ../Mario/Models/level.h \
 		../Mario/Tools/controls.h \
 		../Mario/Models/block.h \
 		../Mario/Models/static_entity.h \
-		../Mario/Models/goomba.h
+		../Mario/Models/goomba.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/QImage \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qimage.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qtgui-config.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qcolor.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qrgb.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qrgba64.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qpaintdevice.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qwindowdefs.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qrect.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qmargins.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qsize.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qpixelformat.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qtransform.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qmatrix.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qpolygon.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qregion.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qdatastream.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qscopedpointer.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qiodevice.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qobject.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qcoreevent.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qmetatype.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qvarlengtharray.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qcontainerfwd.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qobject_impl.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qline.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qpainterpath.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qhash.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qmap.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qtextstream.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qlocale.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qvariant.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qshareddata.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qset.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qcontiguouscache.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\level.o ..\Mario\Models\level.cpp
 
 debug/mario.o: ../Mario/Models/mario.cpp ../Mario/Models/mario.h \

@@ -18,6 +18,8 @@ public:
 
 private:
     Controls *input;
+    int cptjump;
+    bool jump;
 
 };
 

@@ -35,7 +35,8 @@ Game_View *Level_Controller::getScene()
 void Level_Controller::update_view()
 {
     foreach(Entity *entity, current_entity_list){
-        game_view->paint(entity);
+       // game_view->paint(entity);
+        entity->accept(game_view);
     }
 
 

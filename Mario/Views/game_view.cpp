@@ -42,17 +42,27 @@ QMap<Entity*, QMap<Entity*,int>> Game_View::get_list_collides()
         {
             if(entity != collideswith &&  entity->getCollision() && collideswith->getCollision())
             {
+
                 if(map_Entity_GameViewEntity[entity]->collidesWithItem( map_Entity_GameViewEntity[collideswith])){
                     fillPoints(map_Entity_GameViewEntity[entity],map_Entity_GameViewEntity[collideswith]);
+                    if (typeid (Mario).name() == typeid(*entity).name()){
+
+                    }
+                    else{
+
+                    }
+
                     if(E1["Haut"] <= E2["Bas"] && E1["Haut"] > E2["Haut"]){
-                        if(E2["Bas"]-E1["Haut"]<=10) list_collides[entity][collideswith] = 0; //Collision TOP
+                        if(E2["Bas"]-E1["Haut"]<=5) list_collides[entity][collideswith] = 0; //Collision TOP
                         else if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"])list_collides[entity][collideswith] = 1; //Collision RIGHT
-                        else list_collides[entity][collideswith] = 3; //Collision LEFT
+                        else if(E1["Gauche"]<=E2["Droite"] && E1["Gauche"]>E2["Gauche"]) list_collides[entity][collideswith] = 3; //Collision LEFT
+
                     }
                     else if(E1["Bas"] >= E2["Haut"] && E1["Bas"] < E2["Bas"]){
-                        if(E1["Bas"]-E2["Haut"]<=10) list_collides[entity][collideswith] = 2; //Collision BOTTOM
+                        if(E1["Bas"]-E2["Haut"]<=5) list_collides[entity][collideswith] = 2; //Collision BOTTOM
                         else if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"])list_collides[entity][collideswith] = 1; //Collision RIGHT
-                        else list_collides[entity][collideswith] = 3; //Collision LEFT
+                        else if(E1["Gauche"]<=E2["Droite"] && E1["Gauche"]>E2["Gauche"])list_collides[entity][collideswith] = 3; //Collision LEFT
+
                     }
                     else{
                         if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"])list_collides[entity][collideswith] = 1; //Collision RIGHT

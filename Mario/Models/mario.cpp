@@ -3,6 +3,8 @@
 
 Mario::Mario()
 {
+    cptjump = 0;
+    jump = false;
 
 }
 
@@ -24,10 +26,41 @@ void Mario::update()
     if(!input->left && !input->right ) state= 0;
     else state = 1;
 
-    this->move_to_up = true;
-    this->move_to_right = true;
-    this->move_to_down = true;
-    this->move_to_left = true;
+    if(move_to_down) coord_y+=5;
+
+
+
+
+    if(input->up && cptjump ==0 && !move_to_down){
+        jump = true;
+    }
+
+    if(jump){
+        if(move_to_up){
+          this->move_to_down = false;
+           coord_y-=5;
+           cptjump++;
+           if(cptjump == 20){
+               jump = false;
+           }
+        }
+        else{
+            cptjump = 0;
+            jump = false;
+        }
+    }
+    else{
+        if(cptjump>0) cptjump--;
+    }
+
+
+     this->move_to_right = true;
+     this->move_to_down = true;
+    if(jump ) move_to_down=false;
+     this->move_to_left = true;
+     this->move_to_up = true;
+
+
 }
 
 void Mario::collisionSpec(Block *entity, int position)

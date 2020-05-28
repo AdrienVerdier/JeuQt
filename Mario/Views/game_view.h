@@ -26,6 +26,7 @@ class Game_View : public QGraphicsScene, public Interface_Visitor
 
         void fillPoints(Game_View_Entity *e1, Game_View_Entity *e2);
 
+
 };
 
 #endif // GAME_VIEW_H
