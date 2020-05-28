@@ -92,3 +92,8 @@ void Mario::collisionSpec(Goomba *entity, int position)
             this->state_dead = true;
     }
 }
+
+int Mario::getCptjump() const
+{
+    return cptjump;
+}

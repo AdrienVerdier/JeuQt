@@ -16,6 +16,9 @@ public:
     void collisionSpec(Block* entity, int position);
     void collisionSpec(Goomba* entity, int position);
 
+    int getCptjump() const;
+
+
 private:
     Controls *input;
     int cptjump;

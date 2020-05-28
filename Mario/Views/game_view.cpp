@@ -1,6 +1,8 @@
 #include "game_view.h"
 #include <QKeyEvent>
-
+#include "../Models/mario.h"
+#include<QDebug>
+#include <QRectF>
 
 Game_View::Game_View(QWidget *parent)
 {
@@ -44,33 +46,75 @@ QMap<Entity*, QMap<Entity*,int>> Game_View::get_list_collides()
             {
 
                 if(map_Entity_GameViewEntity[entity]->collidesWithItem( map_Entity_GameViewEntity[collideswith])){
-                    fillPoints(map_Entity_GameViewEntity[entity],map_Entity_GameViewEntity[collideswith]);
+
                     if (typeid (Mario).name() == typeid(*entity).name()){
 
+                        QRectF rectHaut(map_Entity_GameViewEntity[entity]->x()+10,map_Entity_GameViewEntity[entity]->y(),map_Entity_GameViewEntity[entity]->boundingRect().width()-20,10);
+                        QRectF rectBas(map_Entity_GameViewEntity[entity]->x()+10,map_Entity_GameViewEntity[entity]->y()+map_Entity_GameViewEntity[entity]->boundingRect().height()-10,map_Entity_GameViewEntity[entity]->boundingRect().width()-20,10);
+                         QRectF rectGauche(map_Entity_GameViewEntity[entity]->x(),map_Entity_GameViewEntity[entity]->y()+10,10,map_Entity_GameViewEntity[entity]->boundingRect().height()-20);
+                         QRectF rectDroite(map_Entity_GameViewEntity[entity]->x()+map_Entity_GameViewEntity[entity]->boundingRect().width()-10,map_Entity_GameViewEntity[entity]->y()+10,10,map_Entity_GameViewEntity[entity]->boundingRect().height()-20);
+
+                        QRectF rect(map_Entity_GameViewEntity[collideswith]->x(),map_Entity_GameViewEntity[collideswith]->y(),map_Entity_GameViewEntity[collideswith]->boundingRect().width(),map_Entity_GameViewEntity[collideswith]->boundingRect().height());
+
+                         if(rectHaut.intersects(rect)){
+                              qInfo() << "coucou";
+                             list_collides[entity][collideswith] = 0;
+                             list_collides[collideswith][entity] = 2;
+                         }
+                         if(rectBas.intersects(rect)) {
+                             list_collides[entity][collideswith] = 2;
+                             list_collides[collideswith][entity] = 0;
+                         }
+                          if(rectGauche.intersects(rect)) {
+                              list_collides[entity][collideswith] = 3;
+                              list_collides[collideswith][entity] = 1;
+                          }
+                           if(rectDroite.intersects(rect)) {
+                               list_collides[entity][collideswith] = 1;
+                               list_collides[collideswith][entity] = 3;
+                           }
+                    }
+                    else if(typeid (Mario).name() == typeid(*collideswith).name()){
+
                     }
                     else{
+                        fillPoints(map_Entity_GameViewEntity[entity],map_Entity_GameViewEntity[collideswith]);
 
-                    }
+                        if(E1["Haut"] <= E2["Bas"] && E1["Haut"] > E2["Haut"]){
+                              if( E2["Bas"] - E1["Haut"] <=5)list_collides[entity][collideswith] = 0; //Collision TOP
+                            else if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"]){
+                                 if(E1["Droite"]-E2["Gauche"]<=5)list_collides[entity][collideswith] = 1; //Collision RIGHT
+                            }
+                            else if(E1["Gauche"]<=E2["Droite"] && E1["Gauche"]>E2["Gauche"]){
+                                 if(E2["Droite"] -E1["Gauche"]<=5)list_collides[entity][collideswith] = 3; //Collision LEFT
 
-                    if(E1["Haut"] <= E2["Bas"] && E1["Haut"] > E2["Haut"]){
-                        if(E2["Bas"]-E1["Haut"]<=5) list_collides[entity][collideswith] = 0; //Collision TOP
-                        else if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"])list_collides[entity][collideswith] = 1; //Collision RIGHT
-                        else if(E1["Gauche"]<=E2["Droite"] && E1["Gauche"]>E2["Gauche"]) list_collides[entity][collideswith] = 3; //Collision LEFT
+                            }
 
-                    }
-                    else if(E1["Bas"] >= E2["Haut"] && E1["Bas"] < E2["Bas"]){
-                        if(E1["Bas"]-E2["Haut"]<=5) list_collides[entity][collideswith] = 2; //Collision BOTTOM
-                        else if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"])list_collides[entity][collideswith] = 1; //Collision RIGHT
-                        else if(E1["Gauche"]<=E2["Droite"] && E1["Gauche"]>E2["Gauche"])list_collides[entity][collideswith] = 3; //Collision LEFT
+                        }
+                        else if(E1["Bas"] >= E2["Haut"] && E1["Bas"] < E2["Bas"]){
+                             if(E1["Bas"] - E2["Haut"]<=5)list_collides[entity][collideswith] = 2; //Collision TOP
+                             else if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"]){
 
-                    }
-                    else{
-                        if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"])list_collides[entity][collideswith] = 1; //Collision RIGHT
-                        else if(E1["Gauche"]<=E2["Droite"] && E1["Gauche"]>E2["Gauche"]){
+                               if(E1["Droite"]-E2["Gauche"]<=5)list_collides[entity][collideswith] = 1; //Collision RIGHT
+                            }
+                             else if(E1["Gauche"]<=E2["Droite"] && E1["Gauche"]>E2["Gauche"]){
 
-                            list_collides[entity][collideswith] = 3; //Collision LEFT
+                                if(E2["Droite"] -E1["Gauche"]<=5)list_collides[entity][collideswith] = 3; //Collision LEFT
+                            }
+
+                        }
+                        else{
+                            if(E1["Droite"]>=E2["Gauche"] && E1["Droite"]<E2["Droite"])list_collides[entity][collideswith] = 1; //Collision RIGHT
+                            else if(E1["Gauche"]<=E2["Droite"] && E1["Gauche"]>E2["Gauche"]){
+
+                                list_collides[entity][collideswith] = 3; //Collision LEFT
+                            }
                         }
                     }
+
+
+
+
 
                 }
 
