@@ -17,12 +17,16 @@ class Game_View : public QGraphicsScene, public Interface_Visitor
         void keyPressEvent(QKeyEvent * keyEvent);
         void keyReleaseEvent(QKeyEvent * keyEvent);
         Controls * get_Keys();
-    private :
+        void setMx(int value);
+
+private :
         Game_View_Factory entity_factory;
         QMap<Entity*, Game_View_Entity*> map_Entity_GameViewEntity;
         Controls *controls;
         QMap<QString,int> E1;
         QMap<QString,int> E2;
+        int Mx;
+
 
         void fillPoints(Game_View_Entity *e1, Game_View_Entity *e2);
 

@@ -8,16 +8,16 @@ Game_View_Factory::Game_View_Factory()
 
 }
 
-Game_View_Entity *Game_View_Factory::create(Entity *e)
+Game_View_Entity *Game_View_Factory::create(Entity *e,int x)
 {
 
-    if (typeid (Mario).name() == typeid(*e).name()) return create((Mario*)e);
-    if (typeid (Block).name() == typeid(*e).name()) return create((Block*)e);
-    if (typeid (Goomba).name() == typeid(*e).name()) return create((Goomba*)e);
+    if (typeid (Mario).name() == typeid(*e).name()) return create((Mario*)e,x);
+    if (typeid (Block).name() == typeid(*e).name()) return create((Block*)e, x);
+    if (typeid (Goomba).name() == typeid(*e).name()) return create((Goomba*)e, x);
 }
 
 
-Game_View_Entity* Game_View_Factory::create(Mario *m){
+Game_View_Entity* Game_View_Factory::create(Mario *m,int x){
 
 
           QMap<int,QList<QString>> map;
@@ -41,14 +41,14 @@ Game_View_Entity* Game_View_Factory::create(Mario *m){
           map[2].push_back(mario["2"].toArray()[0].toString());
           map[3].push_back(mario["3"].toArray()[0].toString());
 
-          Game_View_Entity *entity_view = new Game_View_Entity(map,m->getCoordX(),m->getCoordY(),m->getState());
+          Game_View_Entity *entity_view = new Game_View_Entity(map,x,m->getCoordY(),m->getState());
 
           return entity_view;
 
 }
 
 
-Game_View_Entity* Game_View_Factory::create(Block *b){
+Game_View_Entity* Game_View_Factory::create(Block *b, int x){
 
 
           QMap<int,QList<QString>> map;
@@ -69,13 +69,13 @@ Game_View_Entity* Game_View_Factory::create(Block *b){
           map[0].push_back(block["0"].toArray()[0].toString());
 
 
-          Game_View_Entity *entity_view = new Game_View_Entity(map,b->getCoordX(),b->getCoordY(),b->getState());
+          Game_View_Entity *entity_view = new Game_View_Entity(map,x,b->getCoordY(),b->getState());
 
           return entity_view;
 
 }
 
-Game_View_Entity *Game_View_Factory::create(Goomba *g)
+Game_View_Entity *Game_View_Factory::create(Goomba *g,int x)
 {
         QMap<int,QList<QString>> map;
 
@@ -95,7 +95,7 @@ Game_View_Entity *Game_View_Factory::create(Goomba *g)
         map[0].push_back(goomba["0"].toArray()[0].toString());
 
 
-        Game_View_Entity *entity_view = new Game_View_Entity(map,g->getCoordX(),g->getCoordY(),g->getState());
+        Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());
 
         return entity_view;
 }

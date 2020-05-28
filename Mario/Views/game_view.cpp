@@ -15,11 +15,13 @@ Game_View::Game_View(QWidget *parent)
 }
 
 void Game_View::paint(Entity *entity){
+    int x = entity->getCoordX();
+    if(Mx>640) x = entity->getCoordX()-(Mx-640);
     if(entity->getDisplay()){
         if (map_Entity_GameViewEntity.contains(entity))
-            map_Entity_GameViewEntity[entity]->update_Img(entity->getCoordX(),entity->getCoordY(),entity->getState());
+            map_Entity_GameViewEntity[entity]->update_Img(x,entity->getCoordY(),entity->getState());
         else{
-           map_Entity_GameViewEntity[entity] = entity_factory.create(entity);
+           map_Entity_GameViewEntity[entity] = entity_factory.create(entity,x);
            this->addItem(map_Entity_GameViewEntity[entity]);
         }
     }
@@ -195,6 +197,12 @@ void Game_View::keyReleaseEvent(QKeyEvent *keyEvent)
 Controls *Game_View::get_Keys()
 {
     return controls;
+}
+
+
+void Game_View::setMx(int value)
+{
+    Mx = value;
 }
 
 

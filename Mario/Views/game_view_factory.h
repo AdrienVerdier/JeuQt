@@ -18,10 +18,10 @@ class Game_View_Factory
 {
 public:
     Game_View_Factory();
-    Game_View_Entity* create(Entity *e);
-    Game_View_Entity* create(Mario *m);
-    Game_View_Entity* create(Block *b);
-    Game_View_Entity* create(Goomba *g);
+    Game_View_Entity* create(Entity *e,int x);
+    Game_View_Entity* create(Mario *m,int x);
+    Game_View_Entity* create(Block *b,int x);
+    Game_View_Entity* create(Goomba *g,int x);
 
 };
 

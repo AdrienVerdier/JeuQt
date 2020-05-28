@@ -34,6 +34,7 @@ Game_View *Level_Controller::getScene()
 
 void Level_Controller::update_view()
 {
+    game_view->setMx(level->getPlayer()->getCoordX());
     foreach(Entity *entity, current_entity_list){
        // game_view->paint(entity);
         entity->accept(game_view);
