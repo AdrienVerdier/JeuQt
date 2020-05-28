@@ -6,7 +6,7 @@ Game_View::Game_View(QWidget *parent)
 {
     setSceneRect(0,0,1280,720);
     controls = new Controls();
-
+    this->setBackgroundBrush(QBrush(Qt::cyan, Qt::SolidPattern));
 
 
 }

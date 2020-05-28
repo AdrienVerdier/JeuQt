@@ -18,6 +18,13 @@ Level::Level()
     m->setState(1);
     player = m;
 
+    Goomba* g = new Goomba();
+    g->setCoordX(200);
+    g->setCoordY(200);
+    g->setState(0);
+    g->setDisplay(true);
+    entity_list->push_back(g);
+
     QImage level_img;
     level_img.load(":images/images/Niveau/Niv1.png");
 

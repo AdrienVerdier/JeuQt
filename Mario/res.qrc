@@ -18,5 +18,6 @@
         <file>images/Characters_Animations_Pattern.json</file>
         <file>images/Blocks/Block.png</file>
         <file>images/Niveau/Niv1.png</file>
+        <file>images/Goomba/Goomba.png</file>
     </qresource>
 </RCC>
