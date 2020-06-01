@@ -20,5 +20,10 @@
         <file>images/Niveau/Niv1.png</file>
         <file>images/Goomba/Goomba.png</file>
         <file>images/Piece/piece.png</file>
+        <file>images/Koopa/Koopa1.png</file>
+        <file>images/Koopa/Koopa2.png</file>
+        <file>images/Koopa/Koopa3.png</file>
+        <file>images/Koopa/Koopa4.png</file>
+        <file>images/Koopa/Koopa5.png</file>
     </qresource>
 </RCC>

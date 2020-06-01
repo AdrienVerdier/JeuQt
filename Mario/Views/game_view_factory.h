@@ -7,6 +7,7 @@
 #include "../Models/peach.h"
 #include "../Models/mario.h"
 #include "../Models/piece.h"
+#include "../Models/koopa.h"
 #include "game_view_entity.h"
 #include <QFile>
 #include <QJsonDocument>
@@ -24,6 +25,7 @@ public:
     Game_View_Entity* create(Block *b,int x);
     Game_View_Entity* create(Goomba *g,int x);
     Game_View_Entity* create(Piece *p, int x);
+    Game_View_Entity* create(Koopa *g,int x);
 
 };
 

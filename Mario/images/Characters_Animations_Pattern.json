@@ -13,5 +13,8 @@
         },
         "piece" :{
                 "0" : [":images/images/Piece/piece.png"]
+        },
+        "koopa" :{
+                "0" : [":images/images/Koopa/Koopa1.png",":images/images/Koopa/Koopa4.png",":images/images/Koopa/Koopa2.png",":images/images/Koopa/Koopa3.png",":images/images/Koopa/Koopa4.png",":images/images/Koopa/Koopa5.png"]
         }
 }

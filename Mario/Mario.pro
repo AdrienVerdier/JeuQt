@@ -27,6 +27,7 @@ SOURCES += \
     Models/ground.cpp \
     Models/interface_visitable.cpp \
     Models/interface_visitor.cpp \
+    Models/koopa.cpp \
     Models/level.cpp \
     Models/mario.cpp \
     Models/peach.cpp \
@@ -50,6 +51,7 @@ HEADERS += \
     Models/ground.h \
     Models/interface_visitable.h \
     Models/interface_visitor.h \
+    Models/koopa.h \
     Models/level.h \
     Models/mario.h \
     Models/peach.h \

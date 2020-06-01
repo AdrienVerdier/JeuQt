@@ -1,6 +1,7 @@
 #include "level.h"
 #include "mario.h"
 #include "block.h"
+#include "koopa.h"
 #include <QImage>
 #include<QDebug>
 
@@ -49,6 +50,12 @@ Level::Level()
                 alive_entity_list->last()->setDisplay(true);
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-10);
+            }
+            if(clrCurrent.red() == 34 && clrCurrent.green()==177 &&clrCurrent.blue()==76){
+                alive_entity_list->push_back(new Koopa());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
 
             }

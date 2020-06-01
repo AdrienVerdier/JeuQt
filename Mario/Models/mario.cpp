@@ -18,6 +18,7 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (Block).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
     if (typeid (Goomba).name() == typeid(*entity).name()) collisionSpec((Goomba*)entity, position);
     if (typeid (Piece).name() == typeid(*entity).name()) collisionSpec((Piece*)entity, position);
+    if (typeid (Koopa).name() == typeid(*entity).name()) collisionSpec((Koopa*)entity, position);
 }
 
 void Mario::update()
@@ -103,7 +104,31 @@ void Mario::collisionSpec(Goomba *entity, int position)
             this->move_to_right = false;
             break;
         case 2:
-             break;
+        jump= true;
+        cptjump=0;
+        break;
+    case 3:
+        state_dead = true;
+        this->move_to_left = false;
+        break;
+    }
+}
+
+void Mario::collisionSpec(Koopa *entity, int position)
+{
+    move_to_down = false;
+    switch (position) {
+        case 0 :
+           state_dead = true;
+            break;
+        case 1:
+            state_dead = true;
+            this->move_to_right = false;
+            break;
+        case 2:
+            jump= true;
+            cptjump=0;
+            break;
     case 3:
         state_dead = true;
         this->move_to_left = false;
