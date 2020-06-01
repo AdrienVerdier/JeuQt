@@ -3,13 +3,14 @@
 #include <QTimer>
 #include <QObject>
 #include<QDebug>
+#include <QElapsedTimer>
 
 
 Level_Controller::Level_Controller()
 {
 
     game_view = new Game_View();
-
+    reset = false;
     // Init Level
     level = new Level();
     level->getPlayer()->setInputs(game_view->get_Keys());
@@ -30,6 +31,8 @@ void Level_Controller::select_display_element()
 {
     Entity* point_centre = level->getPlayer();
     current_entity_list.clear();
+
+
     current_entity_list.push_back(level->getPlayer());
 
 
@@ -78,6 +81,10 @@ void Level_Controller::select_display_element()
         }
     }
 
+
+
+
+
 }
 
 void Level_Controller::update_view()
@@ -94,6 +101,14 @@ void Level_Controller::update_view()
 
 void Level_Controller::update_lvl()
 {
+    QElapsedTimer timer;
+      timer.start();
+    if(level->getPlayer()->getDead()){
+        delete level;
+        level = new Level();
+        level->getPlayer()->setInputs(game_view->get_Keys());
+        game_view->reset();
+    }
 
     update_view();
     collision_List =  game_view->get_list_collides();
@@ -107,6 +122,9 @@ void Level_Controller::update_lvl()
     foreach(Entity *entity,current_entity_list){
          if(entity->getDisplay())entity->update();
     }
+
+    qDebug() << "The slow operation took" << timer.elapsed() << "milliseconds";
+
 
     /*\ Pour le moment on update l'ensemble des objets du niveau, par la suite il faudra mettre current_entity_list à jour selon les coordonnées de Mario et les objets morts ou nouveaux) \*/
 
