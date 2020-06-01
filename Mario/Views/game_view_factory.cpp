@@ -92,9 +92,10 @@ Game_View_Entity *Game_View_Factory::create(Goomba *g,int x)
         QJsonValue value = sett2.value(QString("goomba"));
 
         QJsonObject goomba = value.toObject();
-
-        map[0].push_back(goomba["0"].toArray()[0].toString());
-
+        for(int i =0;i<7;i++)
+        map[0].push_back(goomba["0"].toArray()[i].toString());
+        for(int i =0;i<7;i++)
+        map[1].push_back(goomba["1"].toArray()[i].toString());
 
         Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());
 
@@ -119,6 +120,8 @@ Game_View_Entity *Game_View_Factory::create(Koopa *g,int x)
         QJsonObject koopa = value.toObject();
         for(int i =0;i<5;i++)
         map[0].push_back(koopa["0"].toArray()[i].toString());
+        for(int i =0;i<5;i++)
+        map[1].push_back(koopa["1"].toArray()[i].toString());
 
         Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());
 
