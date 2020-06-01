@@ -7,6 +7,7 @@
 #include "game_view_entity.h"
 #include "game_view_factory.h"
 #include "../Tools/controls.h"
+#include <QLabel>
 
 class Game_View : public QGraphicsScene, public Interface_Visitor
 {
@@ -27,7 +28,10 @@ private :
         QMap<QString,int> E1;
         QMap<QString,int> E2;
         int Mx;
-
+        QLabel *score;
+        QGraphicsPixmapItem *pieceHUD;
+        QLabel *vies;
+        QGraphicsPixmapItem *viesHUD;
 
         void fillPoints(Game_View_Entity *e1, Game_View_Entity *e2);
 

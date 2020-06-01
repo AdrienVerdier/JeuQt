@@ -9,10 +9,11 @@ Entity::Entity()
     display = true;
     state_dead = false;
 
+
 }
 
 
 void Entity::accept(Interface_Visitor *visitor) {
 
-   visitor->paint(this);
+    visitor->paint(this);
 }

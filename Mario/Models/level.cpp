@@ -7,6 +7,8 @@
 
 Level::Level()
 {
+    score = 0;
+    nbVie = 3;
 
     entity_list = new QList<Entity*>();
     alive_entity_list = new QList<Entity*>();

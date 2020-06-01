@@ -6,11 +6,38 @@
 #include<QDebug>
 #include <QRectF>
 
+
 Game_View::Game_View(QWidget *parent)
 {
     setSceneRect(0,0,1280,720);
     controls = new Controls();
     this->setBackgroundBrush(QBrush(Qt::cyan, Qt::SolidPattern));
+    QFont f( "Arial", 20, QFont::Bold);
+
+    //HUD
+    score = new QLabel();
+    score->setText("10");
+    score->setGeometry(QRect(50, 10,30, 30));
+    score->setFont(f);
+    score->setAttribute(Qt::WA_TranslucentBackground);
+    this->addWidget(score);
+
+    QGraphicsPixmapItem *pieceHUD = new QGraphicsPixmapItem(QPixmap(":images/images/HUD/pieceHUD.png"));
+    this->addItem(pieceHUD);
+    pieceHUD->setPos(15, 10);
+
+
+    vies = new QLabel();
+    vies->setText("3");
+    vies->setGeometry(QRect(1230, 10,30, 30));
+    vies->setFont(f);
+    vies->setAttribute(Qt::WA_TranslucentBackground);
+    this->addWidget(vies);
+
+    QGraphicsPixmapItem *viesHUD = new QGraphicsPixmapItem(QPixmap(":images/images/HUD/viesHUD.png"));
+    this->addItem(viesHUD);
+    viesHUD->setPos(1195, 10);
+
 
 
 }

@@ -204,16 +204,24 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Goomba/GoombaMiroir4.png \
 		../Mario/images/Goomba/Goomba4.png \
 		../Mario/images/Goomba/GoombaMiroir3.png \
+		../Mario/images/Koopa/KoopaMiroir9.png \
 		../Mario/images/Koopa/Koopa1.png \
-		../Mario/images/Koopa/KoopaMiroir3.png \
-		../Mario/images/Koopa/Koopa5.png \
-		../Mario/images/Koopa/KoopaMiroir2.png \
-		../Mario/images/Koopa/Koopa4.png \
+		../Mario/images/Koopa/Koopa2.png \
 		../Mario/images/Koopa/KoopaMiroir1.png \
 		../Mario/images/Koopa/Koopa3.png \
-		../Mario/images/Koopa/KoopaMiroir5.png \
-		../Mario/images/Koopa/Koopa2.png \
+		../Mario/images/Koopa/KoopaMiroir2.png \
+		../Mario/images/Koopa/Koopa4.png \
+		../Mario/images/Koopa/KoopaMiroir3.png \
+		../Mario/images/Koopa/Koopa5.png \
 		../Mario/images/Koopa/KoopaMiroir4.png \
+		../Mario/images/Koopa/Koopa6.png \
+		../Mario/images/Koopa/KoopaMiroir5.png \
+		../Mario/images/Koopa/Koopa7.png \
+		../Mario/images/Koopa/KoopaMiroir6.png \
+		../Mario/images/Koopa/Koopa8.png \
+		../Mario/images/Koopa/KoopaMiroir7.png \
+		../Mario/images/Koopa/Koopa9.png \
+		../Mario/images/Koopa/KoopaMiroir8.png \
 		../Mario/images/Piece/piece.png \
 		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/Block.png \
@@ -226,6 +234,8 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Mario/Shoot.png \
 		../Mario/images/Mario/Walk3.png \
 		../Mario/images/Mario/Walk2.png \
+		../Mario/images/HUD/pieceHUD.png \
+		../Mario/images/HUD/viesHUD.png \
 		../Mario/son/musique-mario-bros-officielle.mp3
 	E:\QT\5.14.2\mingw73_64\bin\rcc.exe -name res ..\Mario\res.qrc -o release\qrc_res.cpp
 
@@ -249,16 +259,24 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Goomba/GoombaMiroir4.png \
 		../Mario/images/Goomba/Goomba4.png \
 		../Mario/images/Goomba/GoombaMiroir3.png \
+		../Mario/images/Koopa/KoopaMiroir9.png \
 		../Mario/images/Koopa/Koopa1.png \
-		../Mario/images/Koopa/KoopaMiroir3.png \
-		../Mario/images/Koopa/Koopa5.png \
-		../Mario/images/Koopa/KoopaMiroir2.png \
-		../Mario/images/Koopa/Koopa4.png \
+		../Mario/images/Koopa/Koopa2.png \
 		../Mario/images/Koopa/KoopaMiroir1.png \
 		../Mario/images/Koopa/Koopa3.png \
-		../Mario/images/Koopa/KoopaMiroir5.png \
-		../Mario/images/Koopa/Koopa2.png \
+		../Mario/images/Koopa/KoopaMiroir2.png \
+		../Mario/images/Koopa/Koopa4.png \
+		../Mario/images/Koopa/KoopaMiroir3.png \
+		../Mario/images/Koopa/Koopa5.png \
 		../Mario/images/Koopa/KoopaMiroir4.png \
+		../Mario/images/Koopa/Koopa6.png \
+		../Mario/images/Koopa/KoopaMiroir5.png \
+		../Mario/images/Koopa/Koopa7.png \
+		../Mario/images/Koopa/KoopaMiroir6.png \
+		../Mario/images/Koopa/Koopa8.png \
+		../Mario/images/Koopa/KoopaMiroir7.png \
+		../Mario/images/Koopa/Koopa9.png \
+		../Mario/images/Koopa/KoopaMiroir8.png \
 		../Mario/images/Piece/piece.png \
 		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/Block.png \
@@ -271,6 +289,8 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Mario/Shoot.png \
 		../Mario/images/Mario/Walk3.png \
 		../Mario/images/Mario/Walk2.png \
+		../Mario/images/HUD/pieceHUD.png \
+		../Mario/images/HUD/viesHUD.png \
 		../Mario/son/musique-mario-bros-officielle.mp3
 	E:\QT\5.14.2\mingw73_64\bin\rcc.exe -name res ..\Mario\res.qrc -o release\qrc_res.cpp
 
@@ -294,16 +314,24 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Goomba/GoombaMiroir4.png \
 		../Mario/images/Goomba/Goomba4.png \
 		../Mario/images/Goomba/GoombaMiroir3.png \
+		../Mario/images/Koopa/KoopaMiroir9.png \
 		../Mario/images/Koopa/Koopa1.png \
-		../Mario/images/Koopa/KoopaMiroir3.png \
-		../Mario/images/Koopa/Koopa5.png \
-		../Mario/images/Koopa/KoopaMiroir2.png \
-		../Mario/images/Koopa/Koopa4.png \
+		../Mario/images/Koopa/Koopa2.png \
 		../Mario/images/Koopa/KoopaMiroir1.png \
 		../Mario/images/Koopa/Koopa3.png \
-		../Mario/images/Koopa/KoopaMiroir5.png \
-		../Mario/images/Koopa/Koopa2.png \
+		../Mario/images/Koopa/KoopaMiroir2.png \
+		../Mario/images/Koopa/Koopa4.png \
+		../Mario/images/Koopa/KoopaMiroir3.png \
+		../Mario/images/Koopa/Koopa5.png \
 		../Mario/images/Koopa/KoopaMiroir4.png \
+		../Mario/images/Koopa/Koopa6.png \
+		../Mario/images/Koopa/KoopaMiroir5.png \
+		../Mario/images/Koopa/Koopa7.png \
+		../Mario/images/Koopa/KoopaMiroir6.png \
+		../Mario/images/Koopa/Koopa8.png \
+		../Mario/images/Koopa/KoopaMiroir7.png \
+		../Mario/images/Koopa/Koopa9.png \
+		../Mario/images/Koopa/KoopaMiroir8.png \
 		../Mario/images/Piece/piece.png \
 		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/Block.png \
@@ -316,6 +344,8 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Mario/Shoot.png \
 		../Mario/images/Mario/Walk3.png \
 		../Mario/images/Mario/Walk2.png \
+		../Mario/images/HUD/pieceHUD.png \
+		../Mario/images/HUD/viesHUD.png \
 		../Mario/son/musique-mario-bros-officielle.mp3
 	E:\QT\5.14.2\mingw73_64\bin\rcc.exe -name res ..\Mario\res.qrc -o release\qrc_res.cpp
 
@@ -716,7 +746,9 @@ release/global_views_controller.o: ../Mario/Controllers/global_views_controller.
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qjsonarray.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDir \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdir.h \
-		E:/QT/5.14.2/mingw73_64/include/QtCore/qfileinfo.h
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qfileinfo.h \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\global_views_controller.o ..\Mario\Controllers\global_views_controller.cpp
 
 release/level_controller.o: ../Mario/Controllers/level_controller.cpp ../Mario/Controllers/level_controller.h \
@@ -855,6 +887,19 @@ release/level_controller.o: ../Mario/Controllers/level_controller.cpp ../Mario/C
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDir \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdir.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qfileinfo.h \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qframe.h \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qwidget.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qpalette.h \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qsizepolicy.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qcursor.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qkeysequence.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qevent.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qurl.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qurlquery.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QElapsedTimer \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qelapsedtimer.h
@@ -1517,13 +1562,20 @@ release/game_view.o: ../Mario/Views/game_view.cpp ../Mario/Views/game_view.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDir \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdir.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qfileinfo.h \
-		E:/QT/5.14.2/mingw73_64/include/QtGui/QKeyEvent \
-		E:/QT/5.14.2/mingw73_64/include/QtGui/qevent.h \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qframe.h \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qwidget.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qpalette.h \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qsizepolicy.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qcursor.h \
 		E:/QT/5.14.2/mingw73_64/include/QtGui/qkeysequence.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/qevent.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qurl.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qurlquery.h \
 		E:/QT/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
 		E:/QT/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		E:/QT/5.14.2/mingw73_64/include/QtGui/QKeyEvent \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QRectF
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\game_view.o ..\Mario\Views\game_view.cpp
@@ -2030,7 +2082,9 @@ release/viewtest.o: ../Mario/Views/viewtest.cpp ../Mario/Views/viewtest.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qjsonarray.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDir \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdir.h \
-		E:/QT/5.14.2/mingw73_64/include/QtCore/qfileinfo.h
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qfileinfo.h \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\viewtest.o ..\Mario\Views\viewtest.cpp
 
 release/qrc_res.o: release/qrc_res.cpp 

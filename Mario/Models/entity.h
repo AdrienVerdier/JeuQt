@@ -4,6 +4,7 @@
 
 #include "interface_visitable.h"
 
+
 class Interface_Visitor;
 class Interface_Visitable;
 
@@ -65,6 +66,8 @@ class Entity : public Interface_Visitable
             return display;
         }
 
+
+
     protected:
         bool display;
         bool collision_active;
@@ -72,6 +75,7 @@ class Entity : public Interface_Visitable
         int coord_y;
         int state;
         bool state_dead;
+
 
 
 };
