@@ -8,6 +8,7 @@ Level::Level()
 {
 
     entity_list = new QList<Entity*>();
+    alive_entity_list = new QList<Entity*>();
 
     /*\     AJOUTS TEMPORAIRES    \*/
 
@@ -35,52 +36,26 @@ Level::Level()
 
             }
             if(clrCurrent.red() == 255 && clrCurrent.green()==201 &&clrCurrent.blue()==14){
-                entity_list->push_back(new Goomba());
-                entity_list->last()->setDisplay(true);
-                entity_list->last()->setCoordX(col-10);
-                entity_list->last()->setCoordY(row-10);
-                entity_list->last()->setState(0);
+                alive_entity_list->push_back(new Goomba());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
 
             }
         }
 
-/*
-    Mario * m2 = new Mario();
-    m2->setDisplay(true);
-    m2->setCoordX(35);
-    m2->setCoordY(51);
-    m2->setState(1);
-    entity_list->push_back(m2);
-
-    Block * b = new Block();
-    b->setDisplay(true);
-    b->setCoordX(200);
-    b->setCoordY(570);
-    b->setState(0);
-    entity_list->push_back(b);
-
-    Block * b2 = new Block();
-    b2->setDisplay(true);
-    b2->setCoordX(0);
-    b2->setCoordY(570);
-    b2->setState(0);
-    entity_list->push_back(b2);
-
-    for(int i=0;i<20;i++){
-        entity_list->push_back(new Block());
-        entity_list->last()->setDisplay(true);
-        entity_list->last()->setCoordX(i*25);
-        entity_list->last()->setCoordY(595);
-        entity_list->last()->setState(0);
-
-
-    }*/
 
 }
 
 QList<Entity *> *Level::get_entity_list()
 {
     return entity_list;
+}
+
+QList<Entity *> *Level::get_alive_entity_list()
+{
+    return alive_entity_list;
 }
 
 Mario *Level::getPlayer()

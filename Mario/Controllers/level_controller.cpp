@@ -12,12 +12,6 @@ Level_Controller::Level_Controller()
 
     // Init Level
     level = new Level();
-
-    //Init current List (temporaire)
-    foreach(Entity *entity, *level->get_entity_list()){
-        current_entity_list.push_back(entity);
-    }
-    current_entity_list.push_back(level->getPlayer());
     level->getPlayer()->setInputs(game_view->get_Keys());
 
 
@@ -37,7 +31,9 @@ void Level_Controller::select_display_element()
     Entity* point_centre = level->getPlayer();
     current_entity_list.clear();
     current_entity_list.push_back(level->getPlayer());
-    foreach(Entity* entity,*level->get_entity_list()){
+
+
+    foreach(Entity* entity,*level->get_alive_entity_list()){
         float distance = entity->getDistanceOn_X(point_centre);
         if(distance < 500 && distance > -500){
 
@@ -59,6 +55,29 @@ void Level_Controller::select_display_element()
            }
         }
     }
+    foreach(Entity* entity,*level->get_entity_list()){
+        float distance = entity->getDistanceOn_X(point_centre);
+        if(distance < 600 && distance > -600){
+
+            if(!entity->getDead()){
+                entity->setDisplay(true);
+                current_entity_list.push_back(entity);
+            }
+            else{
+                entity->setDisplay(false);
+                current_entity_list.push_back(entity);
+            }
+
+        }
+        else
+        {
+           if(entity->getDisplay()){
+                entity->setDisplay(false);
+                current_entity_list.push_back(entity);
+           }
+        }
+    }
+
 }
 
 void Level_Controller::update_view()
@@ -82,11 +101,11 @@ void Level_Controller::update_lvl()
     {
         foreach(Entity *collideswith, collision_List[entity].keys())
         {
-                entity->collision(collideswith,collision_List[entity][collideswith]);
+                if(entity->getDisplay())entity->collision(collideswith,collision_List[entity][collideswith]);
         }
     }
     foreach(Entity *entity,current_entity_list){
-        entity->update();
+         if(entity->getDisplay())entity->update();
     }
 
     /*\ Pour le moment on update l'ensemble des objets du niveau, par la suite il faudra mettre current_entity_list à jour selon les coordonnées de Mario et les objets morts ou nouveaux) \*/
