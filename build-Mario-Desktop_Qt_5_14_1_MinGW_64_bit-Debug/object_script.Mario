@@ -8,6 +8,7 @@ goomba.o
 ground.o
 interface_visitable.o
 interface_visitor.o
+koopa.o
 level.o
 mario.o
 peach.o
