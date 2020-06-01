@@ -16,6 +16,7 @@ public:
     void select_display_element();
 
 private:
+    bool reset;
     Game_View *game_view;
     Level * level;
     QList<Entity*> current_entity_list;// liste d'entity "courante" --> entity ayant un state à 1 et celles étant passé à 0

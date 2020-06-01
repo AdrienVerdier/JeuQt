@@ -38,7 +38,7 @@ Game_View_Entity* Game_View_Factory::create(Mario *m,int x){
 
           map[0].push_back(mario["0"].toArray()[0].toString());
           for(int i =0;i<6;i++)
-            map[1].push_back(mario["1"].toArray()[i].toString());
+          map[1].push_back(mario["1"].toArray()[i].toString());
           map[2].push_back(mario["2"].toArray()[0].toString());
           map[3].push_back(mario["3"].toArray()[0].toString());
 

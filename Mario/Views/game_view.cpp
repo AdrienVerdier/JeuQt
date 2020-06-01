@@ -15,6 +15,15 @@ Game_View::Game_View(QWidget *parent)
 
 }
 
+void Game_View::reset(){
+
+    foreach(Entity *entity, map_Entity_GameViewEntity.keys()){
+        this->removeItem(map_Entity_GameViewEntity[entity]);
+        delete map_Entity_GameViewEntity[entity];
+        map_Entity_GameViewEntity.remove(entity);
+    }
+}
+
 void Game_View::paint(Entity *entity){
     int x = entity->getCoordX();
     if(Mx>640) x = entity->getCoordX()-(Mx-640);
