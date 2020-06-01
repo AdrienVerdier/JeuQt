@@ -19,5 +19,6 @@
         <file>images/Blocks/Block.png</file>
         <file>images/Niveau/Niv1.png</file>
         <file>images/Goomba/Goomba.png</file>
+        <file>images/Piece/piece.png</file>
     </qresource>
 </RCC>

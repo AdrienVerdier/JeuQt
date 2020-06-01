@@ -10,5 +10,8 @@
         },
         "goomba" :{
                 "0" : [":images/images/Goomba/Goomba.png"]
+        },
+        "piece" :{
+                "0" : [":images/images/Piece/piece.png"]
         }
 }
