@@ -190,12 +190,30 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/ground.png \
 		../Mario/images/mario.png \
 		../Mario/images/Characters_Animations_Pattern.json \
-		../Mario/images/Goomba/Goomba.png \
+		../Mario/images/Goomba/GoombaMiroir7.png \
+		../Mario/images/Goomba/Goomba3.png \
+		../Mario/images/Goomba/Goomba7.png \
+		../Mario/images/Goomba/GoombaMiroir2.png \
+		../Mario/images/Goomba/GoombaMiroir6.png \
+		../Mario/images/Goomba/Goomba2.png \
+		../Mario/images/Goomba/Goomba6.png \
+		../Mario/images/Goomba/GoombaMiroir1.png \
+		../Mario/images/Goomba/GoombaMiroir5.png \
+		../Mario/images/Goomba/Goomba1.png \
+		../Mario/images/Goomba/Goomba5.png \
+		../Mario/images/Goomba/GoombaMiroir4.png \
+		../Mario/images/Goomba/Goomba4.png \
+		../Mario/images/Goomba/GoombaMiroir3.png \
 		../Mario/images/Koopa/Koopa1.png \
+		../Mario/images/Koopa/KoopaMiroir3.png \
 		../Mario/images/Koopa/Koopa5.png \
+		../Mario/images/Koopa/KoopaMiroir2.png \
 		../Mario/images/Koopa/Koopa4.png \
+		../Mario/images/Koopa/KoopaMiroir1.png \
 		../Mario/images/Koopa/Koopa3.png \
+		../Mario/images/Koopa/KoopaMiroir5.png \
 		../Mario/images/Koopa/Koopa2.png \
+		../Mario/images/Koopa/KoopaMiroir4.png \
 		../Mario/images/Piece/piece.png \
 		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/Block.png \
@@ -217,12 +235,30 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/ground.png \
 		../Mario/images/mario.png \
 		../Mario/images/Characters_Animations_Pattern.json \
-		../Mario/images/Goomba/Goomba.png \
+		../Mario/images/Goomba/GoombaMiroir7.png \
+		../Mario/images/Goomba/Goomba3.png \
+		../Mario/images/Goomba/Goomba7.png \
+		../Mario/images/Goomba/GoombaMiroir2.png \
+		../Mario/images/Goomba/GoombaMiroir6.png \
+		../Mario/images/Goomba/Goomba2.png \
+		../Mario/images/Goomba/Goomba6.png \
+		../Mario/images/Goomba/GoombaMiroir1.png \
+		../Mario/images/Goomba/GoombaMiroir5.png \
+		../Mario/images/Goomba/Goomba1.png \
+		../Mario/images/Goomba/Goomba5.png \
+		../Mario/images/Goomba/GoombaMiroir4.png \
+		../Mario/images/Goomba/Goomba4.png \
+		../Mario/images/Goomba/GoombaMiroir3.png \
 		../Mario/images/Koopa/Koopa1.png \
+		../Mario/images/Koopa/KoopaMiroir3.png \
 		../Mario/images/Koopa/Koopa5.png \
+		../Mario/images/Koopa/KoopaMiroir2.png \
 		../Mario/images/Koopa/Koopa4.png \
+		../Mario/images/Koopa/KoopaMiroir1.png \
 		../Mario/images/Koopa/Koopa3.png \
+		../Mario/images/Koopa/KoopaMiroir5.png \
 		../Mario/images/Koopa/Koopa2.png \
+		../Mario/images/Koopa/KoopaMiroir4.png \
 		../Mario/images/Piece/piece.png \
 		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/Block.png \
@@ -244,12 +280,30 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/ground.png \
 		../Mario/images/mario.png \
 		../Mario/images/Characters_Animations_Pattern.json \
-		../Mario/images/Goomba/Goomba.png \
+		../Mario/images/Goomba/GoombaMiroir7.png \
+		../Mario/images/Goomba/Goomba3.png \
+		../Mario/images/Goomba/Goomba7.png \
+		../Mario/images/Goomba/GoombaMiroir2.png \
+		../Mario/images/Goomba/GoombaMiroir6.png \
+		../Mario/images/Goomba/Goomba2.png \
+		../Mario/images/Goomba/Goomba6.png \
+		../Mario/images/Goomba/GoombaMiroir1.png \
+		../Mario/images/Goomba/GoombaMiroir5.png \
+		../Mario/images/Goomba/Goomba1.png \
+		../Mario/images/Goomba/Goomba5.png \
+		../Mario/images/Goomba/GoombaMiroir4.png \
+		../Mario/images/Goomba/Goomba4.png \
+		../Mario/images/Goomba/GoombaMiroir3.png \
 		../Mario/images/Koopa/Koopa1.png \
+		../Mario/images/Koopa/KoopaMiroir3.png \
 		../Mario/images/Koopa/Koopa5.png \
+		../Mario/images/Koopa/KoopaMiroir2.png \
 		../Mario/images/Koopa/Koopa4.png \
+		../Mario/images/Koopa/KoopaMiroir1.png \
 		../Mario/images/Koopa/Koopa3.png \
+		../Mario/images/Koopa/KoopaMiroir5.png \
 		../Mario/images/Koopa/Koopa2.png \
+		../Mario/images/Koopa/KoopaMiroir4.png \
 		../Mario/images/Piece/piece.png \
 		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/Block.png \
