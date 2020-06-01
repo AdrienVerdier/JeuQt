@@ -8,9 +8,11 @@ release/goomba.o
 release/ground.o
 release/interface_visitable.o
 release/interface_visitor.o
+release/koopa.o
 release/level.o
 release/mario.o
 release/peach.o
+release/piece.o
 release/static_entity.o
 release/controls.o
 release/game_view.o

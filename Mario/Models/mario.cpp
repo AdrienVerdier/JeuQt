@@ -45,7 +45,9 @@ void Mario::update()
     }
 
     if(jump){
+
         if(move_to_up){
+           state = 3;
           this->move_to_down = false;
            coord_y-=5;
            cptjump++;
@@ -59,6 +61,7 @@ void Mario::update()
         }
     }
     else{
+        if(!move_to_down) cptjump=0;
         if(cptjump>0) cptjump--;
     }
 
