@@ -13,6 +13,7 @@ class Level_Controller :QObject
 public:
     Level_Controller();
     Game_View * getScene();
+    void select_display_element();
 
 private:
     Game_View *game_view;

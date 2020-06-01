@@ -32,9 +32,26 @@ Game_View *Level_Controller::getScene()
     return game_view;
 }
 
+void Level_Controller::select_display_element()
+{
+    Entity* point_centre = level->getPlayer();
+
+    foreach(Entity* entity,*level->get_entity_list()){
+        float distance = entity->getDistanceOn_X(point_centre);
+        if(distance < 500 && distance > -500){
+            entity->setDisplay(true);
+        }
+        else
+        {
+            entity->setDisplay(false);
+        }
+    }
+}
+
 void Level_Controller::update_view()
 {
     game_view->setMx(level->getPlayer()->getCoordX());
+    select_display_element();
     foreach(Entity *entity, current_entity_list){
        // game_view->paint(entity);
         entity->accept(game_view);
