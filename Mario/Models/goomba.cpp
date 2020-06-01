@@ -20,12 +20,12 @@ void Goomba::collision(Entity *entity, int position)
     if(position == 1){
         move_to_left = true;
         move_to_right = false;
-
+        state=0;
     }
     if(position == 3){
         move_to_left = false;
         move_to_right = true;
-
+        state=1;
     }
     if(position == 2){
         move_to_down = false;
