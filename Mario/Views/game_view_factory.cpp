@@ -16,6 +16,9 @@ Game_View_Entity *Game_View_Factory::create(Entity *e,int x)
     if (typeid (Goomba).name() == typeid(*e).name()) return create((Goomba*)e, x);
     if (typeid (Piece).name() == typeid(*e).name()) return create((Piece*)e, x);
     if (typeid (Koopa).name() == typeid(*e).name()) return create((Koopa*)e, x);
+    if (typeid (plante).name() == typeid(*e).name()) return create((plante*)e, x);
+    if (typeid (flamme).name() == typeid(*e).name()) return create((flamme*)e, x);
+    if (typeid (thwomp).name() == typeid(*e).name()) return create((thwomp*)e, x);
 }
 
 
@@ -148,6 +151,80 @@ Game_View_Entity *Game_View_Factory::create(Koopa *g,int x)
         map[0].push_back(koopa["0"].toArray()[i].toString());
         for(int i =0;i<5;i++)
         map[1].push_back(koopa["1"].toArray()[i].toString());
+
+        Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());
+
+        return entity_view;
+}
+
+Game_View_Entity *Game_View_Factory::create(plante *g,int x)
+{
+        QMap<int,QList<QString>> map;
+
+        QString val;
+        QFile file;
+        file.setFileName(":images/images/Characters_Animations_Pattern.json");
+        file.open(QIODevice::ReadOnly | QIODevice::Text);
+        val = file.readAll();
+        file.close();
+
+        QJsonDocument d = QJsonDocument::fromJson(val.toUtf8());
+        QJsonObject sett2 = d.object();
+
+        QJsonValue value = sett2.value(QString("plante"));
+
+        QJsonObject plante = value.toObject();
+        for(int i =0;i<3;i++)
+        map[0].push_back(plante["0"].toArray()[i].toString());
+
+        Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());
+
+        return entity_view;
+}
+
+Game_View_Entity *Game_View_Factory::create(flamme *g,int x)
+{
+        QMap<int,QList<QString>> map;
+
+        QString val;
+        QFile file;
+        file.setFileName(":images/images/Characters_Animations_Pattern.json");
+        file.open(QIODevice::ReadOnly | QIODevice::Text);
+        val = file.readAll();
+        file.close();
+
+        QJsonDocument d = QJsonDocument::fromJson(val.toUtf8());
+        QJsonObject sett2 = d.object();
+
+        QJsonValue value = sett2.value(QString("flamme"));
+
+        QJsonObject flamme = value.toObject();
+        for(int i =0;i<9;i++)
+        map[0].push_back(flamme["0"].toArray()[i].toString());
+        Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());
+
+        return entity_view;
+}
+Game_View_Entity *Game_View_Factory::create(thwomp *g,int x)
+{
+        QMap<int,QList<QString>> map;
+
+        QString val;
+        QFile file;
+        file.setFileName(":images/images/Characters_Animations_Pattern.json");
+        file.open(QIODevice::ReadOnly | QIODevice::Text);
+        val = file.readAll();
+        file.close();
+
+        QJsonDocument d = QJsonDocument::fromJson(val.toUtf8());
+        QJsonObject sett2 = d.object();
+
+        QJsonValue value = sett2.value(QString("thwomp"));
+
+        QJsonObject thwomp = value.toObject();
+        map[0].push_back(thwomp["0"].toArray()[0].toString());
+        map[1].push_back(thwomp["1"].toArray()[0].toString());
+        map[2].push_back(thwomp["2"].toArray()[0].toString());
 
         Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());
 

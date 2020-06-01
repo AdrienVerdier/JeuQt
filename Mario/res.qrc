@@ -48,5 +48,25 @@
         <file>images/Koopa/KoopaMiroir7.png</file>
         <file>images/Koopa/KoopaMiroir8.png</file>
         <file>images/Koopa/KoopaMiroir9.png</file>
+        <file>images/Koopa/Carapace1.png</file>
+        <file>images/Koopa/Carapace2.png</file>
+        <file>images/Koopa/Carapace3.png</file>
+        <file>images/Koopa/Carapace4.png</file>
+        <file>images/Koopa/Carapace5.png</file>
+        <file>images/Plante/flamme1.png</file>
+        <file>images/Plante/flamme2.png</file>
+        <file>images/Plante/flamme3.png</file>
+        <file>images/Plante/flamme4.png</file>
+        <file>images/Plante/flamme5.png</file>
+        <file>images/Plante/flamme6.png</file>
+        <file>images/Plante/flamme7.png</file>
+        <file>images/Plante/flamme8.png</file>
+        <file>images/Plante/flamme9.png</file>
+        <file>images/Plante/plante1.png</file>
+        <file>images/Plante/plante2.png</file>
+        <file>images/Plante/plante3.png</file>
+        <file>images/Thwomp/Thwomp1.png</file>
+        <file>images/Thwomp/Thwomp2.png</file>
+        <file>images/Thwomp/Thwomp3.png</file>
     </qresource>
 </RCC>

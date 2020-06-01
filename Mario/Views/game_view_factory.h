@@ -26,6 +26,9 @@ public:
     Game_View_Entity* create(Goomba *g,int x);
     Game_View_Entity* create(Piece *p, int x);
     Game_View_Entity* create(Koopa *g,int x);
+    Game_View_Entity* create(plante *g,int x);
+    Game_View_Entity* create(flamme *g,int x);
+    Game_View_Entity* create(thwomp *g,int x);
 
 };
 

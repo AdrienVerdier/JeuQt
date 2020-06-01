@@ -23,6 +23,7 @@ SOURCES += \
     Models/alive_entity.cpp \
     Models/block.cpp \
     Models/entity.cpp \
+    Models/flamme.cpp \
     Models/goomba.cpp \
     Models/ground.cpp \
     Models/interface_visitable.cpp \
@@ -32,7 +33,9 @@ SOURCES += \
     Models/mario.cpp \
     Models/peach.cpp \
     Models/piece.cpp \
+    Models/plante.cpp \
     Models/static_entity.cpp \
+    Models/thwomp.cpp \
     Tools/controls.cpp \
     Views/game_view.cpp \
     Views/game_view_entity.cpp \
@@ -47,6 +50,7 @@ HEADERS += \
     Models/alive_entity.h \
     Models/block.h \
     Models/entity.h \
+    Models/flamme.h \
     Models/goomba.h \
     Models/ground.h \
     Models/interface_visitable.h \
@@ -56,7 +60,9 @@ HEADERS += \
     Models/mario.h \
     Models/peach.h \
     Models/piece.h \
+    Models/plante.h \
     Models/static_entity.h \
+    Models/thwomp.h \
     Tools/controls.h \
     Views/game_view.h \
     Views/game_view_entity.h \

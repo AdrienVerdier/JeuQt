@@ -5,8 +5,11 @@
 #include "../Tools/controls.h"
 #include "Models/block.h"
 #include "Models/goomba.h"
-#include "Models/piece.h"
 #include "Models/koopa.h"
+#include "Models/piece.h"
+#include "Models/plante.h"
+#include "Models/flamme.h"
+#include "Models/thwomp.h"
 
 class Mario : public Alive_Entity
 {
@@ -19,6 +22,9 @@ public:
     void collisionSpec(Goomba* entity, int position);
     void collisionSpec(Piece* piece, int position);
     void collisionSpec(Koopa* entity, int position);
+    void collisionSpec(plante* entity, int position);
+    void collisionSpec(flamme* entity, int position);
+    void collisionSpec(thwomp* entity, int position);
 
     int getCptjump() const;
 
