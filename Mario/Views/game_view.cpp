@@ -2,6 +2,7 @@
 #include <QKeyEvent>
 #include "../Models/mario.h"
 #include "../Models/goomba.h"
+#include "../Models/koopa.h"
 #include<QDebug>
 #include <QRectF>
 
