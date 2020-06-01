@@ -19,11 +19,6 @@
         <file>images/Blocks/Block.png</file>
         <file>images/Niveau/Niv1.png</file>
         <file>images/Piece/piece.png</file>
-        <file>images/Koopa/Koopa1.png</file>
-        <file>images/Koopa/Koopa2.png</file>
-        <file>images/Koopa/Koopa3.png</file>
-        <file>images/Koopa/Koopa4.png</file>
-        <file>images/Koopa/Koopa5.png</file>
         <file>images/Goomba/Goomba1.png</file>
         <file>images/Goomba/Goomba2.png</file>
         <file>images/Goomba/Goomba3.png</file>
@@ -38,10 +33,23 @@
         <file>images/Goomba/GoombaMiroir5.png</file>
         <file>images/Goomba/GoombaMiroir6.png</file>
         <file>images/Goomba/GoombaMiroir7.png</file>
+        <file>images/Koopa/Koopa1.png</file>
+        <file>images/Koopa/Koopa2.png</file>
+        <file>images/Koopa/Koopa3.png</file>
+        <file>images/Koopa/Koopa4.png</file>
+        <file>images/Koopa/Koopa5.png</file>
+        <file>images/Koopa/Koopa6.png</file>
+        <file>images/Koopa/Koopa7.png</file>
+        <file>images/Koopa/Koopa8.png</file>
+        <file>images/Koopa/Koopa9.png</file>
         <file>images/Koopa/KoopaMiroir1.png</file>
         <file>images/Koopa/KoopaMiroir2.png</file>
         <file>images/Koopa/KoopaMiroir3.png</file>
         <file>images/Koopa/KoopaMiroir4.png</file>
         <file>images/Koopa/KoopaMiroir5.png</file>
+        <file>images/Koopa/KoopaMiroir6.png</file>
+        <file>images/Koopa/KoopaMiroir7.png</file>
+        <file>images/Koopa/KoopaMiroir8.png</file>
+        <file>images/Koopa/KoopaMiroir9.png</file>
     </qresource>
 </RCC>
