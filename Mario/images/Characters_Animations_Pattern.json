@@ -12,6 +12,6 @@
                 "0" : [":images/images/Goomba/Goomba.png"]
         },
         "koopa" :{
-                "0" : [":images/images/Koopa/Koopa.png"]
+                "0" : [":images/images/Koopa/Koopa1.png",":images/images/Koopa/Koopa2.png",":images/images/Koopa/Koopa3.png",":images/images/Koopa/Koopa4.png",":images/images/Koopa/Koopa5.png"]
         }
 }

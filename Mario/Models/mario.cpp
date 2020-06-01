@@ -103,7 +103,9 @@ void Mario::collisionSpec(Goomba *entity, int position)
             this->move_to_right = false;
             break;
         case 2:
-             break;
+        jump= true;
+        cptjump=0;
+        break;
     case 3:
         state_dead = true;
         this->move_to_left = false;
@@ -116,13 +118,18 @@ void Mario::collisionSpec(Koopa *entity, int position)
     move_to_down = false;
     switch (position) {
         case 0 :
+           state_dead = true;
             break;
         case 1:
+            state_dead = true;
             this->move_to_right = false;
             break;
         case 2:
+            jump= true;
+            cptjump=0;
             break;
     case 3:
+        state_dead = true;
         this->move_to_left = false;
         break;
     }

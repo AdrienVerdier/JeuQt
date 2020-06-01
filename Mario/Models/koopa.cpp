@@ -6,7 +6,7 @@
 Koopa::Koopa()
 {
     move_to_right = false;
-    move_to_left = false;
+    move_to_left = true;
     move_to_down = true;
 }
 
