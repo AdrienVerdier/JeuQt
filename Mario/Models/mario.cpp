@@ -26,7 +26,14 @@ void Mario::update()
     if(!input->left && !input->right ) state= 0;
     else state = 1;
 
-    if(move_to_down) coord_y+=5;
+    if(move_to_down) {
+        coord_y+=5;
+        if(coord_y>800){
+            state_dead = true;
+        }
+
+
+    }
 
 
 
@@ -52,6 +59,8 @@ void Mario::update()
     else{
         if(cptjump>0) cptjump--;
     }
+
+
 
 
      this->move_to_right = true;
@@ -86,13 +95,16 @@ void Mario::collisionSpec(Goomba *entity, int position)
     move_to_down = false;
     switch (position) {
         case 0 :
+           state_dead = true;
             break;
         case 1:
+            state_dead = true;
             this->move_to_right = false;
             break;
         case 2:
-            break;
+             break;
     case 3:
+        state_dead = true;
         this->move_to_left = false;
         break;
     }

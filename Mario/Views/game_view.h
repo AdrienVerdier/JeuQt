@@ -17,6 +17,7 @@ class Game_View : public QGraphicsScene, public Interface_Visitor
         void keyPressEvent(QKeyEvent * keyEvent);
         void keyReleaseEvent(QKeyEvent * keyEvent);
         Controls * get_Keys();
+        void reset();
         void setMx(int value);
 
 private :
