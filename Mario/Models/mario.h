@@ -5,6 +5,7 @@
 #include "../Tools/controls.h"
 #include "Models/block.h"
 #include "Models/goomba.h"
+#include "Models/piece.h"
 #include "Models/koopa.h"
 
 class Mario : public Alive_Entity
@@ -16,6 +17,7 @@ public:
     void update() override;
     void collisionSpec(Block* entity, int position);
     void collisionSpec(Goomba* entity, int position);
+    void collisionSpec(Piece* piece, int position);
     void collisionSpec(Koopa* entity, int position);
 
     int getCptjump() const;

@@ -44,7 +44,13 @@ Level::Level()
                 alive_entity_list->last()->setState(0);
 
             }
-
+            if(clrCurrent.red() == 255 && clrCurrent.green()==242 &&clrCurrent.blue()==0){
+                qInfo() << "New Piece" ;
+                alive_entity_list->push_back(new Piece());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-10);
+            }
             if(clrCurrent.red() == 34 && clrCurrent.green()==177 &&clrCurrent.blue()==76){
                 alive_entity_list->push_back(new Koopa());
                 alive_entity_list->last()->setDisplay(true);

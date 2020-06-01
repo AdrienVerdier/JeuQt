@@ -18,29 +18,12 @@
         <file>images/Characters_Animations_Pattern.json</file>
         <file>images/Blocks/Block.png</file>
         <file>images/Niveau/Niv1.png</file>
+        <file>images/Goomba/Goomba.png</file>
+        <file>images/Piece/piece.png</file>
         <file>images/Koopa/Koopa1.png</file>
         <file>images/Koopa/Koopa2.png</file>
         <file>images/Koopa/Koopa3.png</file>
         <file>images/Koopa/Koopa4.png</file>
         <file>images/Koopa/Koopa5.png</file>
-        <file>images/Goomba/Goomba1.png</file>
-        <file>images/Goomba/Goomba2.png</file>
-        <file>images/Goomba/Goomba3.png</file>
-        <file>images/Goomba/Goomba4.png</file>
-        <file>images/Goomba/Goomba5.png</file>
-        <file>images/Goomba/Goomba6.png</file>
-        <file>images/Goomba/Goomba7.png</file>
-        <file>images/Goomba/GoombaMiroir1.png</file>
-        <file>images/Goomba/GoombaMiroir2.png</file>
-        <file>images/Goomba/GoombaMiroir3.png</file>
-        <file>images/Goomba/GoombaMiroir4.png</file>
-        <file>images/Goomba/GoombaMiroir5.png</file>
-        <file>images/Goomba/GoombaMiroir6.png</file>
-        <file>images/Goomba/GoombaMiroir7.png</file>
-        <file>images/Koopa/KoopaMiroir1.png</file>
-        <file>images/Koopa/KoopaMiroir2.png</file>
-        <file>images/Koopa/KoopaMiroir3.png</file>
-        <file>images/Koopa/KoopaMiroir4.png</file>
-        <file>images/Koopa/KoopaMiroir5.png</file>
     </qresource>
 </RCC>
