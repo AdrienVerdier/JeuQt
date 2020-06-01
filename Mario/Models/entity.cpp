@@ -7,6 +7,7 @@ Entity::Entity()
     coord_y = 0;
     collision_active = true;
     display = true;
+    state_dead = false;
 
 }
 

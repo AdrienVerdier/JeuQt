@@ -32,7 +32,10 @@ void Goomba::collision(Entity *entity, int position)
 
 void Goomba::collisionSpec(Mario *entity, int position)
 {
-    if(position == 0) this->display = false; //TODO : le faire mourir
+    if(position == 0) {
+        this->state_dead = true;
+        this->display = false;
+    } //TODO : le faire mourir
        qInfo() << "collision";
 }
 

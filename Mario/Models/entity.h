@@ -47,6 +47,11 @@ class Entity : public Interface_Visitable
             state = value;
         }
 
+
+        inline int getDead() const{
+            return state_dead;
+        }
+
         virtual void update() =0;
         virtual void collision(Entity* entity, int position)=0;
 
@@ -66,6 +71,7 @@ class Entity : public Interface_Visitable
         int coord_x;
         int coord_y;
         int state;
+        bool state_dead;
 
 
 };

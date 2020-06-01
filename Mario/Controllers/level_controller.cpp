@@ -35,15 +35,28 @@ Game_View *Level_Controller::getScene()
 void Level_Controller::select_display_element()
 {
     Entity* point_centre = level->getPlayer();
-
+    current_entity_list.clear();
+    current_entity_list.push_back(level->getPlayer());
     foreach(Entity* entity,*level->get_entity_list()){
         float distance = entity->getDistanceOn_X(point_centre);
         if(distance < 500 && distance > -500){
-            entity->setDisplay(true);
+
+            if(!entity->getDead()){
+                entity->setDisplay(true);
+                current_entity_list.push_back(entity);
+            }
+            else{
+                entity->setDisplay(false);
+                current_entity_list.push_back(entity);
+            }
+
         }
         else
         {
-            entity->setDisplay(false);
+           if(entity->getDisplay()){
+                entity->setDisplay(false);
+                current_entity_list.push_back(entity);
+           }
         }
     }
 }
