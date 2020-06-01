@@ -115,10 +115,6 @@ QMap<Entity*, QMap<Entity*,int>> Game_View::get_list_collides()
                         }
                     }
 
-
-
-
-
                 }
 
             }
