@@ -13,6 +13,10 @@
 #include "../Models/smoke.h"
 #include "../Models/tuyau.h"
 #include "../Models/mysteryblock.h"
+#include "../Models/lifeup.h"
+#include "../Models/star.h"
+#include "../Models/mushroom.h"
+#include "../Models/flower.h"
 #include "game_view_entity.h"
 #include <QFile>
 #include <QJsonDocument>
@@ -39,6 +43,10 @@ public:
     Game_View_Entity* create(smoke *g,int x);
     Game_View_Entity* create(Tuyau *t, int x);
     Game_View_Entity* create(mysteryblock *t, int x);
+    Game_View_Entity* create(star *t, int x);
+    Game_View_Entity* create(mushroom *t, int x);
+    Game_View_Entity* create(lifeup *t, int x);
+    Game_View_Entity* create(flower *t, int x);
 };
 
 #endif // GAME_VIEW_FACTORY_H

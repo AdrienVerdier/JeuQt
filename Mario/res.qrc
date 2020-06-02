@@ -89,5 +89,9 @@
         <file>images/Mario/Walk6Miroir.png</file>
         <file>images/Blocks/mysteryblock1.jpg</file>
         <file>images/Blocks/mysteryblock2.jpg</file>
+        <file>images/powerup/flower.png</file>
+        <file>images/powerup/lifeup.png</file>
+        <file>images/powerup/mushroom.png</file>
+        <file>images/powerup/star.png</file>
     </qresource>
 </RCC>

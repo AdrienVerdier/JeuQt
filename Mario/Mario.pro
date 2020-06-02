@@ -26,18 +26,22 @@ SOURCES += \
     Models/bulletbill.cpp \
     Models/entity.cpp \
     Models/flamme.cpp \
+    Models/flower.cpp \
     Models/goomba.cpp \
     Models/ground.cpp \
     Models/interface_visitable.cpp \
     Models/interface_visitor.cpp \
     Models/koopa.cpp \
     Models/level.cpp \
+    Models/lifeup.cpp \
     Models/mario.cpp \
+    Models/mushroom.cpp \
     Models/mysteryblock.cpp \
     Models/peach.cpp \
     Models/piece.cpp \
     Models/plante.cpp \
     Models/smoke.cpp \
+    Models/star.cpp \
     Models/static_entity.cpp \
     Models/thwomp.cpp \
     Models/tuyau.cpp \
@@ -58,18 +62,22 @@ HEADERS += \
     Models/bulletbill.h \
     Models/entity.h \
     Models/flamme.h \
+    Models/flower.h \
     Models/goomba.h \
     Models/ground.h \
     Models/interface_visitable.h \
     Models/interface_visitor.h \
     Models/koopa.h \
     Models/level.h \
+    Models/lifeup.h \
     Models/mario.h \
+    Models/mushroom.h \
     Models/mysteryblock.h \
     Models/peach.h \
     Models/piece.h \
     Models/plante.h \
     Models/smoke.h \
+    Models/star.h \
     Models/static_entity.h \
     Models/thwomp.h \
     Models/tuyau.h \

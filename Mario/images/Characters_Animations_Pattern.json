@@ -50,5 +50,17 @@
         },
         "tuyau" :{
                 "0" : [":images/images/Tuyau/Tuyau.png"]
+        },
+        "flower" :{
+                "0" : [":images/images/powerup/flower.png"]
+        },
+        "lifeup" :{
+                "0" : [":images/images/powerup/lifeup.png"]
+        },
+        "mushroom" :{
+                "0" : [":images/images/powerup/mushroom.png"]
+        },
+        "star" :{
+                "0" : [":images/images/powerup/star.png"]
         }
 }

@@ -137,6 +137,42 @@ Level::Level()
                 alive_entity_list->last()->setState(0);
 
             }
+
+            if(clrCurrent.red() == 255 && clrCurrent.green()==255 &&clrCurrent.blue()==0){
+                alive_entity_list->push_back(new star());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
+
+            if(clrCurrent.red() == 255 && clrCurrent.green()==128 &&clrCurrent.blue()==0){
+                alive_entity_list->push_back(new flower());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
+
+            if(clrCurrent.red() == 255 && clrCurrent.green()==0 &&clrCurrent.blue()==0){
+                alive_entity_list->push_back(new mushroom());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
+
+            if(clrCurrent.red() == 0 && clrCurrent.green()==255 &&clrCurrent.blue()==0){
+                alive_entity_list->push_back(new lifeup());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
         }
 
 

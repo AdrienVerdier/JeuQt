@@ -15,6 +15,10 @@
 #include "Models/smoke.h"
 #include "Models/tuyau.h"
 #include "Models/mysteryblock.h"
+#include "Models/lifeup.h"
+#include "Models/star.h"
+#include "Models/mushroom.h"
+#include "Models/flower.h"
 
 class Mario : public Alive_Entity
 {
