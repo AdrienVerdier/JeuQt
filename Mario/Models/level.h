@@ -5,8 +5,6 @@
 #include <QList>
 #include "mario.h"
 #include "block.h"
-#include "goomba.h"
-#include "piece.h"
 
 class Level
 {

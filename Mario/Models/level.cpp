@@ -61,6 +61,33 @@ Level::Level()
                 alive_entity_list->last()->setState(0);
 
             }
+
+            if(clrCurrent.red() == 237 && clrCurrent.green()==28 &&clrCurrent.blue()==36){
+                alive_entity_list->push_back(new plante());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
+
+            if(clrCurrent.red() == 255 && clrCurrent.green()==127 &&clrCurrent.blue()==39){
+                alive_entity_list->push_back(new flamme());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
+
+            if(clrCurrent.red() == 195 && clrCurrent.green()==195 &&clrCurrent.blue()==195){
+                alive_entity_list->push_back(new thwomp());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
         }
 
 

@@ -15,8 +15,21 @@
         "piece" :{
                 "0" : [":images/images/Piece/piece.png"]
         },
+        "plante" :{
+                "0" : [":images/images/Plante/plante2.png",":images/images/Plante/plante1.png",":images/images/Plante/plante3.png",":images/images/Plante/plante1.png",":images/images/Plante/plante2.png"]
+        },
+        "flamme" :{
+                "0" : [":images/images/Plante/flamme1.png",":images/images/Plante/flamme2.png",":images/images/Plante/flamme3.png",":images/images/Plante/flamme4.png",":images/images/Plante/flamme5.png",":images/images/Plante/flamme6.png",":images/images/Plante/flamme7.png",":images/images/Plante/flamme8.png",":images/images/Plante/flamme9.png"]
+        },
+        "thwomp" :{
+                "0" : [":images/images/Thwomp/Thwomp1.png"],
+                "1" : [":images/images/Thwomp/Thwomp2.png"],
+                "2" : [":images/images/Thwomp/Thwomp3.png"]
+        },
         "koopa" :{
                 "0" : [":images/images/Koopa/Koopa1.png",":images/images/Koopa/Koopa2.png",":images/images/Koopa/Koopa3.png",":images/images/Koopa/Koopa4.png",":images/images/Koopa/Koopa5.png",":images/images/Koopa/Koopa6.png",":images/images/Koopa/Koopa7.png",":images/images/Koopa/Koopa8.png",":images/images/Koopa/Koopa9.png"],
-                "1" : [":images/images/Koopa/KoopaMiroir1.png",":images/images/Koopa/KoopaMiroir2.png",":images/images/Koopa/KoopaMiroir3.png",":images/images/Koopa/KoopaMiroir4.png",":images/images/Koopa/KoopaMiroir5.png",":images/images/Koopa/KoopaMiroir6.png",":images/images/Koopa/KoopaMiroir7.png",":images/images/Koopa/KoopaMiroir8.png",":images/images/Koopa/KoopaMiroir9.png"]
+                "1" : [":images/images/Koopa/KoopaMiroir1.png",":images/images/Koopa/KoopaMiroir2.png",":images/images/Koopa/KoopaMiroir3.png",":images/images/Koopa/KoopaMiroir4.png",":images/images/Koopa/KoopaMiroir5.png",":images/images/Koopa/KoopaMiroir6.png",":images/images/Koopa/KoopaMiroir7.png",":images/images/Koopa/KoopaMiroir8.png",":images/images/Koopa/KoopaMiroir9.png"],
+                "2" : [":images/images/Koopa/Carapace1.png"],
+                "3" : [":images/images/Koopa/Carapace1.png",":images/images/Koopa/Carapace2.png",":images/images/Koopa/Carapace3.png",":images/images/Koopa/Carapace4.png",":images/images/Koopa/Carapace5.png"]
         }
 }
