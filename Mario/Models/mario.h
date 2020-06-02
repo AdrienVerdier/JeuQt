@@ -29,11 +29,18 @@ public:
     int getCptjump() const;
 
 
+    bool getOn_ground() const;
+    void setOn_ground(bool value);
+
+    bool getContact_thwomp() const;
+    void setContact_thwomp(bool value);
+
 private:
     Controls *input;
     int cptjump;
     bool jump;
-
+    bool on_ground;
+    bool contact_thwomp;
 };
 
 #endif // MARIO_H

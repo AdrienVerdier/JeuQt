@@ -22,8 +22,8 @@ void thwomp::collision(Entity *entity, int position)
 void thwomp::update()
 {
    if(getInitial_y()==-1) setInitial_y(this->coord_y);
-   if(move_to_down) this->coord_y += 5;
-   if(move_to_up) this->coord_y -= 5;
+   if(move_to_down) this->coord_y += 4;
+   if(move_to_up) this->coord_y -= 4;
    if(this->coord_y <= initial_y)
    {
        move_to_up = false;

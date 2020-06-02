@@ -5,7 +5,8 @@ Mario::Mario()
 {
     cptjump = 0;
     jump = false;
-
+    setOn_ground(false);
+    setContact_thwomp(false);
 }
 
 void Mario::setInputs(Controls *c)
@@ -54,6 +55,9 @@ void Mario::update()
           this->move_to_down = false;
            coord_y-=5;
            cptjump++;
+           if(cptjump == 2){
+               setOn_ground(false);
+           }
            if(cptjump == 20){
                jump = false;
            }
@@ -68,16 +72,11 @@ void Mario::update()
         if(cptjump>0) cptjump--;
     }
 
-
-
-
-     this->move_to_right = true;
+    this->move_to_right = true;
     this->move_to_down = true;
-    if(jump ) move_to_down=false;
-     this->move_to_left = true;
-     this->move_to_up = true;
-
-
+    if(jump) move_to_down=false;
+    this->move_to_left = true;
+    this->move_to_up = true;
 }
 
 void Mario::collisionSpec(Block *entity, int position)
@@ -91,6 +90,7 @@ void Mario::collisionSpec(Block *entity, int position)
             break;
         case 2:
             this->move_to_down = false;
+            setOn_ground(true);
             break;
         case 3:
             this->move_to_left = false;
@@ -113,32 +113,34 @@ void Mario::collisionSpec(Goomba *entity, int position)
         jump= true;
         cptjump=0;
         break;
-    case 3:
-        state_dead = true;
-        this->move_to_left = false;
-        break;
+        case 3:
+            state_dead = true;
+            this->move_to_left = false;
+            break;
     }
 }
 
 void Mario::collisionSpec(Koopa *entity, int position)
 {
     move_to_down = false;
-    switch (position) {
-        case 0 :
-           state_dead = true;
-            break;
-        case 1:
-            state_dead = true;
-            this->move_to_right = false;
-            break;
-        case 2:
-            jump= true;
-            cptjump=0;
-            break;
-    case 3:
-        state_dead = true;
-        this->move_to_left = false;
-        break;
+    if(entity->getState() != 2){
+        switch (position) {
+            case 0 :
+               state_dead = true;
+                break;
+            case 1:
+                state_dead = true;
+                this->move_to_right = false;
+                break;
+            case 2:
+                jump= true;
+                cptjump=0;
+                break;
+            case 3:
+                state_dead = true;
+                this->move_to_left = false;
+                break;
+        }
     }
 }
 
@@ -154,10 +156,11 @@ void Mario::collisionSpec(flamme *entity, int position)
 
 void Mario::collisionSpec(thwomp *entity, int position)
 {
+    setContact_thwomp(true);
     switch (position) {
         case 0 :
-            if(!move_to_down && !jump) state_dead = true;
-            this->jump = false;
+            if(getOn_ground() && getContact_thwomp()) state_dead = true;
+            this->move_to_up = false;
             break;
         case 1:
             this->move_to_right = false;
@@ -179,4 +182,24 @@ void Mario::collisionSpec(Piece *entity, int position)
 int Mario::getCptjump() const
 {
     return cptjump;
+}
+
+bool Mario::getOn_ground() const
+{
+    return on_ground;
+}
+
+void Mario::setOn_ground(bool value)
+{
+    on_ground = value;
+}
+
+bool Mario::getContact_thwomp() const
+{
+    return contact_thwomp;
+}
+
+void Mario::setContact_thwomp(bool value)
+{
+    contact_thwomp = value;
 }
