@@ -33,6 +33,7 @@ SOURCES += \
     Models/koopa.cpp \
     Models/level.cpp \
     Models/mario.cpp \
+    Models/mysteryblock.cpp \
     Models/peach.cpp \
     Models/piece.cpp \
     Models/plante.cpp \
@@ -64,6 +65,7 @@ HEADERS += \
     Models/koopa.h \
     Models/level.h \
     Models/mario.h \
+    Models/mysteryblock.h \
     Models/peach.h \
     Models/piece.h \
     Models/plante.h \

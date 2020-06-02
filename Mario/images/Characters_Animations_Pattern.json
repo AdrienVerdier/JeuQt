@@ -10,6 +10,10 @@
 	"block" :{
 		"0" : [":images/images/Blocks/Block.png"]
         },
+        "mysteryblock" :{
+                "0" : [":images/images/Blocks/mysteryblock1.jpg"],
+                "1" : [":images/images/Blocks/mysteryblock2.jpg"]
+        },
         "goomba" :{
                 "0" : [":images/images/Goomba/Goomba1.png",":images/images/Goomba/Goomba2.png",":images/images/Goomba/Goomba3.png",":images/images/Goomba/Goomba4.png",":images/images/Goomba/Goomba5.png",":images/images/Goomba/Goomba6.png",":images/images/Goomba/Goomba7.png"],
                 "1" : [":images/images/Goomba/GoombaMiroir1.png",":images/images/Goomba/GoombaMiroir2.png",":images/images/Goomba/GoombaMiroir3.png",":images/images/Goomba/GoombaMiroir4.png",":images/images/Goomba/GoombaMiroir5.png",":images/images/Goomba/GoombaMiroir6.png",":images/images/Goomba/GoombaMiroir7.png"]

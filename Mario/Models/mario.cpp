@@ -17,6 +17,7 @@ void Mario::setInputs(Controls *c)
 void Mario::collision(Entity *entity, int position)
 {
     if (typeid (Block).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
+    if (typeid (mysteryblock).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
     if (typeid (Goomba).name() == typeid(*entity).name()) collisionSpec((Goomba*)entity, position);
     if (typeid (Piece).name() == typeid(*entity).name()) collisionSpec((Piece*)entity, position);
     if (typeid (Koopa).name() == typeid(*entity).name()) collisionSpec((Koopa*)entity, position);

@@ -87,5 +87,7 @@
         <file>images/Mario/Walk4Miroir.png</file>
         <file>images/Mario/Walk5Miroir.png</file>
         <file>images/Mario/Walk6Miroir.png</file>
+        <file>images/Blocks/mysteryblock1.jpg</file>
+        <file>images/Blocks/mysteryblock2.jpg</file>
     </qresource>
 </RCC>

@@ -45,6 +45,13 @@ Level::Level()
                 entity_list->last()->setCoordX(col-10);
                 entity_list->last()->setCoordY(row-10);
                 entity_list->last()->setState(0);
+            }
+            if(clrCurrent.red() == 239 && clrCurrent.green()==228 &&clrCurrent.blue()==176){
+                entity_list->push_back(new mysteryblock());
+                entity_list->last()->setDisplay(true);
+                entity_list->last()->setCoordX(col-10);
+                entity_list->last()->setCoordY(row-10);
+                entity_list->last()->setState(0);
 
             }
             if(clrCurrent.red() == 255 && clrCurrent.green()==201 &&clrCurrent.blue()==14){
@@ -60,7 +67,7 @@ Level::Level()
                 alive_entity_list->last()->setDisplay(true);
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-10);
-                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setState(0);
             }
             if(clrCurrent.red() == 34 && clrCurrent.green()==177 &&clrCurrent.blue()==76){
                 alive_entity_list->push_back(new Koopa());

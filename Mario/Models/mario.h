@@ -14,6 +14,7 @@
 #include "Models/billblaster.h"
 #include "Models/smoke.h"
 #include "Models/tuyau.h"
+#include "Models/mysteryblock.h"
 
 class Mario : public Alive_Entity
 {
