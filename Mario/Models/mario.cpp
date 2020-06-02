@@ -52,8 +52,6 @@ void Mario::update()
     }
 
 
-
-
     if(input->up && cptjump ==0 && !move_to_down){
         jump = true;
     }
@@ -242,6 +240,7 @@ void Mario::collisionSpec(thwomp *entity, int position)
             break;
         case 2:
             this->move_to_down = false;
+            coord_y-=4;
             break;
         case 3:
             this->move_to_left = false;
