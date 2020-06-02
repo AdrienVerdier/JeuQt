@@ -67,7 +67,7 @@ void Mario::update()
            if(cptjump <= 2){
                setOn_ground(false);
            }
-           if(cptjump == 20){
+           if(cptjump == 30){
                jump = false;
            }
         }
