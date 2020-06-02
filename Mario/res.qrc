@@ -80,5 +80,12 @@
         <file>images/BulletBill/BulletBillMiroir.png</file>
         <file>images/BulletBill/Smoke.png</file>
         <file>images/Tuyau/Tuyau.png</file>
+        <file>images/Mario/JumpMiroir.png</file>
+        <file>images/Mario/Walk1Miroir.png</file>
+        <file>images/Mario/Walk2Miroir.png</file>
+        <file>images/Mario/Walk3Miroir.png</file>
+        <file>images/Mario/Walk4Miroir.png</file>
+        <file>images/Mario/Walk5Miroir.png</file>
+        <file>images/Mario/Walk6Miroir.png</file>
     </qresource>
 </RCC>

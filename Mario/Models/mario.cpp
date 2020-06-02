@@ -31,14 +31,19 @@ void Mario::collision(Entity *entity, int position)
 
 void Mario::update()
 {
-    if(input->right && move_to_right) coord_x+= 5;
-    if(input->left && move_to_left) coord_x-= 5;
+    if(input->right && move_to_right) {
+        state = 1;
+        coord_x+= 5;
+    }
+    if(input->left && move_to_left) {
+        state = 4;
+        coord_x-= 5;
+    }
     if(!input->left && !input->right ) state= 0;
-    else state = 1;
 
     if(move_to_down) {
         coord_y+=5;
-        if(coord_y>800){
+        if(coord_y>750){
             state_dead = true;
         }
 
@@ -55,11 +60,12 @@ void Mario::update()
     if(jump){
 
         if(move_to_up){
-           state = 3;
-          this->move_to_down = false;
+           if(input->right )state = 3;
+           if(input->left )state = 5;
+           this->move_to_down = false;
            coord_y-=5;
            cptjump++;
-           if(cptjump == 2){
+           if(cptjump <= 2){
                setOn_ground(false);
            }
            if(cptjump == 20){
