@@ -5,8 +5,6 @@
 #include <QDebug>
 thwomp::thwomp()
 {
-    move_to_right = false;
-    move_to_left = true;
     move_to_down = true;
 }
 
@@ -14,27 +12,32 @@ void thwomp::collision(Entity *entity, int position)
 {
     QString name = typeid(*entity).name();
     if (name != "5Block") qInfo() << typeid(*entity).name();
-
-    if(position == 1){
-        move_to_left = true;
-        move_to_right = false;
-        state=0;
-    }
-    if(position == 3){
-        move_to_left = false;
-        move_to_right = true;
-        state=1;
-    }
-    if(position == 2){
+    if(position == 2 && typeid (Mario).name() != typeid(*entity).name()){
         move_to_down = false;
+        move_to_up = true;
+        state=1;
     }
 }
 
 void thwomp::update()
 {
-   if(move_to_right && !move_to_down) this->coord_x += 1;
-   if(move_to_left && !move_to_down) this->coord_x -= 1;
+   if(getInitial_y()==-1) setInitial_y(this->coord_y);
    if(move_to_down) this->coord_y += 5;
-   move_to_down = true;
+   if(move_to_up) this->coord_y -= 5;
+   if(this->coord_y <= initial_y)
+   {
+       move_to_up = false;
+       move_to_down = true;
+       state=0;
+   }
+}
 
+int thwomp::getInitial_y() const
+{
+    return initial_y;
+}
+
+void thwomp::setInitial_y(int value)
+{
+    initial_y = value;
 }

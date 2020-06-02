@@ -22,8 +22,8 @@
                 "0" : [":images/images/Plante/flamme1.png",":images/images/Plante/flamme2.png",":images/images/Plante/flamme3.png",":images/images/Plante/flamme4.png",":images/images/Plante/flamme5.png",":images/images/Plante/flamme6.png",":images/images/Plante/flamme7.png",":images/images/Plante/flamme8.png",":images/images/Plante/flamme9.png"]
         },
         "thwomp" :{
-                "0" : [":images/images/Thwomp/Thwomp1.png"],
-                "1" : [":images/images/Thwomp/Thwomp2.png"],
+                "0" : [":images/images/Thwomp/Thwomp2.png"],
+                "1" : [":images/images/Thwomp/Thwomp1.png"],
                 "2" : [":images/images/Thwomp/Thwomp3.png"]
         },
         "koopa" :{

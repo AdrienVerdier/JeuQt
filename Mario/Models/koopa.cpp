@@ -16,31 +16,54 @@ void Koopa::collision(Entity *entity, int position)
     if (name != "5Block") qInfo() << typeid(*entity).name();
 
     if (typeid (Mario).name() == typeid(*entity).name()) collisionSpec((Mario*) entity, position);
+    if(this->getState() != 2 || this->getState() != 3)
+    {
+        if(position == 1){
+            move_to_left = true;
+            move_to_right = false;
+            state=0;
 
-    if(position == 1){
-        move_to_left = true;
-        move_to_right = false;
-        state=0;
+        }
+        if(position == 3){
+            move_to_left = false;
+            move_to_right = true;
+            state=1;
 
-    }
-    if(position == 3){
-        move_to_left = false;
-        move_to_right = true;
-        state=1;
-
-    }
-    if(position == 2){
-        move_to_down = false;
+        }
+        if(position == 2){
+            move_to_down = false;
+        }
     }
 }
 
 void Koopa::collisionSpec(Mario *entity, int position)
 {
-    if(position == 0) {
+    if(state == 2){
         this->state_dead = true;
         this->display = false;
-    } //TODO : le faire mourir
-       qInfo() << "collision";
+    }
+    if(position == 0) {
+        state=2;
+        move_to_left = false;
+        move_to_right = false;
+    }
+    if(position == 1){
+        if(state==2)
+        {
+            state=3;
+            move_to_left = true;
+            move_to_right = false;
+        }
+
+    }
+    if(position == 3){
+        if(state==2)
+        {
+            state=3;
+            move_to_left = false;
+            move_to_right = true;
+        }
+    }
 }
 
 void Koopa::update()

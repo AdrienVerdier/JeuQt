@@ -1,6 +1,6 @@
 #include "mario.h"
 #include <typeinfo>
-
+#include <QDebug>
 Mario::Mario()
 {
     cptjump = 0;
@@ -72,7 +72,7 @@ void Mario::update()
 
 
      this->move_to_right = true;
-     this->move_to_down = true;
+    this->move_to_down = true;
     if(jump ) move_to_down=false;
      this->move_to_left = true;
      this->move_to_up = true;
@@ -154,7 +154,21 @@ void Mario::collisionSpec(flamme *entity, int position)
 
 void Mario::collisionSpec(thwomp *entity, int position)
 {
-    state_dead = true;
+    switch (position) {
+        case 0 :
+            if(!move_to_down && !jump) state_dead = true;
+            this->jump = false;
+            break;
+        case 1:
+            this->move_to_right = false;
+            break;
+        case 2:
+            this->move_to_down = false;
+            break;
+        case 3:
+            this->move_to_left = false;
+            break;
+    }
 }
 
 void Mario::collisionSpec(Piece *entity, int position)
