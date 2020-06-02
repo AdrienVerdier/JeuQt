@@ -10,6 +10,9 @@
 #include "Models/plante.h"
 #include "Models/flamme.h"
 #include "Models/thwomp.h"
+#include "Models/bulletbill.h"
+#include "Models/billblaster.h"
+#include "Models/smoke.h"
 
 class Mario : public Alive_Entity
 {
@@ -25,6 +28,9 @@ public:
     void collisionSpec(plante* entity, int position);
     void collisionSpec(flamme* entity, int position);
     void collisionSpec(thwomp* entity, int position);
+    void collisionSpec(bulletbill* entity, int position);
+    void collisionSpec(billblaster* entity, int position);
+    void collisionSpec(smoke* entity, int position);
 
     int getCptjump() const;
 

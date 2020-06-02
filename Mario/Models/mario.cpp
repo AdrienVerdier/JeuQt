@@ -23,6 +23,9 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (plante).name() == typeid(*entity).name()) collisionSpec((plante*)entity, position);
     if (typeid (flamme).name() == typeid(*entity).name()) collisionSpec((flamme*)entity, position);
     if (typeid (thwomp).name() == typeid(*entity).name()) collisionSpec((thwomp*)entity, position);
+    if (typeid (bulletbill).name() == typeid(*entity).name()) collisionSpec((bulletbill*)entity, position);
+    if (typeid (billblaster).name() == typeid(*entity).name()) collisionSpec((billblaster*)entity, position);
+    if (typeid (smoke).name() == typeid(*entity).name()) collisionSpec((smoke*)entity, position);
 }
 
 void Mario::update()
@@ -98,6 +101,30 @@ void Mario::collisionSpec(Block *entity, int position)
     }
 }
 
+void Mario::collisionSpec(billblaster *entity, int position)
+{
+    switch (position) {
+        case 0 :
+            this->move_to_up = false;
+            break;
+        case 1:
+            this->move_to_right = false;
+            break;
+        case 2:
+            this->move_to_down = false;
+            setOn_ground(true);
+            break;
+        case 3:
+            this->move_to_left = false;
+            break;
+    }
+}
+
+void Mario::collisionSpec(smoke *entity, int position)
+{
+
+}
+
 void Mario::collisionSpec(Goomba *entity, int position)
 {
     move_to_down = false;
@@ -113,6 +140,27 @@ void Mario::collisionSpec(Goomba *entity, int position)
         jump= true;
         cptjump=0;
         break;
+        case 3:
+            state_dead = true;
+            this->move_to_left = false;
+            break;
+    }
+}
+
+void Mario::collisionSpec(bulletbill *entity, int position)
+{
+    switch (position) {
+        case 0 :
+           state_dead = true;
+            break;
+        case 1:
+            state_dead = true;
+            this->move_to_right = false;
+            break;
+        case 2:
+            jump= true;
+            cptjump=0;
+            break;
         case 3:
             state_dead = true;
             this->move_to_left = false;

@@ -1,10 +1,11 @@
 #include "level.h"
 #include "mario.h"
 #include "block.h"
-#include "koopa.h"
 #include <QImage>
 #include<QDebug>
 
+#include <typeinfo>
+#include <QDebug>
 Level::Level()
 {
     score = 0;
@@ -82,6 +83,39 @@ Level::Level()
 
             if(clrCurrent.red() == 195 && clrCurrent.green()==195 &&clrCurrent.blue()==195){
                 alive_entity_list->push_back(new thwomp());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
+            if(clrCurrent.red() == 181 && clrCurrent.green()==230 &&clrCurrent.blue()==29){
+                alive_entity_list->push_back(new bulletbill(true));
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
+            if(clrCurrent.red() == 163 && clrCurrent.green()==73 &&clrCurrent.blue()==164){
+                alive_entity_list->push_back(new bulletbill(false));
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
+
+            if(clrCurrent.red() == 63 && clrCurrent.green()==72 &&clrCurrent.blue()==204){
+                alive_entity_list->push_back(new billblaster());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-14);
+                alive_entity_list->last()->setState(0);
+
+            }
+            if(clrCurrent.red() == 255 && clrCurrent.green()==174 &&clrCurrent.blue()==201){
+                alive_entity_list->push_back(new smoke());
                 alive_entity_list->last()->setDisplay(true);
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);

@@ -71,5 +71,13 @@
         <file>images/Thwomp/Thwomp1.png</file>
         <file>images/Thwomp/Thwomp2.png</file>
         <file>images/Thwomp/Thwomp3.png</file>
+        <file>images/BulletBill/BillBlaster1.png</file>
+        <file>images/BulletBill/BillBlaster2.png</file>
+        <file>images/BulletBill/BillBlaster3.png</file>
+        <file>images/BulletBill/BillBlaster4.png</file>
+        <file>images/BulletBill/BillBlaster5.png</file>
+        <file>images/BulletBill/BulletBill.png</file>
+        <file>images/BulletBill/BulletBillMiroir.png</file>
+        <file>images/BulletBill/Smoke.png</file>
     </qresource>
 </RCC>

@@ -21,7 +21,9 @@ SOURCES += \
     Controllers/level_controller.cpp \
     Main.cpp \
     Models/alive_entity.cpp \
+    Models/billblaster.cpp \
     Models/block.cpp \
+    Models/bulletbill.cpp \
     Models/entity.cpp \
     Models/flamme.cpp \
     Models/goomba.cpp \
@@ -34,6 +36,7 @@ SOURCES += \
     Models/peach.cpp \
     Models/piece.cpp \
     Models/plante.cpp \
+    Models/smoke.cpp \
     Models/static_entity.cpp \
     Models/thwomp.cpp \
     Tools/controls.cpp \
@@ -48,7 +51,9 @@ HEADERS += \
     Controllers/global_views_controller.h \
     Controllers/level_controller.h \
     Models/alive_entity.h \
+    Models/billblaster.h \
     Models/block.h \
+    Models/bulletbill.h \
     Models/entity.h \
     Models/flamme.h \
     Models/goomba.h \
@@ -61,6 +66,7 @@ HEADERS += \
     Models/peach.h \
     Models/piece.h \
     Models/plante.h \
+    Models/smoke.h \
     Models/static_entity.h \
     Models/thwomp.h \
     Tools/controls.h \

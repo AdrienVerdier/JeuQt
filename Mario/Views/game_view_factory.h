@@ -8,6 +8,9 @@
 #include "../Models/mario.h"
 #include "../Models/piece.h"
 #include "../Models/koopa.h"
+#include "../Models/bulletbill.h"
+#include "../Models/billblaster.h"
+#include "../Models/smoke.h"
 #include "game_view_entity.h"
 #include <QFile>
 #include <QJsonDocument>
@@ -29,6 +32,9 @@ public:
     Game_View_Entity* create(plante *g,int x);
     Game_View_Entity* create(flamme *g,int x);
     Game_View_Entity* create(thwomp *g,int x);
+    Game_View_Entity* create(bulletbill *g,int x);
+    Game_View_Entity* create(billblaster *g,int x);
+    Game_View_Entity* create(smoke *g,int x);
 
 };
 
