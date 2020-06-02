@@ -2,8 +2,11 @@ global_views_controller.o
 level_controller.o
 Main.o
 alive_entity.o
+billblaster.o
 block.o
+bulletbill.o
 entity.o
+flamme.o
 goomba.o
 ground.o
 interface_visitable.o
@@ -13,7 +16,11 @@ level.o
 mario.o
 peach.o
 piece.o
+plante.o
+smoke.o
 static_entity.o
+thwomp.o
+tuyau.o
 controls.o
 game_view.o
 game_view_entity.o

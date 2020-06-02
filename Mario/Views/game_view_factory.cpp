@@ -21,6 +21,7 @@ Game_View_Entity *Game_View_Factory::create(Entity *e,int x)
     if (typeid (bulletbill).name() == typeid(*e).name()) return create((bulletbill*)e, x);
     if (typeid (billblaster).name() == typeid(*e).name()) return create((billblaster*)e, x);
     if (typeid (smoke).name() == typeid(*e).name()) return create((smoke*)e, x);
+    if (typeid (Tuyau).name() == typeid(*e).name()) return create((Tuyau*)e, x);
 }
 
 
@@ -77,6 +78,33 @@ Game_View_Entity* Game_View_Factory::create(Block *b, int x){
 
 
           Game_View_Entity *entity_view = new Game_View_Entity(map,x,b->getCoordY(),b->getState());
+
+          return entity_view;
+
+}
+
+Game_View_Entity* Game_View_Factory::create(Tuyau *t, int x){
+
+
+          QMap<int,QList<QString>> map;
+
+          QString val;
+          QFile file;
+          file.setFileName(":images/images/Characters_Animations_Pattern.json");
+          file.open(QIODevice::ReadOnly | QIODevice::Text);
+          val = file.readAll();
+          file.close();
+
+          QJsonDocument d = QJsonDocument::fromJson(val.toUtf8());
+          QJsonObject sett2 = d.object();
+          QJsonValue value = sett2.value(QString("tuyau"));
+
+          QJsonObject block = value.toObject();
+
+          map[0].push_back(block["0"].toArray()[0].toString());
+
+
+          Game_View_Entity *entity_view = new Game_View_Entity(map,x,t->getCoordY(),t->getState());
 
           return entity_view;
 

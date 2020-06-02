@@ -79,5 +79,6 @@
         <file>images/BulletBill/BulletBill.png</file>
         <file>images/BulletBill/BulletBillMiroir.png</file>
         <file>images/BulletBill/Smoke.png</file>
+        <file>images/Tuyau/Tuyau.png</file>
     </qresource>
 </RCC>

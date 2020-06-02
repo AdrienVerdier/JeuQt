@@ -26,6 +26,7 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (bulletbill).name() == typeid(*entity).name()) collisionSpec((bulletbill*)entity, position);
     if (typeid (billblaster).name() == typeid(*entity).name()) collisionSpec((billblaster*)entity, position);
     if (typeid (smoke).name() == typeid(*entity).name()) collisionSpec((smoke*)entity, position);
+    if (typeid (Tuyau).name() == typeid(*entity).name()) collisionSpec((Tuyau*)entity, position);
 }
 
 void Mario::update()
@@ -83,6 +84,25 @@ void Mario::update()
 }
 
 void Mario::collisionSpec(Block *entity, int position)
+{
+    switch (position) {
+        case 0 :
+            this->move_to_up = false;
+            break;
+        case 1:
+            this->move_to_right = false;
+            break;
+        case 2:
+            this->move_to_down = false;
+            setOn_ground(true);
+            break;
+        case 3:
+            this->move_to_left = false;
+            break;
+    }
+}
+
+void Mario::collisionSpec(Tuyau *entity, int position)
 {
     switch (position) {
         case 0 :

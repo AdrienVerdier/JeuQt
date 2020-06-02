@@ -41,5 +41,8 @@
                 "1" : [":images/images/Koopa/KoopaMiroir1.png",":images/images/Koopa/KoopaMiroir2.png",":images/images/Koopa/KoopaMiroir3.png",":images/images/Koopa/KoopaMiroir4.png",":images/images/Koopa/KoopaMiroir5.png",":images/images/Koopa/KoopaMiroir6.png",":images/images/Koopa/KoopaMiroir7.png",":images/images/Koopa/KoopaMiroir8.png",":images/images/Koopa/KoopaMiroir9.png"],
                 "2" : [":images/images/Koopa/Carapace1.png"],
                 "3" : [":images/images/Koopa/Carapace1.png",":images/images/Koopa/Carapace2.png",":images/images/Koopa/Carapace3.png",":images/images/Koopa/Carapace4.png",":images/images/Koopa/Carapace5.png"]
+        },
+        "tuyau" :{
+                "0" : [":images/images/Tuyau/Tuyau.png"]
         }
 }

@@ -39,6 +39,7 @@ SOURCES += \
     Models/smoke.cpp \
     Models/static_entity.cpp \
     Models/thwomp.cpp \
+    Models/tuyau.cpp \
     Tools/controls.cpp \
     Views/game_view.cpp \
     Views/game_view_entity.cpp \
@@ -69,6 +70,7 @@ HEADERS += \
     Models/smoke.h \
     Models/static_entity.h \
     Models/thwomp.h \
+    Models/tuyau.h \
     Tools/controls.h \
     Views/game_view.h \
     Views/game_view_entity.h \

@@ -39,6 +39,14 @@ Level::Level()
                 entity_list->last()->setState(0);
 
             }
+            if(clrCurrent.red() == 0 && clrCurrent.green()==162 &&clrCurrent.blue()==232){
+                entity_list->push_back(new Tuyau());
+                entity_list->last()->setDisplay(true);
+                entity_list->last()->setCoordX(col-10);
+                entity_list->last()->setCoordY(row-10);
+                entity_list->last()->setState(0);
+
+            }
             if(clrCurrent.red() == 255 && clrCurrent.green()==201 &&clrCurrent.blue()==14){
                 alive_entity_list->push_back(new Goomba());
                 alive_entity_list->last()->setDisplay(true);

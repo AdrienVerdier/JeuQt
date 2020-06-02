@@ -5,6 +5,7 @@
 #include <QList>
 #include "mario.h"
 #include "block.h"
+#include "tuyau.h"
 
 class Level
 {
