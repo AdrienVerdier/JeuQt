@@ -100,7 +100,7 @@ OBJECTS       = debug/global_views_controller.o \
 		debug/moc_level_controller.o \
 		debug/moc_viewtest.o
 
-DIST          =  ..\Mario\Controllers\global_views_controller.h \
+DIST          = images/HUD/background.png ..\Mario\Controllers\global_views_controller.h \
 		..\Mario\Controllers\level_controller.h \
 		..\Mario\Models\alive_entity.h \
 		..\Mario\Models\block.h \
@@ -186,9 +186,6 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_res.cpp debug\qrc_res.cpp debug\qrc_res.cpp
 debug/qrc_res.cpp: ../Mario/res.qrc \
 		E:/QT/5.14.2/mingw73_64/bin/rcc.exe \
-		../Mario/images/sky.png \
-		../Mario/images/ground.png \
-		../Mario/images/mario.png \
 		../Mario/images/Characters_Animations_Pattern.json \
 		../Mario/images/Goomba/GoombaMiroir7.png \
 		../Mario/images/Goomba/Goomba3.png \
@@ -235,15 +232,13 @@ debug/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Mario/Walk3.png \
 		../Mario/images/Mario/Walk2.png \
 		../Mario/images/HUD/pieceHUD.png \
+		../Mario/images/HUD/background.png \
 		../Mario/images/HUD/viesHUD.png \
 		../Mario/son/musique-mario-bros-officielle.mp3
 	E:\QT\5.14.2\mingw73_64\bin\rcc.exe -name res ..\Mario\res.qrc -o debug\qrc_res.cpp
 
 debug/qrc_res.cpp: ../Mario/res.qrc \
 		E:/QT/5.14.2/mingw73_64/bin/rcc.exe \
-		../Mario/images/sky.png \
-		../Mario/images/ground.png \
-		../Mario/images/mario.png \
 		../Mario/images/Characters_Animations_Pattern.json \
 		../Mario/images/Goomba/GoombaMiroir7.png \
 		../Mario/images/Goomba/Goomba3.png \
@@ -290,15 +285,13 @@ debug/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Mario/Walk3.png \
 		../Mario/images/Mario/Walk2.png \
 		../Mario/images/HUD/pieceHUD.png \
+		../Mario/images/HUD/background.png \
 		../Mario/images/HUD/viesHUD.png \
 		../Mario/son/musique-mario-bros-officielle.mp3
 	E:\QT\5.14.2\mingw73_64\bin\rcc.exe -name res ..\Mario\res.qrc -o debug\qrc_res.cpp
 
 debug/qrc_res.cpp: ../Mario/res.qrc \
 		E:/QT/5.14.2/mingw73_64/bin/rcc.exe \
-		../Mario/images/sky.png \
-		../Mario/images/ground.png \
-		../Mario/images/mario.png \
 		../Mario/images/Characters_Animations_Pattern.json \
 		../Mario/images/Goomba/GoombaMiroir7.png \
 		../Mario/images/Goomba/Goomba3.png \
@@ -345,6 +338,7 @@ debug/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Mario/Walk3.png \
 		../Mario/images/Mario/Walk2.png \
 		../Mario/images/HUD/pieceHUD.png \
+		../Mario/images/HUD/background.png \
 		../Mario/images/HUD/viesHUD.png \
 		../Mario/son/musique-mario-bros-officielle.mp3
 	E:\QT\5.14.2\mingw73_64\bin\rcc.exe -name res ..\Mario\res.qrc -o debug\qrc_res.cpp

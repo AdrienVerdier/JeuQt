@@ -77,4 +77,5 @@ RESOURCES += \
     res.qrc \
     res.qrc
 
-DISTFILES +=
+DISTFILES += \
+    images/HUD/background.png

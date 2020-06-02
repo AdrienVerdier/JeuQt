@@ -22,7 +22,7 @@ Game_View::Game_View(QWidget *parent)
     score->setAttribute(Qt::WA_TranslucentBackground);
     this->addWidget(score);
 
-    QGraphicsPixmapItem *pieceHUD = new QGraphicsPixmapItem(QPixmap(":images/images/HUD/pieceHUD.png"));
+    pieceHUD = new QGraphicsPixmapItem(QPixmap(":images/images/HUD/pieceHUD.png"));
     this->addItem(pieceHUD);
     pieceHUD->setPos(15, 10);
 
@@ -34,9 +34,16 @@ Game_View::Game_View(QWidget *parent)
     vies->setAttribute(Qt::WA_TranslucentBackground);
     this->addWidget(vies);
 
-    QGraphicsPixmapItem *viesHUD = new QGraphicsPixmapItem(QPixmap(":images/images/HUD/viesHUD.png"));
+    viesHUD = new QGraphicsPixmapItem(QPixmap(":images/images/HUD/viesHUD.png"));
     this->addItem(viesHUD);
     viesHUD->setPos(1195, 10);
+
+
+    QPixmap bk(":images/images/HUD/background.png");
+
+    background = new QGraphicsPixmapItem(bk.scaled(QSize(1280,720)));
+    this->addItem(background);
+    background->setPos(0, 0);
 
 
 

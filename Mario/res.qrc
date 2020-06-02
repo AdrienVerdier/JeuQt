@@ -50,5 +50,6 @@
         <file>images/Koopa/KoopaMiroir9.png</file>
         <file>images/HUD/pieceHUD.png</file>
         <file>images/HUD/viesHUD.png</file>
+        <file>images/HUD/background.png</file>
     </qresource>
 </RCC>

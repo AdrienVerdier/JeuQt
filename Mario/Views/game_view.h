@@ -32,6 +32,7 @@ private :
         QGraphicsPixmapItem *pieceHUD;
         QLabel *vies;
         QGraphicsPixmapItem *viesHUD;
+        QGraphicsPixmapItem *background;
 
         void fillPoints(Game_View_Entity *e1, Game_View_Entity *e2);
 
