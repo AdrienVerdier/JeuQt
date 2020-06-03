@@ -14,6 +14,11 @@
 
 Game_View::Game_View(QWidget *parent)
 {
+
+    nbScore = 0;
+    nbVies = 3;
+
+
     setSceneRect(0,0,1280,700);
     controls = new Controls();
     this->setBackgroundBrush(QBrush(Qt::cyan, Qt::SolidPattern));
@@ -21,7 +26,7 @@ Game_View::Game_View(QWidget *parent)
 
     //HUD
     score = new QLabel();
-    score->setText("10");
+    score->setText(QString::number(nbScore));
     score->setGeometry(QRect(50, 10,30, 30));
     score->setFont(f);
     score->setAttribute(Qt::WA_TranslucentBackground);
@@ -33,7 +38,7 @@ Game_View::Game_View(QWidget *parent)
 
 
     vies = new QLabel();
-    vies->setText("3");
+    vies->setText( QString::number(nbVies));
     vies->setGeometry(QRect(1230, 10,30, 30));
     vies->setFont(f);
     vies->setAttribute(Qt::WA_TranslucentBackground);
@@ -54,8 +59,16 @@ Game_View::Game_View(QWidget *parent)
 
 
 
-}
 
+
+}
+void Game_View::update_HUD(int scor, int vie){
+    nbScore  = scor;
+    nbVies = vie;
+     vies->setText( QString::number(nbVies));
+     score->setText(QString::number(nbScore));
+
+}
 void Game_View::reset(){
 
     foreach(Entity *entity, map_Entity_GameViewEntity.keys()){

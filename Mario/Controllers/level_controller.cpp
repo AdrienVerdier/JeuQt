@@ -5,21 +5,21 @@
 #include<QDebug>
 #include <QElapsedTimer>
 #include "../Models/static_entity.h"
+#include "global_views_controller.h"
 
 
-Level_Controller::Level_Controller()
+Level_Controller::Level_Controller( Global_Views_Controller *p)
 {
 
     game_view = new Game_View();
     reset = false;
-    // Init Level
-    level = new Level();
-    level->getPlayer()->setInputs(game_view->get_Keys());
 
+    pere = p;
 
     m_timer = new QTimer(this);
     QObject::connect(m_timer,SIGNAL(timeout()),this,SLOT(update_lvl()));
     m_timer->start(15);
+    pause = true;
 
 }
 
@@ -131,6 +131,7 @@ void Level_Controller::update_view()
 {
     game_view->setMx(level->getPlayer()->getCoordX());
     select_display_element();
+    game_view->update_HUD(level->getScore(), level->getNbVie());
     foreach(Entity *entity, current_entity_list){
        // game_view->paint(entity);
         entity->accept(game_view);
@@ -139,35 +140,50 @@ void Level_Controller::update_view()
 
 }
 
+void Level_Controller::NewLevel(QString path){
+    // Init Level
+    level = new Level();
+    level->getPlayer()->setInputs(game_view->get_Keys());
+    pause = false;
+
+}
+
 void Level_Controller::update_lvl()
 {
-    QElapsedTimer timer;
-      timer.start();
-    if(level->getPlayer()->getDead()){
-        delete level;
-        level = new Level();
-        level->getPlayer()->setInputs(game_view->get_Keys());
-        game_view->reset();
-    }
+    if(! pause){
+        QElapsedTimer timer;
+          timer.start();
+        if(level->getPlayer()->getDead()){
+            if(level->getNbVie()<=0){
+                pause = true;
+                pere->display_GameOver();
 
-    update_view();
-
-    collision_List =  game_view->get_list_collides();
-    foreach(Entity *entity, collision_List.keys())
-    {
-        foreach(Entity *collideswith, collision_List[entity].keys())
-        {
-                if(entity->getDisplay())entity->collision(collideswith,collision_List[entity][collideswith]);
+            }
+            else{
+                level->SetNbVie(level->getNbVie()-1);
+                level->getPlayer()->setDead(false);
+                level->getPlayer()->setCoordX(level->getCoord_x_cp());
+                level->getPlayer()->setCoordY(level->getCoord_y_cp());
+            }
         }
+
+        update_view();
+
+        collision_List =  game_view->get_list_collides();
+        foreach(Entity *entity, collision_List.keys())
+        {
+            foreach(Entity *collideswith, collision_List[entity].keys())
+            {
+                    if(entity->getDisplay())entity->collision(collideswith,collision_List[entity][collideswith]);
+            }
+        }
+        foreach(Entity *entity,current_entity_list){
+             if(entity->getDisplay())entity->update();
+        }
+
+        qDebug() << "The slow operation took" << timer.elapsed() << "milliseconds";
     }
-    foreach(Entity *entity,current_entity_list){
-         if(entity->getDisplay())entity->update();
-    }
 
-    qDebug() << "The slow operation took" << timer.elapsed() << "milliseconds";
-
-
-    /*\ Pour le moment on update l'ensemble des objets du niveau, par la suite il faudra mettre current_entity_list à jour selon les coordonnées de Mario et les objets morts ou nouveaux) \*/
 
 
 

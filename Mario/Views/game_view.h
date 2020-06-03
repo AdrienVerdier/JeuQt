@@ -20,6 +20,7 @@ class Game_View : public QGraphicsScene, public Interface_Visitor
         Controls * get_Keys();
         void reset();
         void setMx(int value);
+        void update_HUD(int score, int vie);
 
         int getXLeftLimit() const;
         void setXLeftLimit(int value);
@@ -39,6 +40,9 @@ private :
         QGraphicsPixmapItem *background;
         int x;
         bool updateB;
+        int nbScore;
+        int nbVies;
+
 
         void fillPoints(Game_View_Entity *e1, Game_View_Entity *e2);
 
