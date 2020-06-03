@@ -42,6 +42,16 @@ class Entity : public Interface_Visitable
         }
 
 
+        inline bool getRefresh() const{
+            return refresh;
+        }
+        inline void setRefresh(bool value){
+            refresh = value;
+        }
+
+
+
+
         inline int getState() const{
             return state;
         }
@@ -89,6 +99,7 @@ class Entity : public Interface_Visitable
         int state;
         bool state_dead;
         bool move;
+        bool refresh;
 
 
 

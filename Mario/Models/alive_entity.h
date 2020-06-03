@@ -18,6 +18,9 @@ public:
     bool getMove_to_up() const;
     void setMove_to_up(bool value);
 
+    bool getRefresh() const;
+    void setRefresh(bool value);
+
 protected:
 
     Level * level;
@@ -25,6 +28,7 @@ protected:
     bool move_to_right;
     bool move_to_down;
     bool move_to_up;
+
 
 };
 

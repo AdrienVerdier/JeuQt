@@ -142,6 +142,7 @@ Game_View_Entity* Game_View_Factory::create(Tuyau *t, int x){
           QJsonObject tuyau = value.toObject();
 
           map[0].push_back(tuyau["0"].toArray()[0].toString());
+          map[0].push_back(tuyau["0"].toArray()[1].toString());
 
 
           Game_View_Entity *entity_view = new Game_View_Entity(map,x,t->getCoordY(),t->getState());

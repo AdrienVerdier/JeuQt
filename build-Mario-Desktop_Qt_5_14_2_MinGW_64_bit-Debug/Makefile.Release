@@ -326,6 +326,7 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Plante/plante3.png \
 		../Mario/images/Piece/piece.png \
 		../Mario/images/Tuyau/Tuyau.png \
+		../Mario/images/Tuyau/Tuyau2.png \
 		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/mysteryblock2.jpg \
 		../Mario/images/Blocks/mysteryblock1.jpg \
@@ -426,6 +427,7 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Plante/plante3.png \
 		../Mario/images/Piece/piece.png \
 		../Mario/images/Tuyau/Tuyau.png \
+		../Mario/images/Tuyau/Tuyau2.png \
 		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/mysteryblock2.jpg \
 		../Mario/images/Blocks/mysteryblock1.jpg \
@@ -526,6 +528,7 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Plante/plante3.png \
 		../Mario/images/Piece/piece.png \
 		../Mario/images/Tuyau/Tuyau.png \
+		../Mario/images/Tuyau/Tuyau2.png \
 		../Mario/images/Niveau/Niv1.png \
 		../Mario/images/Blocks/mysteryblock2.jpg \
 		../Mario/images/Blocks/mysteryblock1.jpg \
@@ -2736,9 +2739,76 @@ release/trampoline.o: ../Mario/Models/trampoline.cpp ../Mario/Models/trampoline.
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\trampoline.o ..\Mario\Models\trampoline.cpp
 
 release/tuyau.o: ../Mario/Models/tuyau.cpp ../Mario/Models/tuyau.h \
-		../Mario/Models/static_entity.h \
+		../Mario/Models/alive_entity.h \
 		../Mario/Models/entity.h \
-		../Mario/Models/interface_visitable.h
+		../Mario/Models/interface_visitable.h \
+		../Mario/Models/level.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/QList \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qlist.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qglobal.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qconfig.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qtcore-config.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qprocessordetection.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qcompilerdetection.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qsysinfo.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qlogging.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qflags.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qatomic.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qbasicatomic.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qgenericatomic.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qatomic_msvc.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qglobalstatic.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qmutex.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qnumeric.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qversiontagging.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qiterator.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qrefcount.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qarraydata.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qhashfunctions.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qstring.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qchar.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qbytearray.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qnamespace.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qstringliteral.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qstringalgorithms.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qstringview.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qstringbuilder.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qpair.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qvector.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qpoint.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qbytearraylist.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qstringlist.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qregexp.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qstringmatcher.h \
+		../Mario/Models/mario.h \
+		../Mario/Tools/controls.h \
+		../Mario/Models/block.h \
+		../Mario/Models/static_entity.h \
+		../Mario/Models/goomba.h \
+		../Mario/Models/koopa.h \
+		../Mario/Models/piece.h \
+		../Mario/Models/plante.h \
+		../Mario/Models/flamme.h \
+		../Mario/Models/thwomp.h \
+		../Mario/Models/bulletbill.h \
+		../Mario/Models/billblaster.h \
+		../Mario/Models/smoke.h \
+		../Mario/Models/mysteryblock.h \
+		../Mario/Models/lifeup.h \
+		../Mario/Models/mushroom.h \
+		../Mario/Models/star.h \
+		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
+		../Mario/Models/spike.h \
+		../Mario/Models/carapace.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\tuyau.o ..\Mario\Models\tuyau.cpp
 
 release/controls.o: ../Mario/Tools/controls.cpp ../Mario/Tools/controls.h
@@ -2862,7 +2932,10 @@ release/game_over_view.o: ../Mario/Views/game_over_view.cpp ../Mario/Views/game_
 		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qgraphicsproxywidget.h \
 		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qgraphicswidget.h \
 		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qgraphicslayoutitem.h \
-		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h
+		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/QCoreApplication \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		E:/QT/5.14.2/mingw73_64/include/QtCore/qeventloop.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\game_over_view.o ..\Mario\Views\game_over_view.cpp
 
 release/game_view.o: ../Mario/Views/game_view.cpp ../Mario/Views/game_view.h \

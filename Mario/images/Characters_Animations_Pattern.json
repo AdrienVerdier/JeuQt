@@ -51,7 +51,7 @@
                 "1" : [":images/images/Koopa/Carapace1.png",":images/images/Koopa/Carapace2.png",":images/images/Koopa/Carapace3.png",":images/images/Koopa/Carapace4.png",":images/images/Koopa/Carapace5.png",":images/images/Koopa/Carapace4.png",":images/images/Koopa/Carapace3.png",":images/images/Koopa/Carapace2.png"]
         },
         "tuyau" :{
-                "0" : [":images/images/Tuyau/Tuyau.png"]
+                "0" : [":images/images/Tuyau/Tuyau.png",":images/images/Tuyau/Tuyau2.png"]
         },
         "flower" :{
                 "0" : [":images/images/powerup/flower.png"]
