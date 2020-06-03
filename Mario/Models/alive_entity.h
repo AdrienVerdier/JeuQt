@@ -15,6 +15,9 @@ public:
 
     void setLevel(Level *value);
 
+    bool getMove_to_up() const;
+    void setMove_to_up(bool value);
+
 protected:
 
     Level * level;

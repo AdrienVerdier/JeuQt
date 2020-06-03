@@ -294,7 +294,7 @@ void Mario::collisionSpec(thwomp *entity, int position)
     setContact_thwomp(true);
     switch (position) {
         case 0 :
-            if(getOn_ground() && getContact_thwomp()) state_dead = true;
+            if(getOn_ground() && getContact_thwomp() && !entity->getMove_to_up()) state_dead = true;
             this->move_to_up = false;
             break;
         case 1:
