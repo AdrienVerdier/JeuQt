@@ -12,10 +12,8 @@ plante::plante()
 
 void plante::collision(Entity *entity, int position)
 {
-    QString name = typeid(*entity).name();
-    if (name != "5Block") qInfo() << typeid(*entity).name();
     if (typeid (Mario).name() == typeid(*entity).name()) collisionSpec((Mario*) entity, position);
-
+    if (typeid (carapace).name() == typeid(*entity).name() && entity->getState() == 1) this->state_dead = true;
 }
 void plante::collisionSpec(Mario *entity, int position)
 {
