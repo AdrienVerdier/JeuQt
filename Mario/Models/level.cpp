@@ -181,6 +181,14 @@ Level::Level()
                 alive_entity_list->last()->setState(0);
 
             }
+            if(clrCurrent.red() == 136 && clrCurrent.green()== 0 &&clrCurrent.blue()== 21){
+                alive_entity_list->push_back(new Trampoline());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-10);
+                alive_entity_list->last()->setState(0);
+
+            }
         }
 
 

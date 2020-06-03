@@ -45,6 +45,7 @@ SOURCES += \
     Models/star.cpp \
     Models/static_entity.cpp \
     Models/thwomp.cpp \
+    Models/trampoline.cpp \
     Models/tuyau.cpp \
     Tools/controls.cpp \
     Views/game_view.cpp \
@@ -82,6 +83,7 @@ HEADERS += \
     Models/star.h \
     Models/static_entity.h \
     Models/thwomp.h \
+    Models/trampoline.h \
     Models/tuyau.h \
     Tools/controls.h \
     Views/game_view.h \

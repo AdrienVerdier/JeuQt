@@ -18,6 +18,7 @@
 #include "../Models/mushroom.h"
 #include "../Models/flower.h"
 #include "../Models/chateau.h"
+#include "../Models/trampoline.h"
 #include "game_view_entity.h"
 #include <QFile>
 #include <QJsonDocument>
@@ -49,6 +50,7 @@ public:
     Game_View_Entity* create(lifeup *t, int x);
     Game_View_Entity* create(flower *t, int x);
     Game_View_Entity* create(Chateau *c, int x);
+    Game_View_Entity* create(Trampoline *t, int x);
 };
 
 #endif // GAME_VIEW_FACTORY_H
