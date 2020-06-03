@@ -62,5 +62,8 @@
         },
         "star" :{
                 "0" : [":images/images/powerup/star.png"]
+        },
+        "chateau" :{
+                "0" : [":images/images/Chateau/Chateau.png"]
         }
 }

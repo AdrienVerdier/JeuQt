@@ -24,6 +24,7 @@ SOURCES += \
     Models/billblaster.cpp \
     Models/block.cpp \
     Models/bulletbill.cpp \
+    Models/chateau.cpp \
     Models/entity.cpp \
     Models/flamme.cpp \
     Models/flower.cpp \
@@ -60,6 +61,7 @@ HEADERS += \
     Models/billblaster.h \
     Models/block.h \
     Models/bulletbill.h \
+    Models/chateau.h \
     Models/entity.h \
     Models/flamme.h \
     Models/flower.h \
