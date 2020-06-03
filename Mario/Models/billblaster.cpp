@@ -18,7 +18,7 @@ void billblaster::collision(Entity *entity, int position)
 
 void billblaster::update()
 {
-    if (cpt_frame == 1000){
+    if (cpt_frame == 60){
         smoke * s = new smoke();
         level->get_alive_entity_list()->push_back(s);
         s->setDisplay(true);

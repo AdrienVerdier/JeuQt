@@ -24,4 +24,36 @@ void plante::collisionSpec(Mario *entity, int position)
 void plante::update()
 {
     Alive_Entity::update();
+    if(tuyau){
+        if(getCpt_frame()<10){
+            this->coord_y -= 5;
+        }
+        if(getCpt_frame()>20){
+            this->coord_y += 5;
+        }
+        if(getCpt_frame() == 30){
+            state_dead = true;
+        }
+        setCpt_frame(getCpt_frame()+1);
+    }
+}
+
+bool plante::getTuyau() const
+{
+    return tuyau;
+}
+
+void plante::setTuyau(bool value)
+{
+    tuyau = value;
+}
+
+int plante::getCpt_frame() const
+{
+    return cpt_frame;
+}
+
+void plante::setCpt_frame(int value)
+{
+    cpt_frame = value;
 }

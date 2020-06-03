@@ -1,14 +1,16 @@
 #ifndef TUYAU_H
 #define TUYAU_H
 
-#include "static_entity.h"
+#include "alive_entity.h"
 
-class Tuyau : public Static_Entity
+class Tuyau : public Alive_Entity
 {
 public:
     Tuyau();
     void collision(Entity* entity, int position)  override;
     void update() override;
+private:
+    int cpt_frame;
 };
 
 #endif // TUYAU_H
