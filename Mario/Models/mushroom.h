@@ -12,6 +12,9 @@ public:
     void collision(Entity* entity, int position)  override;
     void collisionSpec(Mario* entity, int position);
     void update() override;
+
+private:
+    int cpt_frame;
 };
 
 #endif // MUSHROOM_H

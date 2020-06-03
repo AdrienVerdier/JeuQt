@@ -1,9 +1,9 @@
 #ifndef MYSTERYBLOCK_H
 #define MYSTERYBLOCK_H
 
-#include "static_entity.h"
+#include "alive_entity.h"
 
-class mysteryblock  : public Static_Entity
+class mysteryblock  : public Alive_Entity
 {
 public:
     mysteryblock();

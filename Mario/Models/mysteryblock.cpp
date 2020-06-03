@@ -1,5 +1,6 @@
 #include "mysteryblock.h"
 #include "mario.h"
+#include "level.h"
 #include <typeinfo>
 #include <QDebug>
 mysteryblock::mysteryblock()
@@ -30,6 +31,13 @@ void mysteryblock::update()
         setMove_to_down(true);
         setCompteur(0);
         setState(1);
+        mushroom *c= new mushroom();
+        level->get_alive_entity_list()->push_back(c);
+        c->setDisplay(true);
+        c->setCoordX(coord_x);
+        c->setCoordY(coord_y-4);
+        c->setState(0);
+
     }
     if(getMove_to_down() && getCompteur() < 5){
         setCompteur(getCompteur()+1);
