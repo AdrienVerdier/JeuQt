@@ -31,7 +31,7 @@ void mysteryblock::update()
         setMove_to_down(true);
         setCompteur(0);
         setState(1);
-        mushroom *c= new mushroom();
+        flower *c= new flower();
         level->get_alive_entity_list()->push_back(c);
         c->setDisplay(true);
         c->setCoordX(coord_x);

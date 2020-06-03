@@ -2,16 +2,14 @@
 #define FLOWER_H
 
 
-#include "alive_entity.h"
+#include "mushroom.h"
 
 class Mario;
-class flower : public Alive_Entity
+class flower : public mushroom
 {
 public:
     flower();
-    void collision(Entity* entity, int position)  override;
-    void collisionSpec(Mario* entity, int position);
-    void update() override;
+
 };
 
 #endif // FLOWER_H

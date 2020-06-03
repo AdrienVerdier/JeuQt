@@ -2,16 +2,14 @@
 #define LIFEUP_H
 
 
-#include "alive_entity.h"
+#include "mushroom.h"
 
 class Mario;
-class lifeup : public Alive_Entity
+class lifeup : public mushroom
 {
 public:
     lifeup();
-    void collision(Entity* entity, int position)  override;
-    void collisionSpec(Mario* entity, int position);
-    void update() override;
+
 };
 
 #endif // LIFEUP_H
