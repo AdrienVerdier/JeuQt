@@ -23,7 +23,7 @@
 #include "Models/trampoline.h"
 #include "Models/spike.h"
 #include "Models/carapace.h"
-
+#include <QMediaPlayer>
 class Mario : public Alive_Entity
 {
 public:
@@ -78,6 +78,8 @@ private:
     bool contact_trampoline=false;
     bool invincible = false;
     int cptinvincible = 0;
+    QMediaPlayer * jump_sound;
+    QMediaPlayer * background_sound;
 };
 
 #endif // MARIO_H

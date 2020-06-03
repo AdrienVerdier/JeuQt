@@ -1,12 +1,21 @@
 #include "mario.h"
 #include <typeinfo>
 #include <QDebug>
+#include <QSound>
+#include <QMediaPlayer>
+#include <QSoundEffect>
 Mario::Mario()
 {
     cptjump = 0;
     jump = false;
     setOn_ground(false);
     setContact_thwomp(false);
+    jump_sound = new QMediaPlayer();
+    jump_sound->setMedia(QUrl("qrc:/son/son/mario_jump.mp3"));
+    jump_sound->setVolume(30);
+    background_sound = new QMediaPlayer();
+    background_sound->setMedia(QUrl("qrc:/son/son/background.mp3"));
+    background_sound->setVolume(10);
 }
 
 void Mario::setInputs(Controls *c)
@@ -36,10 +45,13 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (star).name() == typeid(*entity).name()) collisionSpec((star*)entity, position);
     if (typeid (flower).name() == typeid(*entity).name()) collisionSpec((flower*)entity, position);
     if (typeid (carapace).name() == typeid(*entity).name()) collisionSpec((carapace*)entity, position);
+    if(state_dead == true) background_sound->stop();
 }
 
 void Mario::update()
 {
+    qInfo() << background_sound->state();
+    if(background_sound->state() == QMediaPlayer::StoppedState)background_sound->play();
     if(input->right && move_to_right) {
         state = 1;
         coord_x+= 5;
@@ -62,6 +74,7 @@ void Mario::update()
 
     if(input->up && cptjump ==0 && !move_to_down){
         jump = true;
+        if(jump_sound->state() != QMediaPlayer::PlayingState)jump_sound->play();
     }
 
     if(jump){
@@ -105,6 +118,7 @@ void Mario::update()
             setInvincible(false);
         }
     }
+    if(state_dead == true) background_sound->stop();
 }
 
 void Mario::collisionSpec(Block *entity, int position)

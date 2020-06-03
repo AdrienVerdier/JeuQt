@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/son">
-        <file>son/musique-mario-bros-officielle.mp3</file>
+        <file>son/background.mp3</file>
+        <file>son/mario_jump.mp3</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/Mario/Idle.png</file>
