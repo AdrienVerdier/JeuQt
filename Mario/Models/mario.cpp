@@ -50,7 +50,6 @@ void Mario::collision(Entity *entity, int position)
 
 void Mario::update()
 {
-    qInfo() << background_sound->state();
     if(background_sound->state() == QMediaPlayer::StoppedState)background_sound->play();
     if(!mort){
 
@@ -77,6 +76,7 @@ void Mario::update()
 
         if(input->up && cptjump ==0 && !move_to_down){
             jump = true;
+            if(jump_sound->state() != QMediaPlayer::PlayingState)jump_sound->play();
         }
 
         if(jump){
@@ -135,6 +135,7 @@ void Mario::update()
 
 
     }
+    if(state_dead == true) background_sound->stop();
 }
 
 void Mario::collisionSpec(Block *entity, int position)
