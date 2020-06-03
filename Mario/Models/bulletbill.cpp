@@ -26,6 +26,7 @@ void bulletbill::collision(Entity *entity, int position)
 
 void bulletbill::collisionSpec(Mario *entity, int position)
 {
+    if(entity->getInvincible()) this->state_dead = true;
     if(position == 0) {
         this->state_dead = true;
     }

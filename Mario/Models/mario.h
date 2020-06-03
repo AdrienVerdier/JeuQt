@@ -44,6 +44,10 @@ public:
     void collisionSpec(Chateau* entity, int position);
     void collisionSpec(Trampoline* entity, int position);
     void collisionSpec(spike* entity, int position);
+    void collisionSpec(mushroom* entity, int position);
+    void collisionSpec(lifeup* entity, int position);
+    void collisionSpec(star* entity, int position);
+    void collisionSpec(flower* entity, int position);
 
     int getCptjump() const;
 
@@ -57,6 +61,12 @@ public:
     bool getContact_trampoline() const;
     void setContact_trampoline(bool value);
 
+    bool getInvincible() const;
+    void setInvincible(bool value);
+
+    int getCptinvincible() const;
+    void setCptinvincible(int value);
+
 private:
     Controls *input;
     int cptjump;
@@ -64,6 +74,8 @@ private:
     bool on_ground;
     bool contact_thwomp;
     bool contact_trampoline=false;
+    bool invincible = false;
+    int cptinvincible = 0;
 };
 
 #endif // MARIO_H
