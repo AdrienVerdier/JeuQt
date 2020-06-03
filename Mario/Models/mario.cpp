@@ -35,6 +35,7 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (lifeup).name() == typeid(*entity).name()) collisionSpec((lifeup*)entity, position);
     if (typeid (star).name() == typeid(*entity).name()) collisionSpec((star*)entity, position);
     if (typeid (flower).name() == typeid(*entity).name()) collisionSpec((flower*)entity, position);
+    if (typeid (carapace).name() == typeid(*entity).name()) collisionSpec((carapace*)entity, position);
 }
 
 void Mario::update()
@@ -253,7 +254,29 @@ void Mario::collisionSpec(bulletbill *entity, int position)
 void Mario::collisionSpec(Koopa *entity, int position)
 {
     move_to_down = false;
-    if(entity->getState() != 2){
+    switch (position) {
+        case 0 :
+            if(!getInvincible()) state_dead = true;
+            break;
+        case 1:
+            if(!getInvincible()) state_dead = true;
+            this->move_to_right = false;
+            break;
+        case 2:
+            jump= true;
+            cptjump=0;
+            break;
+        case 3:
+            if(!getInvincible()) state_dead = true;
+            this->move_to_left = false;
+            break;
+    }
+}
+
+void Mario::collisionSpec(carapace *entity, int position)
+{
+    move_to_down = false;
+    if(entity->getState()==1 && entity->getCompteur() > 20){
         switch (position) {
             case 0 :
                 if(!getInvincible()) state_dead = true;

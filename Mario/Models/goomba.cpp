@@ -12,24 +12,26 @@ Goomba::Goomba()
 
 void Goomba::collision(Entity *entity, int position)
 {
-    QString name = typeid(*entity).name();
-    if (name != "5Block") qInfo() << typeid(*entity).name();
 
     if (typeid (Mario).name() == typeid(*entity).name()) collisionSpec((Mario*) entity, position);
 
-    if(position == 1){
-        move_to_left = true;
-        move_to_right = false;
-        state=0;
+    if (typeid (carapace).name() == typeid(*entity).name() && entity->getState() == 1) this->state_dead = true;
+    if (typeid (bulletbill).name() != typeid(*entity).name()) {
+        if(position == 1){
+            move_to_left = true;
+            move_to_right = false;
+            state=0;
+        }
+        if(position == 3){
+            move_to_left = false;
+            move_to_right = true;
+            state=1;
+        }
+        if(position == 2){
+            move_to_down = false;
+        }
     }
-    if(position == 3){
-        move_to_left = false;
-        move_to_right = true;
-        state=1;
-    }
-    if(position == 2){
-        move_to_down = false;
-    }
+
 }
 
 void Goomba::collisionSpec(Mario *entity, int position)

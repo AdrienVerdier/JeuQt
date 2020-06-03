@@ -22,6 +22,7 @@ bulletbill::bulletbill(bool left)
 void bulletbill::collision(Entity *entity, int position)
 {
     if (typeid (Mario).name() == typeid(*entity).name()) collisionSpec((Mario*) entity, position);
+    if (typeid (carapace).name() == typeid(*entity).name() && entity->getState() == 1) this->state_dead = true;
 }
 
 void bulletbill::collisionSpec(Mario *entity, int position)
@@ -35,8 +36,8 @@ void bulletbill::collisionSpec(Mario *entity, int position)
 void bulletbill::update()
 {
    Alive_Entity::update();
-   if(move_to_right) this->coord_x += 5;
-   if(move_to_left) this->coord_x -= 5;
+   if(move_to_right) this->coord_x += 3;
+   if(move_to_left) this->coord_x -= 3;
    if(!getLeft()){
         setState(1);
    }
