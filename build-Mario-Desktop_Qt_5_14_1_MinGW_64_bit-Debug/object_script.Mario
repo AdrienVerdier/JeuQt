@@ -26,6 +26,7 @@ smoke.o
 star.o
 static_entity.o
 thwomp.o
+trampoline.o
 tuyau.o
 controls.o
 game_view.o

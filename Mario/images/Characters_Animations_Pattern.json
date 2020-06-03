@@ -65,5 +65,8 @@
         },
         "chateau" :{
                 "0" : [":images/images/Chateau/Chateau.png"]
+        },
+        "trampoline" :{
+                "0" : [":images/images/Trampoline/Trampoline.png"]
         }
 }
