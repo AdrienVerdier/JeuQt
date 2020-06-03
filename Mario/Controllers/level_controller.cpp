@@ -40,7 +40,7 @@ void Level_Controller::select_display_element()
 
 
 
-    foreach(Entity* entity,*level->get_alive_entity_list()){
+    foreach(Alive_Entity* entity,*level->get_alive_entity_list()){
         float distance = entity->getDistanceOn_X(pos_centre);
         if(distance < 650 && distance > -650){
 

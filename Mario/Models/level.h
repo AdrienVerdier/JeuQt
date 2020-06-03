@@ -2,6 +2,7 @@
 #define LEVEL_H
 
 #include "entity.h"
+#include "alive_entity.h"
 #include <QList>
 #include "mario.h"
 #include "block.h"
@@ -11,7 +12,7 @@ class Level
 public:
     Level();
     QList<Entity*> * get_entity_list();
-    QList<Entity*> * get_alive_entity_list();
+    QList<Alive_Entity*> * get_alive_entity_list();
     Mario * getPlayer();
 
     inline int getScore() const{
@@ -35,7 +36,7 @@ public:
 private:
     Mario * player;
     QList<Entity*> * entity_list;
-     QList<Entity*> * alive_entity_list;
+     QList<Alive_Entity*> * alive_entity_list;
      int score;
      int nbVie;
 };

@@ -5,6 +5,8 @@ Alive_Entity::Alive_Entity()
     move = true;
 }
 
+
+
 void Alive_Entity::collision(Entity *entity, int position)
 {
 
@@ -20,4 +22,9 @@ void Alive_Entity::update()
 Alive_Entity::~Alive_Entity()
 {
 
+}
+
+void Alive_Entity::setLevel(Level *value)
+{
+    level = value;
 }

@@ -3,15 +3,21 @@
 
 #include "entity.h"
 
+class Level;
 class Alive_Entity : public Entity
 {
 public:
     Alive_Entity();
+
     void collision(Entity* entity, int position)  override;
     void update() override;
     ~Alive_Entity();
 
+    void setLevel(Level *value);
+
 protected:
+
+    Level * level;
     bool move_to_left;
     bool move_to_right;
     bool move_to_down;

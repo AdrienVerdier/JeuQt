@@ -12,7 +12,7 @@ Level::Level()
     nbVie = 3;
 
     entity_list = new QList<Entity*>();
-    alive_entity_list = new QList<Entity*>();
+    alive_entity_list = new QList<Alive_Entity*>();
 
     /*\     AJOUTS TEMPORAIRES    \*/
 
@@ -84,6 +84,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
             if(clrCurrent.red() == 255 && clrCurrent.green()==242 &&clrCurrent.blue()==0){
@@ -92,6 +93,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-10);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
             }
             if(clrCurrent.red() == 34 && clrCurrent.green()==177 &&clrCurrent.blue()==76){
                 alive_entity_list->push_back(new Koopa());
@@ -99,6 +101,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
 
@@ -108,6 +111,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
 
@@ -117,6 +121,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
 
@@ -126,6 +131,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
             if(clrCurrent.red() == 181 && clrCurrent.green()==230 &&clrCurrent.blue()==29){
@@ -134,6 +140,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
             if(clrCurrent.red() == 163 && clrCurrent.green()==73 &&clrCurrent.blue()==164){
@@ -142,6 +149,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
 
@@ -151,6 +159,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
             if(clrCurrent.red() == 255 && clrCurrent.green()==174 &&clrCurrent.blue()==201){
@@ -159,6 +168,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
 
@@ -168,6 +178,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
 
@@ -177,6 +188,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
 
@@ -186,6 +198,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
 
@@ -195,6 +208,7 @@ Level::Level()
                 alive_entity_list->last()->setCoordX(col-10);
                 alive_entity_list->last()->setCoordY(row-14);
                 alive_entity_list->last()->setState(0);
+                alive_entity_list->last()->setLevel(this);
 
             }
         }
@@ -205,7 +219,7 @@ QList<Entity *> *Level::get_entity_list()
     return entity_list;
 }
 
-QList<Entity *> *Level::get_alive_entity_list()
+QList<Alive_Entity *> *Level::get_alive_entity_list()
 {
     return alive_entity_list;
 }
