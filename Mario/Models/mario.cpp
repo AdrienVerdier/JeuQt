@@ -52,73 +52,89 @@ void Mario::update()
 {
     qInfo() << background_sound->state();
     if(background_sound->state() == QMediaPlayer::StoppedState)background_sound->play();
-    if(input->right && move_to_right) {
-        state = 1;
-        coord_x+= 5;
-    }
-    if(input->left && move_to_left) {
-        state = 4;
-        coord_x-= 5;
-    }
-    if(!input->left && !input->right ) state= 0;
+    if(!mort){
 
-    if(move_to_down) {
-        coord_y+=5;
-        if(coord_y>750){
-            state_dead = true;
+        if(input->right && move_to_right) {
+            state = 1;
+            coord_x+= 5;
+        }
+        if(input->left && move_to_left) {
+            state = 4;
+            coord_x-= 5;
+        }
+        if(!input->left && !input->right ) state= 0;
+
+        if(move_to_down) {
+            coord_y+=5;
+            if(coord_y>750){
+               state_dead = true;
+
+            }
+
+
         }
 
 
-    }
+        if(input->up && cptjump ==0 && !move_to_down){
+            jump = true;
+        }
 
+        if(jump){
 
-    if(input->up && cptjump ==0 && !move_to_down){
-        jump = true;
-        if(jump_sound->state() != QMediaPlayer::PlayingState)jump_sound->play();
-    }
-
-    if(jump){
-
-        if(move_to_up){
-           if(input->right )state = 3;
-           if(input->left )state = 5;
-           this->move_to_down = false;
-           coord_y-=5;
-           if(contact_trampoline)coord_y-=5;
-           cptjump++;
-           if(cptjump <= 2){
-               setOn_ground(false);
-           }
-           if(cptjump == 30){
-               jump = false;
-               contact_trampoline = false;
-           }
+            if(move_to_up){
+               if(input->right )state = 3;
+               if(input->left )state = 5;
+               this->move_to_down = false;
+               coord_y-=5;
+               if(contact_trampoline)coord_y-=5;
+               cptjump++;
+               if(cptjump <= 2){
+                   setOn_ground(false);
+               }
+               if(cptjump == 30){
+                   jump = false;
+                   contact_trampoline = false;
+               }
+            }
+            else{
+                cptjump = 0;
+                jump = false;
+            }
         }
         else{
-            cptjump = 0;
-            jump = false;
+            if(!move_to_down) cptjump=0;
+            if(cptjump>0) cptjump--;
         }
+
+        this->move_to_right = true;
+        this->move_to_down = true;
+        if(jump) move_to_down=false;
+        this->move_to_left = true;
+        this->move_to_up = true;
+
+        if(invincible){
+            if(getCptinvincible()<100){
+                setCptinvincible(getCptinvincible()+1);
+            }
+            if(getCptinvincible()==100){
+                setInvincible(false);
+            }
+        }
+
     }
     else{
-        if(!move_to_down) cptjump=0;
-        if(cptjump>0) cptjump--;
-    }
+        state = 6;
+        if (cptmort >=60 )   coord_y+=5;
 
-    this->move_to_right = true;
-    this->move_to_down = true;
-    if(jump) move_to_down=false;
-    this->move_to_left = true;
-    this->move_to_up = true;
+        if(coord_y>750){
+           state_dead = true;
 
-    if(invincible){
-        if(getCptinvincible()<100){
-            setCptinvincible(getCptinvincible()+1);
+
         }
-        if(getCptinvincible()==100){
-            setInvincible(false);
-        }
+        cptmort ++;
+
+
     }
-    if(state_dead == true) background_sound->stop();
 }
 
 void Mario::collisionSpec(Block *entity, int position)
@@ -227,10 +243,12 @@ void Mario::collisionSpec(Goomba *entity, int position)
     move_to_down = false;
     switch (position) {
         case 0 :
-            if(!getInvincible()) state_dead = true;
+            if(!getInvincible())mort = true;
+
             break;
         case 1:
-        if(!getInvincible()) state_dead = true;
+        if(!getInvincible())mort = true;
+
             this->move_to_right = false;
             break;
         case 2:
@@ -238,7 +256,7 @@ void Mario::collisionSpec(Goomba *entity, int position)
         cptjump=0;
         break;
         case 3:
-            if(!getInvincible()) state_dead = true;
+            if(!getInvincible()) mort = true;
             this->move_to_left = false;
             break;
     }
@@ -248,10 +266,10 @@ void Mario::collisionSpec(bulletbill *entity, int position)
 {
     switch (position) {
         case 0 :
-            if(!getInvincible()) state_dead = true;
+            if(!getInvincible()) mort = true;
             break;
         case 1:
-            if(!getInvincible()) state_dead = true;
+            if(!getInvincible())mort = true;
             this->move_to_right = false;
             break;
         case 2:
@@ -259,7 +277,7 @@ void Mario::collisionSpec(bulletbill *entity, int position)
             cptjump=0;
             break;
         case 3:
-            if(!getInvincible()) state_dead = true;
+            if(!getInvincible()) mort = true;
             this->move_to_left = false;
             break;
     }
@@ -270,10 +288,10 @@ void Mario::collisionSpec(Koopa *entity, int position)
     move_to_down = false;
     switch (position) {
         case 0 :
-            if(!getInvincible()) state_dead = true;
+            if(!getInvincible()) mort = true;
             break;
         case 1:
-            if(!getInvincible()) state_dead = true;
+            if(!getInvincible()) mort = true;
             this->move_to_right = false;
             break;
         case 2:
@@ -281,7 +299,7 @@ void Mario::collisionSpec(Koopa *entity, int position)
             cptjump=0;
             break;
         case 3:
-            if(!getInvincible()) state_dead = true;
+            if(!getInvincible()) mort = true;
             this->move_to_left = false;
             break;
     }
@@ -293,10 +311,10 @@ void Mario::collisionSpec(carapace *entity, int position)
     if(entity->getState()==1 && entity->getCompteur() > 20){
         switch (position) {
             case 0 :
-                if(!getInvincible()) state_dead = true;
+                if(!getInvincible()) mort = true;
                 break;
             case 1:
-                if(!getInvincible()) state_dead = true;
+                if(!getInvincible())mort = true;
                 this->move_to_right = false;
                 break;
             case 2:
@@ -304,7 +322,7 @@ void Mario::collisionSpec(carapace *entity, int position)
                 cptjump=0;
                 break;
             case 3:
-                if(!getInvincible()) state_dead = true;
+                if(!getInvincible()) mort = true;
                 this->move_to_left = false;
                 break;
         }
@@ -313,17 +331,17 @@ void Mario::collisionSpec(carapace *entity, int position)
 
 void Mario::collisionSpec(plante *entity, int position)
 {
-    if(!getInvincible()) state_dead = true;
+    if(!getInvincible()) mort = true;
 }
 
 void Mario::collisionSpec(flamme *entity, int position)
 {
-    if(!getInvincible()) state_dead = true;
+    if(!getInvincible()) mort = true;
 }
 
 void Mario::collisionSpec(spike *entity, int position)
 {
-    if(!getInvincible()) state_dead = true;
+    if(!getInvincible()) mort = true;
 }
 
 void Mario::collisionSpec(thwomp *entity, int position)
@@ -331,7 +349,7 @@ void Mario::collisionSpec(thwomp *entity, int position)
     setContact_thwomp(true);
     switch (position) {
         case 0 :
-            if(getOn_ground() && getContact_thwomp() && !entity->getMove_to_up()) state_dead = true;
+            if(getOn_ground() && getContact_thwomp() && !entity->getMove_to_up()) mort = true;
             this->move_to_up = false;
             break;
         case 1:

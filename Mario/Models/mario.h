@@ -72,11 +72,13 @@ public:
 private:
     Controls *input;
     int cptjump;
+    int cptmort =0;
     bool jump;
     bool on_ground;
     bool contact_thwomp;
     bool contact_trampoline=false;
     bool invincible = false;
+    bool mort = false;
     int cptinvincible = 0;
     QMediaPlayer * jump_sound;
     QMediaPlayer * background_sound;

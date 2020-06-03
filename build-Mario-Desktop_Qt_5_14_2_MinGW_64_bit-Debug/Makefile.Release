@@ -342,6 +342,7 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Mario/Walk6.png \
 		../Mario/images/Mario/Walk5Miroir.png \
 		../Mario/images/Mario/Walk4Miroir.png \
+		../Mario/images/Mario/Dead.png \
 		../Mario/images/Mario/Walk1.png \
 		../Mario/images/Mario/Walk3Miroir.png \
 		../Mario/images/Mario/Walk5.png \
@@ -443,6 +444,7 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Mario/Walk6.png \
 		../Mario/images/Mario/Walk5Miroir.png \
 		../Mario/images/Mario/Walk4Miroir.png \
+		../Mario/images/Mario/Dead.png \
 		../Mario/images/Mario/Walk1.png \
 		../Mario/images/Mario/Walk3Miroir.png \
 		../Mario/images/Mario/Walk5.png \
@@ -544,6 +546,7 @@ release/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Mario/Walk6.png \
 		../Mario/images/Mario/Walk5Miroir.png \
 		../Mario/images/Mario/Walk4Miroir.png \
+		../Mario/images/Mario/Dead.png \
 		../Mario/images/Mario/Walk1.png \
 		../Mario/images/Mario/Walk3Miroir.png \
 		../Mario/images/Mario/Walk5.png \

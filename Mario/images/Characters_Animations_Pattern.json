@@ -5,7 +5,8 @@
 		 "2" : [":images/images/Mario/Shoot.png"],
                  "3" : [":images/images/Mario/Jump.png"],
                  "4" : [":images/images/Mario/Walk1Miroir.png",":images/images/Mario/Walk2Miroir.png",":images/images/Mario/Walk3Miroir.png",":images/images/Mario/Walk4Miroir.png",":images/images/Mario/Walk5Miroir.png",":images/images/Mario/Walk6Miroir.png"],
-                 "5" : [":images/images/Mario/JumpMiroir.png"]
+                 "5" : [":images/images/Mario/JumpMiroir.png"],
+                 "6" : [":images/images/Mario/Dead.png"]
 	},
 	"block" :{
 		"0" : [":images/images/Blocks/Block.png"]
