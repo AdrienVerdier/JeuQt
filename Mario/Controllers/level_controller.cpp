@@ -141,8 +141,9 @@ void Level_Controller::update_view()
 }
 
 void Level_Controller::NewLevel(QString path){
-    // Init Level
+
     level = new Level();
+     game_view->reset();
     level->getPlayer()->setInputs(game_view->get_Keys());
     pause = false;
 
@@ -161,9 +162,8 @@ void Level_Controller::update_lvl()
             }
             else{
                 level->SetNbVie(level->getNbVie()-1);
-                level->getPlayer()->setDead(false);
-                level->getPlayer()->setCoordX(level->getCoord_x_cp());
-                level->getPlayer()->setCoordY(level->getCoord_y_cp());
+                NewLevel("");
+                game_view->reset();
             }
         }
 
