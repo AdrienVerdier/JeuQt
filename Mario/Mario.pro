@@ -49,6 +49,7 @@ SOURCES += \
     Models/trampoline.cpp \
     Models/tuyau.cpp \
     Tools/controls.cpp \
+    Views/game_over_view.cpp \
     Views/game_view.cpp \
     Views/game_view_entity.cpp \
     Views/game_view_factory.cpp \
@@ -88,6 +89,7 @@ HEADERS += \
     Models/trampoline.h \
     Models/tuyau.h \
     Tools/controls.h \
+    Views/game_over_view.h \
     Views/game_view.h \
     Views/game_view_entity.h \
     Views/game_view_factory.h \

@@ -33,12 +33,20 @@ public:
 
 
 
+    int getCoord_x_cp() const;
+    void setCoord_x_cp(int value);
+
+    int getCoord_y_cp() const;
+    void setCoord_y_cp(int value);
+
 private:
     Mario * player;
     QList<Entity*> * entity_list;
-     QList<Alive_Entity*> * alive_entity_list;
-     int score;
-     int nbVie;
+    QList<Alive_Entity*> * alive_entity_list;
+    int score;
+    int nbVie;
+    int coord_x_cp;
+    int coord_y_cp;
 };
 
 #endif // LEVEL_H

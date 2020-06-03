@@ -49,6 +49,10 @@ class Entity : public Interface_Visitable
             state = value;
         }
 
+        inline void setDead(bool value){
+            state_dead = value;
+        }
+
 
         inline int getDead() const{
             return state_dead;

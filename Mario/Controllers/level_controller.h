@@ -7,21 +7,25 @@
 
 
 class Game_View;
+class Global_Views_Controller;
 class Level_Controller :QObject
 {
     Q_OBJECT
 public:
-    Level_Controller();
+    Level_Controller( Global_Views_Controller *p=0);
     Game_View * getScene();
     void select_display_element();
+    void NewLevel(QString path);
 
 private:
+    Global_Views_Controller *pere;
     bool reset;
     Game_View *game_view;
     Level * level;
     QList<Entity*> current_entity_list;// liste d'entity "courante" --> entity ayant un state à 1 et celles étant passé à 0
     QTimer *m_timer;
     QMap<Entity*, QMap<Entity*,int>> collision_List;
+    bool pause;
 
     void update_view();
 

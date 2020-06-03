@@ -30,6 +30,7 @@ release/thwomp.o
 release/trampoline.o
 release/tuyau.o
 release/controls.o
+release/game_over_view.o
 release/game_view.o
 release/game_view_entity.o
 release/game_view_factory.o

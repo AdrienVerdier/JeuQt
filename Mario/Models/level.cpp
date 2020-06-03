@@ -22,6 +22,8 @@ Level::Level()
     m->setCoordY(2);
     m->setState(1);
     player = m;
+    coord_x_cp = 0;
+    coord_y_cp = 2;
 
     QImage level_img;
     level_img.load(":images/images/Niveau/Niv1.png");
@@ -228,4 +230,24 @@ QList<Alive_Entity *> *Level::get_alive_entity_list()
 Mario *Level::getPlayer()
 {
   return player;
+}
+
+int Level::getCoord_x_cp() const
+{
+    return coord_x_cp;
+}
+
+void Level::setCoord_x_cp(int value)
+{
+    coord_x_cp = value;
+}
+
+int Level::getCoord_y_cp() const
+{
+    return coord_y_cp;
+}
+
+void Level::setCoord_y_cp(int value)
+{
+    coord_y_cp = value;
 }
