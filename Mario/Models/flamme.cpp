@@ -11,6 +11,7 @@ flamme::flamme()
 
 void flamme::collision(Entity *entity, int position)
 {
+
     QString name = typeid(*entity).name();
     if (name != "5Block") qInfo() << typeid(*entity).name();
 
@@ -18,5 +19,6 @@ void flamme::collision(Entity *entity, int position)
 
 void flamme::update()
 {
+    Alive_Entity::update();
 
 }

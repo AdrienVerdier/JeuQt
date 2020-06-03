@@ -28,12 +28,12 @@ void bulletbill::collisionSpec(Mario *entity, int position)
 {
     if(position == 0) {
         this->state_dead = true;
-        this->display = false;
     }
 }
 
 void bulletbill::update()
 {
+   Alive_Entity::update();
    if(move_to_right) this->coord_x += 5;
    if(move_to_left) this->coord_x -= 5;
    if(!getLeft()){

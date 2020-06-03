@@ -36,13 +36,13 @@ void Goomba::collisionSpec(Mario *entity, int position)
 {
     if(position == 0) {
         this->state_dead = true;
-        this->display = false;
     } //TODO : le faire mourir
        qInfo() << "collision";
 }
 
 void Goomba::update()
 {
+   Alive_Entity::update();
    if(move_to_right && !move_to_down) this->coord_x += 1;
    if(move_to_left && !move_to_down) this->coord_x -= 1;
    if(move_to_down) this->coord_y += 5;

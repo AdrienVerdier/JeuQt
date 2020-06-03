@@ -3,6 +3,11 @@
 #include "../Models/mario.h"
 #include "../Models/goomba.h"
 #include "../Models/piece.h"
+#include "../Models/lifeup.h"
+#include "../Models/star.h"
+#include "../Models/mushroom.h"
+#include "../Models/flower.h"
+
 #include<QDebug>
 #include <QRectF>
 

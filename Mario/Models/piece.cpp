@@ -20,24 +20,25 @@ void Piece::collisionSpec(Mario *entity, int position)
 {
     if(position == 0) {
         this->state_dead = true;
-        this->display = false;
+
     }
     if(position == 1) {
         this->state_dead = true;
-        this->display = false;
+
     }
     if(position == 2) {
         this->state_dead = true;
-        this->display = false;
+
     }
     if(position == 3) {
         this->state_dead = true;
-        this->display = false;
+
     }
     qInfo() << "collision";
 }
 
 void Piece::update()
 {
+    //Alive_Entity::update();
 
 }

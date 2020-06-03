@@ -16,6 +16,7 @@ class Entity : public Interface_Visitable
         Entity(int coord_x ,int coord_y):coord_x(coord_x),coord_y(coord_y){ collision_active = true;}
 
         inline int getDistanceOn_X(Entity* entity){return entity->coord_x - this->coord_x;}
+        inline int getDistanceOn_X(int x){return x - this->coord_x;}
         inline int getDistanceOn_Y(Entity* entity){return entity->coord_y - this->coord_y;}
 
         inline bool getCollision() const{

@@ -20,10 +20,10 @@ void flower::collision(Entity *entity, int position)
 void flower::collisionSpec(Mario *entity, int position)
 {
     this->state_dead = true;
-    this->display = false;
 }
 
 void flower::update()
 {
+    Alive_Entity::update();
 
 }

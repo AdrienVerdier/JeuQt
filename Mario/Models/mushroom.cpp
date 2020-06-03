@@ -27,11 +27,11 @@ void mushroom::collision(Entity *entity, int position)
 void mushroom::collisionSpec(Mario *entity, int position)
 {
     this->state_dead = true;
-    this->display = false;
 }
 
 void mushroom::update()
 {
+    Alive_Entity::update();
     if(move_to_right && !move_to_down) this->coord_x += 1;
     if(move_to_left && !move_to_down) this->coord_x -= 1;
 }

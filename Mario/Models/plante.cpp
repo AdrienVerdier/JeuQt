@@ -18,5 +18,5 @@ void plante::collision(Entity *entity, int position)
 
 void plante::update()
 {
-
+    Alive_Entity::update();
 }

@@ -29,24 +29,31 @@ Game_View *Level_Controller::getScene()
 
 void Level_Controller::select_display_element()
 {
-    Entity* point_centre = level->getPlayer();
+
+    int pos_centre = level->getPlayer()->getCoordX();
+    if(pos_centre<640)pos_centre=640;
     current_entity_list.clear();
 
 
     current_entity_list.push_back(level->getPlayer());
 
 
+
     foreach(Entity* entity,*level->get_alive_entity_list()){
-        float distance = entity->getDistanceOn_X(point_centre);
-        if(distance < 500 && distance > -500){
+        float distance = entity->getDistanceOn_X(pos_centre);
+        if(distance < 650 && distance > -650){
 
             if(!entity->getDead()){
                 entity->setDisplay(true);
                 current_entity_list.push_back(entity);
             }
-            else{
+            else if(entity->getDisplay()){
                 entity->setDisplay(false);
                 current_entity_list.push_back(entity);
+            }
+            else{
+                level->get_alive_entity_list()->removeOne(entity);
+                //delete entity;
             }
 
         }
@@ -56,11 +63,15 @@ void Level_Controller::select_display_element()
                 entity->setDisplay(false);
                 current_entity_list.push_back(entity);
            }
+           else if(entity->getDead()){
+               level->get_alive_entity_list()->removeOne(entity);
+              // delete entity;
+           }
         }
     }
     foreach(Entity* entity,*level->get_entity_list()){
-        float distance = entity->getDistanceOn_X(point_centre);
-        if(distance < 600 && distance > -600){
+        float distance = entity->getDistanceOn_X(pos_centre);
+        if(distance < 700 && distance > -700){
 
             if(!entity->getDead()){
                 entity->setDisplay(true);

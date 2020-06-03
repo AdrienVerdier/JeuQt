@@ -44,7 +44,6 @@ void Koopa::collisionSpec(Mario *entity, int position)
 {
     if(state == 2 && position == 0){
         this->state_dead = true;
-        this->display = false;
     }
     if(position == 0) {
         state=2;
@@ -72,6 +71,7 @@ void Koopa::collisionSpec(Mario *entity, int position)
 
 void Koopa::update()
 {
+   Alive_Entity::update();
    if(move_to_right && !move_to_down) this->coord_x += 1;
    if(move_to_left && !move_to_down) this->coord_x -= 1;
    if(move_to_down) this->coord_y += 5;
