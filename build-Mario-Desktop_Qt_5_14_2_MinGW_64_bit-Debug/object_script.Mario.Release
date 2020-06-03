@@ -1,5 +1,6 @@
 release/global_views_controller.o
 release/level_controller.o
+release/menu_controler.o
 release/Main.o
 release/alive_entity.o
 release/billblaster.o
@@ -36,6 +37,7 @@ release/game_view.o
 release/game_view_entity.o
 release/game_view_factory.o
 release/global_view.o
+release/menu_view.o
 release/viewtest.o
 release/qrc_res.o
 release/moc_level_controller.o
