@@ -54,12 +54,16 @@ public:
     bool getContact_thwomp() const;
     void setContact_thwomp(bool value);
 
+    bool getContact_trampoline() const;
+    void setContact_trampoline(bool value);
+
 private:
     Controls *input;
     int cptjump;
     bool jump;
     bool on_ground;
     bool contact_thwomp;
+    bool contact_trampoline=false;
 };
 
 #endif // MARIO_H

@@ -66,12 +66,14 @@ void Mario::update()
            if(input->left )state = 5;
            this->move_to_down = false;
            coord_y-=5;
+           if(contact_trampoline)coord_y-=5;
            cptjump++;
            if(cptjump <= 2){
                setOn_ground(false);
            }
            if(cptjump == 30){
                jump = false;
+               contact_trampoline = false;
            }
         }
         else{
@@ -175,6 +177,7 @@ void Mario::collisionSpec(smoke *entity, int position)
 void Mario::collisionSpec(Trampoline *entity, int position)
 {
     move_to_down = false;
+    setContact_trampoline(true);
     switch (position) {
         case 0 :
             break;
@@ -183,7 +186,7 @@ void Mario::collisionSpec(Trampoline *entity, int position)
             break;
         case 2:
             jump= true;
-            cptjump=-20;
+            cptjump=5;
             break;
         case 3:
             this->move_to_left = false;
@@ -322,4 +325,14 @@ bool Mario::getContact_thwomp() const
 void Mario::setContact_thwomp(bool value)
 {
     contact_thwomp = value;
+}
+
+bool Mario::getContact_trampoline() const
+{
+    return contact_trampoline;
+}
+
+void Mario::setContact_trampoline(bool value)
+{
+    contact_trampoline = value;
 }
