@@ -5,6 +5,7 @@ release/alive_entity.o
 release/billblaster.o
 release/block.o
 release/bulletbill.o
+release/chateau.o
 release/entity.o
 release/flamme.o
 release/flower.o
@@ -25,6 +26,7 @@ release/smoke.o
 release/star.o
 release/static_entity.o
 release/thwomp.o
+release/trampoline.o
 release/tuyau.o
 release/controls.o
 release/game_view.o

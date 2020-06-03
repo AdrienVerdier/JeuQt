@@ -57,6 +57,7 @@ SOURCES       = ..\Mario\Controllers\global_views_controller.cpp \
 		..\Mario\Models\billblaster.cpp \
 		..\Mario\Models\block.cpp \
 		..\Mario\Models\bulletbill.cpp \
+		..\Mario\Models\chateau.cpp \
 		..\Mario\Models\entity.cpp \
 		..\Mario\Models\flamme.cpp \
 		..\Mario\Models\flower.cpp \
@@ -77,6 +78,7 @@ SOURCES       = ..\Mario\Controllers\global_views_controller.cpp \
 		..\Mario\Models\star.cpp \
 		..\Mario\Models\static_entity.cpp \
 		..\Mario\Models\thwomp.cpp \
+		..\Mario\Models\trampoline.cpp \
 		..\Mario\Models\tuyau.cpp \
 		..\Mario\Tools\controls.cpp \
 		..\Mario\Views\game_view.cpp \
@@ -93,6 +95,7 @@ OBJECTS       = debug/global_views_controller.o \
 		debug/billblaster.o \
 		debug/block.o \
 		debug/bulletbill.o \
+		debug/chateau.o \
 		debug/entity.o \
 		debug/flamme.o \
 		debug/flower.o \
@@ -113,6 +116,7 @@ OBJECTS       = debug/global_views_controller.o \
 		debug/star.o \
 		debug/static_entity.o \
 		debug/thwomp.o \
+		debug/trampoline.o \
 		debug/tuyau.o \
 		debug/controls.o \
 		debug/game_view.o \
@@ -130,6 +134,7 @@ DIST          = images/HUD/background.png ..\Mario\Controllers\global_views_cont
 		..\Mario\Models\billblaster.h \
 		..\Mario\Models\block.h \
 		..\Mario\Models\bulletbill.h \
+		..\Mario\Models\chateau.h \
 		..\Mario\Models\entity.h \
 		..\Mario\Models\flamme.h \
 		..\Mario\Models\flower.h \
@@ -150,6 +155,7 @@ DIST          = images/HUD/background.png ..\Mario\Controllers\global_views_cont
 		..\Mario\Models\star.h \
 		..\Mario\Models\static_entity.h \
 		..\Mario\Models\thwomp.h \
+		..\Mario\Models\trampoline.h \
 		..\Mario\Models\tuyau.h \
 		..\Mario\Tools\controls.h \
 		..\Mario\Views\game_view.h \
@@ -163,6 +169,7 @@ DIST          = images/HUD/background.png ..\Mario\Controllers\global_views_cont
 		..\Mario\Models\billblaster.cpp \
 		..\Mario\Models\block.cpp \
 		..\Mario\Models\bulletbill.cpp \
+		..\Mario\Models\chateau.cpp \
 		..\Mario\Models\entity.cpp \
 		..\Mario\Models\flamme.cpp \
 		..\Mario\Models\flower.cpp \
@@ -183,6 +190,7 @@ DIST          = images/HUD/background.png ..\Mario\Controllers\global_views_cont
 		..\Mario\Models\star.cpp \
 		..\Mario\Models\static_entity.cpp \
 		..\Mario\Models\thwomp.cpp \
+		..\Mario\Models\trampoline.cpp \
 		..\Mario\Models\tuyau.cpp \
 		..\Mario\Tools\controls.cpp \
 		..\Mario\Views\game_view.cpp \
@@ -209,10 +217,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Mario.zip $(SOURCES) $(DIST) ..\Mario\Mario.pro E:\QT\5.14.2\mingw73_64\mkspecs\features\spec_pre.prf E:\QT\5.14.2\mingw73_64\mkspecs\qdevice.pri E:\QT\5.14.2\mingw73_64\mkspecs\features\device_config.prf E:\QT\5.14.2\mingw73_64\mkspecs\common\sanitize.conf E:\QT\5.14.2\mingw73_64\mkspecs\common\gcc-base.conf E:\QT\5.14.2\mingw73_64\mkspecs\common\g++-base.conf E:\QT\5.14.2\mingw73_64\mkspecs\common\angle.conf E:\QT\5.14.2\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf E:\QT\5.14.2\mingw73_64\mkspecs\common\windows-vulkan.conf E:\QT\5.14.2\mingw73_64\mkspecs\common\g++-win32.conf E:\QT\5.14.2\mingw73_64\mkspecs\common\windows-desktop.conf E:\QT\5.14.2\mingw73_64\mkspecs\qconfig.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bodymovin_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_charts.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_charts_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_datavisualization.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_datavisualization_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_purchasing.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_purchasing_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3d.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3d_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3drender.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3drender_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dutils.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dutils_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_script.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_script_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scripttools.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scripttools_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_virtualkeyboard.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_zlib_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\features\qt_functions.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\qt_config.prf E:\QT\5.14.2\mingw73_64\mkspecs\win32-g++\qmake.conf E:\QT\5.14.2\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash E:\QT\5.14.2\mingw73_64\mkspecs\features\exclusive_builds.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\toolchain.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\default_pre.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\win32\default_pre.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\resolve_config.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\exclusive_builds_post.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\default_post.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\build_pass.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\qml_debug.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\precompile_header.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\warn_on.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\qt.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\resources_functions.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\resources.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\moc.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\win32\opengl.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\uic.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\qmake_use.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\file_copies.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\win32\windows.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\testcase_targets.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\exceptions.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\yacc.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\lex.prf ..\Mario\Mario.pro ..\Mario\res.qrc E:\QT\5.14.2\mingw73_64\lib\Qt5Multimedia.prl E:\QT\5.14.2\mingw73_64\lib\Qt5Widgets.prl E:\QT\5.14.2\mingw73_64\lib\Qt5Gui.prl E:\QT\5.14.2\mingw73_64\lib\Qt5Network.prl E:\QT\5.14.2\mingw73_64\lib\Qt5Core.prl E:\QT\5.14.2\mingw73_64\lib\qtmain.prl   ..\Mario\res.qrc ..\Mario\res.qrc ..\Mario\res.qrc E:\QT\5.14.2\mingw73_64\mkspecs\features\data\dummy.cpp ..\Mario\Controllers\global_views_controller.h ..\Mario\Controllers\level_controller.h ..\Mario\Models\alive_entity.h ..\Mario\Models\billblaster.h ..\Mario\Models\block.h ..\Mario\Models\bulletbill.h ..\Mario\Models\entity.h ..\Mario\Models\flamme.h ..\Mario\Models\flower.h ..\Mario\Models\goomba.h ..\Mario\Models\ground.h ..\Mario\Models\interface_visitable.h ..\Mario\Models\interface_visitor.h ..\Mario\Models\koopa.h ..\Mario\Models\level.h ..\Mario\Models\lifeup.h ..\Mario\Models\mario.h ..\Mario\Models\mushroom.h ..\Mario\Models\mysteryblock.h ..\Mario\Models\peach.h ..\Mario\Models\piece.h ..\Mario\Models\plante.h ..\Mario\Models\smoke.h ..\Mario\Models\star.h ..\Mario\Models\static_entity.h ..\Mario\Models\thwomp.h ..\Mario\Models\tuyau.h ..\Mario\Tools\controls.h ..\Mario\Views\game_view.h ..\Mario\Views\game_view_entity.h ..\Mario\Views\game_view_factory.h ..\Mario\Views\global_view.h ..\Mario\Views\viewtest.h  ..\Mario\Controllers\global_views_controller.cpp ..\Mario\Controllers\level_controller.cpp ..\Mario\Main.cpp ..\Mario\Models\alive_entity.cpp ..\Mario\Models\billblaster.cpp ..\Mario\Models\block.cpp ..\Mario\Models\bulletbill.cpp ..\Mario\Models\entity.cpp ..\Mario\Models\flamme.cpp ..\Mario\Models\flower.cpp ..\Mario\Models\goomba.cpp ..\Mario\Models\ground.cpp ..\Mario\Models\interface_visitable.cpp ..\Mario\Models\interface_visitor.cpp ..\Mario\Models\koopa.cpp ..\Mario\Models\level.cpp ..\Mario\Models\lifeup.cpp ..\Mario\Models\mario.cpp ..\Mario\Models\mushroom.cpp ..\Mario\Models\mysteryblock.cpp ..\Mario\Models\peach.cpp ..\Mario\Models\piece.cpp ..\Mario\Models\plante.cpp ..\Mario\Models\smoke.cpp ..\Mario\Models\star.cpp ..\Mario\Models\static_entity.cpp ..\Mario\Models\thwomp.cpp ..\Mario\Models\tuyau.cpp ..\Mario\Tools\controls.cpp ..\Mario\Views\game_view.cpp ..\Mario\Views\game_view_entity.cpp ..\Mario\Views\game_view_factory.cpp ..\Mario\Views\global_view.cpp ..\Mario\Views\viewtest.cpp     
+	$(ZIP) Mario.zip $(SOURCES) $(DIST) ..\Mario\Mario.pro E:\QT\5.14.2\mingw73_64\mkspecs\features\spec_pre.prf E:\QT\5.14.2\mingw73_64\mkspecs\qdevice.pri E:\QT\5.14.2\mingw73_64\mkspecs\features\device_config.prf E:\QT\5.14.2\mingw73_64\mkspecs\common\sanitize.conf E:\QT\5.14.2\mingw73_64\mkspecs\common\gcc-base.conf E:\QT\5.14.2\mingw73_64\mkspecs\common\g++-base.conf E:\QT\5.14.2\mingw73_64\mkspecs\common\angle.conf E:\QT\5.14.2\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf E:\QT\5.14.2\mingw73_64\mkspecs\common\windows-vulkan.conf E:\QT\5.14.2\mingw73_64\mkspecs\common\g++-win32.conf E:\QT\5.14.2\mingw73_64\mkspecs\common\windows-desktop.conf E:\QT\5.14.2\mingw73_64\mkspecs\qconfig.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bodymovin_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_charts.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_charts_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_core_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_datavisualization.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_datavisualization_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_help_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_location_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_network_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_networkauth_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_purchasing.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_purchasing_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3d.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3d_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3drender.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3drender_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dutils.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick3dutils_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_script.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_script_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scripttools.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scripttools_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_virtualkeyboard.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\modules\qt_lib_zlib_private.pri E:\QT\5.14.2\mingw73_64\mkspecs\features\qt_functions.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\qt_config.prf E:\QT\5.14.2\mingw73_64\mkspecs\win32-g++\qmake.conf E:\QT\5.14.2\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash E:\QT\5.14.2\mingw73_64\mkspecs\features\exclusive_builds.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\toolchain.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\default_pre.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\win32\default_pre.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\resolve_config.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\exclusive_builds_post.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\default_post.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\build_pass.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\qml_debug.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\precompile_header.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\warn_on.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\qt.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\resources_functions.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\resources.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\moc.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\win32\opengl.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\uic.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\qmake_use.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\file_copies.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\win32\windows.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\testcase_targets.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\exceptions.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\yacc.prf E:\QT\5.14.2\mingw73_64\mkspecs\features\lex.prf ..\Mario\Mario.pro ..\Mario\res.qrc E:\QT\5.14.2\mingw73_64\lib\Qt5Multimedia.prl E:\QT\5.14.2\mingw73_64\lib\Qt5Widgets.prl E:\QT\5.14.2\mingw73_64\lib\Qt5Gui.prl E:\QT\5.14.2\mingw73_64\lib\Qt5Network.prl E:\QT\5.14.2\mingw73_64\lib\Qt5Core.prl E:\QT\5.14.2\mingw73_64\lib\qtmain.prl   ..\Mario\res.qrc ..\Mario\res.qrc ..\Mario\res.qrc E:\QT\5.14.2\mingw73_64\mkspecs\features\data\dummy.cpp ..\Mario\Controllers\global_views_controller.h ..\Mario\Controllers\level_controller.h ..\Mario\Models\alive_entity.h ..\Mario\Models\billblaster.h ..\Mario\Models\block.h ..\Mario\Models\bulletbill.h ..\Mario\Models\chateau.h ..\Mario\Models\entity.h ..\Mario\Models\flamme.h ..\Mario\Models\flower.h ..\Mario\Models\goomba.h ..\Mario\Models\ground.h ..\Mario\Models\interface_visitable.h ..\Mario\Models\interface_visitor.h ..\Mario\Models\koopa.h ..\Mario\Models\level.h ..\Mario\Models\lifeup.h ..\Mario\Models\mario.h ..\Mario\Models\mushroom.h ..\Mario\Models\mysteryblock.h ..\Mario\Models\peach.h ..\Mario\Models\piece.h ..\Mario\Models\plante.h ..\Mario\Models\smoke.h ..\Mario\Models\star.h ..\Mario\Models\static_entity.h ..\Mario\Models\thwomp.h ..\Mario\Models\trampoline.h ..\Mario\Models\tuyau.h ..\Mario\Tools\controls.h ..\Mario\Views\game_view.h ..\Mario\Views\game_view_entity.h ..\Mario\Views\game_view_factory.h ..\Mario\Views\global_view.h ..\Mario\Views\viewtest.h  ..\Mario\Controllers\global_views_controller.cpp ..\Mario\Controllers\level_controller.cpp ..\Mario\Main.cpp ..\Mario\Models\alive_entity.cpp ..\Mario\Models\billblaster.cpp ..\Mario\Models\block.cpp ..\Mario\Models\bulletbill.cpp ..\Mario\Models\chateau.cpp ..\Mario\Models\entity.cpp ..\Mario\Models\flamme.cpp ..\Mario\Models\flower.cpp ..\Mario\Models\goomba.cpp ..\Mario\Models\ground.cpp ..\Mario\Models\interface_visitable.cpp ..\Mario\Models\interface_visitor.cpp ..\Mario\Models\koopa.cpp ..\Mario\Models\level.cpp ..\Mario\Models\lifeup.cpp ..\Mario\Models\mario.cpp ..\Mario\Models\mushroom.cpp ..\Mario\Models\mysteryblock.cpp ..\Mario\Models\peach.cpp ..\Mario\Models\piece.cpp ..\Mario\Models\plante.cpp ..\Mario\Models\smoke.cpp ..\Mario\Models\star.cpp ..\Mario\Models\static_entity.cpp ..\Mario\Models\thwomp.cpp ..\Mario\Models\trampoline.cpp ..\Mario\Models\tuyau.cpp ..\Mario\Tools\controls.cpp ..\Mario\Views\game_view.cpp ..\Mario\Views\game_view_entity.cpp ..\Mario\Views\game_view_factory.cpp ..\Mario\Views\global_view.cpp ..\Mario\Views\viewtest.cpp     
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\global_views_controller.o debug\level_controller.o debug\Main.o debug\alive_entity.o debug\billblaster.o debug\block.o debug\bulletbill.o debug\entity.o debug\flamme.o debug\flower.o debug\goomba.o debug\ground.o debug\interface_visitable.o debug\interface_visitor.o debug\koopa.o debug\level.o debug\lifeup.o debug\mario.o debug\mushroom.o debug\mysteryblock.o debug\peach.o debug\piece.o debug\plante.o debug\smoke.o debug\star.o debug\static_entity.o debug\thwomp.o debug\tuyau.o debug\controls.o debug\game_view.o debug\game_view_entity.o debug\game_view_factory.o debug\global_view.o debug\viewtest.o debug\qrc_res.o debug\moc_level_controller.o debug\moc_viewtest.o
+	-$(DEL_FILE) debug\global_views_controller.o debug\level_controller.o debug\Main.o debug\alive_entity.o debug\billblaster.o debug\block.o debug\bulletbill.o debug\chateau.o debug\entity.o debug\flamme.o debug\flower.o debug\goomba.o debug\ground.o debug\interface_visitable.o debug\interface_visitor.o debug\koopa.o debug\level.o debug\lifeup.o debug\mario.o debug\mushroom.o debug\mysteryblock.o debug\peach.o debug\piece.o debug\plante.o debug\smoke.o debug\star.o debug\static_entity.o debug\thwomp.o debug\trampoline.o debug\tuyau.o debug\controls.o debug\game_view.o debug\game_view_entity.o debug\game_view_factory.o debug\global_view.o debug\viewtest.o debug\qrc_res.o debug\moc_level_controller.o debug\moc_viewtest.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -246,6 +254,8 @@ debug/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Thwomp/Thwomp1.png \
 		../Mario/images/Thwomp/Thwomp3.png \
 		../Mario/images/Thwomp/Thwomp2.png \
+		../Mario/images/Trampoline/Trampoline.png \
+		../Mario/images/Chateau/Chateau.png \
 		../Mario/images/Goomba/GoombaMiroir7.png \
 		../Mario/images/Goomba/Goomba3.png \
 		../Mario/images/Goomba/Goomba7.png \
@@ -341,6 +351,8 @@ debug/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Thwomp/Thwomp1.png \
 		../Mario/images/Thwomp/Thwomp3.png \
 		../Mario/images/Thwomp/Thwomp2.png \
+		../Mario/images/Trampoline/Trampoline.png \
+		../Mario/images/Chateau/Chateau.png \
 		../Mario/images/Goomba/GoombaMiroir7.png \
 		../Mario/images/Goomba/Goomba3.png \
 		../Mario/images/Goomba/Goomba7.png \
@@ -436,6 +448,8 @@ debug/qrc_res.cpp: ../Mario/res.qrc \
 		../Mario/images/Thwomp/Thwomp1.png \
 		../Mario/images/Thwomp/Thwomp3.png \
 		../Mario/images/Thwomp/Thwomp2.png \
+		../Mario/images/Trampoline/Trampoline.png \
+		../Mario/images/Chateau/Chateau.png \
 		../Mario/images/Goomba/GoombaMiroir7.png \
 		../Mario/images/Goomba/Goomba3.png \
 		../Mario/images/Goomba/Goomba7.png \
@@ -594,6 +608,8 @@ debug/moc_level_controller.cpp: ../Mario/Controllers/level_controller.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QObject \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qobject.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
@@ -764,6 +780,8 @@ debug/moc_viewtest.cpp: ../Mario/Views/viewtest.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		debug/moc_predefs.h \
 		E:/QT/5.14.2/mingw73_64/bin/moc.exe
 	E:\QT\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/PC_LEO/JeuQt/build-Mario-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IE:/QT/5.14.2/mingw73_64/mkspecs/win32-g++ -IC:/Users/PC_LEO/JeuQt/Mario -IE:/QT/5.14.2/mingw73_64/include -IE:/QT/5.14.2/mingw73_64/include/QtMultimedia -IE:/QT/5.14.2/mingw73_64/include/QtWidgets -IE:/QT/5.14.2/mingw73_64/include/QtGui -IE:/QT/5.14.2/mingw73_64/include/QtANGLE -IE:/QT/5.14.2/mingw73_64/include/QtNetwork -IE:/QT/5.14.2/mingw73_64/include/QtCore -I. -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Mario\Views\viewtest.h -o debug\moc_viewtest.cpp
@@ -927,6 +945,8 @@ debug/global_views_controller.o: ../Mario/Controllers/global_views_controller.cp
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QTimer \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qtimer.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qbasictimer.h \
@@ -1023,6 +1043,8 @@ debug/level_controller.o: ../Mario/Controllers/level_controller.cpp ../Mario/Con
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QObject \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qobject.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qobjectdefs.h \
@@ -1269,6 +1291,8 @@ debug/Main.o: ../Mario/Main.cpp E:/QT/5.14.2/mingw73_64/include/QtWidgets/QAppli
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QTimer \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qtimer.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qbasictimer.h \
@@ -1367,6 +1391,8 @@ debug/billblaster.o: ../Mario/Models/billblaster.cpp ../Mario/Models/billblaster
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -1462,6 +1488,8 @@ debug/bulletbill.o: ../Mario/Models/bulletbill.cpp ../Mario/Models/bulletbill.h 
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -1528,6 +1556,12 @@ debug/bulletbill.o: ../Mario/Models/bulletbill.cpp ../Mario/Models/bulletbill.h 
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\bulletbill.o ..\Mario\Models\bulletbill.cpp
+
+debug/chateau.o: ../Mario/Models/chateau.cpp ../Mario/Models/chateau.h \
+		../Mario/Models/static_entity.h \
+		../Mario/Models/entity.h \
+		../Mario/Models/interface_visitable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\chateau.o ..\Mario\Models\chateau.cpp
 
 debug/entity.o: ../Mario/Models/entity.cpp ../Mario/Models/entity.h \
 		../Mario/Models/interface_visitable.h \
@@ -1627,6 +1661,8 @@ debug/flower.o: ../Mario/Models/flower.cpp ../Mario/Models/flower.h \
 		../Mario/Models/lifeup.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -1716,6 +1752,8 @@ debug/goomba.o: ../Mario/Models/goomba.cpp ../Mario/Models/goomba.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -1817,6 +1855,8 @@ debug/koopa.o: ../Mario/Models/koopa.cpp ../Mario/Models/koopa.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -1951,6 +1991,8 @@ debug/level.o: ../Mario/Models/level.cpp ../Mario/Models/level.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtGui/QImage \
 		E:/QT/5.14.2/mingw73_64/include/QtGui/qimage.h \
 		E:/QT/5.14.2/mingw73_64/include/QtGui/qtguiglobal.h \
@@ -2018,6 +2060,8 @@ debug/lifeup.o: ../Mario/Models/lifeup.cpp ../Mario/Models/lifeup.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -2107,6 +2151,8 @@ debug/mario.o: ../Mario/Models/mario.cpp ../Mario/Models/mario.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -2196,6 +2242,8 @@ debug/mushroom.o: ../Mario/Models/mushroom.cpp ../Mario/Models/mushroom.h \
 		../Mario/Models/lifeup.h \
 		../Mario/Models/star.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -2285,6 +2333,8 @@ debug/mysteryblock.o: ../Mario/Models/mysteryblock.cpp ../Mario/Models/mysterybl
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -2380,6 +2430,8 @@ debug/piece.o: ../Mario/Models/piece.cpp ../Mario/Models/piece.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -2546,6 +2598,8 @@ debug/star.o: ../Mario/Models/star.cpp ../Mario/Models/star.h \
 		../Mario/Models/lifeup.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -2640,6 +2694,8 @@ debug/thwomp.o: ../Mario/Models/thwomp.cpp ../Mario/Models/thwomp.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qdebug.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qalgorithms.h \
@@ -2706,6 +2762,12 @@ debug/thwomp.o: ../Mario/Models/thwomp.cpp ../Mario/Models/thwomp.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qsharedpointer.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qsharedpointer_impl.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\thwomp.o ..\Mario\Models\thwomp.cpp
+
+debug/trampoline.o: ../Mario/Models/trampoline.cpp ../Mario/Models/trampoline.h \
+		../Mario/Models/static_entity.h \
+		../Mario/Models/entity.h \
+		../Mario/Models/interface_visitable.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\trampoline.o ..\Mario\Models\trampoline.cpp
 
 debug/tuyau.o: ../Mario/Models/tuyau.cpp ../Mario/Models/tuyau.h \
 		../Mario/Models/static_entity.h \
@@ -2845,6 +2907,8 @@ debug/game_view.o: ../Mario/Views/game_view.cpp ../Mario/Views/game_view.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QFile \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qfile.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/qfiledevice.h \
@@ -3006,6 +3070,8 @@ debug/game_view_factory.o: ../Mario/Views/game_view_factory.cpp ../Mario/Views/g
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		../Mario/Views/game_view_entity.h \
 		E:/QT/5.14.2/mingw73_64/include/QtWidgets/QGraphicsItem \
 		E:/QT/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
@@ -3381,6 +3447,8 @@ debug/viewtest.o: ../Mario/Views/viewtest.cpp ../Mario/Views/viewtest.h \
 		../Mario/Models/star.h \
 		../Mario/Models/mushroom.h \
 		../Mario/Models/flower.h \
+		../Mario/Models/chateau.h \
+		../Mario/Models/trampoline.h \
 		../Mario/Views/game_view.h \
 		../Mario/Models/interface_visitor.h \
 		E:/QT/5.14.2/mingw73_64/include/QtCore/QMap \
