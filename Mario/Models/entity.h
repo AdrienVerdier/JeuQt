@@ -68,6 +68,14 @@ class Entity : public Interface_Visitable
         }
 
 
+        inline bool getMove() const{
+            return move;
+        }
+
+
+        virtual ~Entity();
+
+
 
     protected:
         bool display;
@@ -76,6 +84,7 @@ class Entity : public Interface_Visitable
         int coord_y;
         int state;
         bool state_dead;
+        bool move;
 
 
 

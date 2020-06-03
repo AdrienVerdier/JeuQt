@@ -9,6 +9,7 @@ public:
     Alive_Entity();
     void collision(Entity* entity, int position)  override;
     void update() override;
+    ~Alive_Entity();
 
 protected:
     bool move_to_left;

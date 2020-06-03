@@ -21,6 +21,9 @@ class Game_View : public QGraphicsScene, public Interface_Visitor
         void reset();
         void setMx(int value);
 
+        int getXLeftLimit() const;
+        void setXLeftLimit(int value);
+
 private :
         Game_View_Factory entity_factory;
         QMap<Entity*, Game_View_Entity*> map_Entity_GameViewEntity;
@@ -28,11 +31,14 @@ private :
         QMap<QString,int> E1;
         QMap<QString,int> E2;
         int Mx;
+        int xLeftLimit;
         QLabel *score;
         QGraphicsPixmapItem *pieceHUD;
         QLabel *vies;
         QGraphicsPixmapItem *viesHUD;
         QGraphicsPixmapItem *background;
+        int x;
+        bool updateB;
 
         void fillPoints(Game_View_Entity *e1, Game_View_Entity *e2);
 

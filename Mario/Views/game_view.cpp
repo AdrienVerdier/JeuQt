@@ -14,7 +14,7 @@
 
 Game_View::Game_View(QWidget *parent)
 {
-    setSceneRect(0,0,1280,720);
+    setSceneRect(0,0,1280,700);
     controls = new Controls();
     this->setBackgroundBrush(QBrush(Qt::cyan, Qt::SolidPattern));
     QFont f( "Arial", 20, QFont::Bold);
@@ -50,6 +50,8 @@ Game_View::Game_View(QWidget *parent)
     this->addItem(background);
     background->setPos(0, 0);
 
+    xLeftLimit = 640;
+
 
 
 }
@@ -60,18 +62,30 @@ void Game_View::reset(){
         this->removeItem(map_Entity_GameViewEntity[entity]);
         delete map_Entity_GameViewEntity[entity];
         map_Entity_GameViewEntity.remove(entity);
+        xLeftLimit = 640;
     }
 }
 
 void Game_View::paint(Entity *entity){
-    int x = entity->getCoordX();
-    if(Mx>640) x = entity->getCoordX()-(Mx-640);
+     updateB = true;
+    if(Mx>=xLeftLimit) {
+        x = entity->getCoordX()-(Mx-640);
+        xLeftLimit = Mx;
+    }
+    else{
+        x = entity->getCoordX()-(xLeftLimit-640);
+        if(!entity->getMove())updateB = false;
+
+
+    }
     if(entity->getDisplay()){
-        if (map_Entity_GameViewEntity.contains(entity))
-            map_Entity_GameViewEntity[entity]->update_Img(x,entity->getCoordY(),entity->getState());
+        if (map_Entity_GameViewEntity.contains(entity)){
+            if(updateB)map_Entity_GameViewEntity[entity]->update_Img(x,entity->getCoordY(),entity->getState());
+        }
         else{
            map_Entity_GameViewEntity[entity] = entity_factory.create(entity,x);
            this->addItem(map_Entity_GameViewEntity[entity]);
+
         }
     }
     else{
@@ -84,13 +98,17 @@ void Game_View::paint(Entity *entity){
     }
 }
 
-QMap<Entity*, QMap<Entity*,int>> Game_View::get_list_collides()
+QMap<Entity*, QMap<Entity*,int>> Game_View::get_list_collides( )
 {
+    QList<Entity*> listeTestCol;
+    foreach(Entity *entity,map_Entity_GameViewEntity.keys()){
+        if(entity->getMove()) listeTestCol.push_back(entity);
+    }
 
 
 
     QMap<Entity*,  QMap<Entity*,int>> list_collides;
-    foreach(Entity *entity, map_Entity_GameViewEntity.keys())
+    foreach(Entity *entity, listeTestCol)
     {
         foreach(Entity *collideswith, map_Entity_GameViewEntity.keys())
         {
@@ -248,6 +266,16 @@ Controls *Game_View::get_Keys()
 void Game_View::setMx(int value)
 {
     Mx = value;
+}
+
+int Game_View::getXLeftLimit() const
+{
+    return xLeftLimit;
+}
+
+void Game_View::setXLeftLimit(int value)
+{
+    xLeftLimit = value;
 }
 
 

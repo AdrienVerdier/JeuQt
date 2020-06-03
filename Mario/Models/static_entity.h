@@ -9,6 +9,7 @@ public:
     Static_Entity();
     void collision(Entity* entity, int position)  override;
     void update() override;
+    ~Static_Entity();
 
 private:
 

@@ -4,6 +4,7 @@
 #include <QObject>
 #include<QDebug>
 #include <QElapsedTimer>
+#include "../Models/static_entity.h"
 
 
 Level_Controller::Level_Controller()
@@ -30,8 +31,8 @@ Game_View *Level_Controller::getScene()
 void Level_Controller::select_display_element()
 {
 
-    int pos_centre = level->getPlayer()->getCoordX();
-    if(pos_centre<640)pos_centre=640;
+    int pos_centre = game_view->getXLeftLimit();
+
     current_entity_list.clear();
 
 
@@ -53,11 +54,11 @@ void Level_Controller::select_display_element()
             }
             else{
                 level->get_alive_entity_list()->removeOne(entity);
-                //delete entity;
+                delete entity;
             }
 
         }
-        else
+        else if(distance<=650)
         {
            if(entity->getDisplay()){
                 entity->setDisplay(false);
@@ -65,8 +66,18 @@ void Level_Controller::select_display_element()
            }
            else if(entity->getDead()){
                level->get_alive_entity_list()->removeOne(entity);
-              // delete entity;
+               delete entity;
            }
+        }
+        else{
+            if(entity->getDisplay()){
+                 entity->setDisplay(false);
+                 current_entity_list.push_back(entity);
+            }
+            else{
+                 level->get_alive_entity_list()->removeOne(entity);
+                 delete entity;
+            }
         }
     }
     foreach(Entity* entity,*level->get_entity_list()){
@@ -77,18 +88,36 @@ void Level_Controller::select_display_element()
                 entity->setDisplay(true);
                 current_entity_list.push_back(entity);
             }
-            else{
+            else if(entity->getDisplay()){
                 entity->setDisplay(false);
                 current_entity_list.push_back(entity);
             }
+            else{
+                level->get_entity_list()->removeOne(entity);
+                delete entity;
+            }
 
         }
-        else
+        else if(distance<=700)
         {
            if(entity->getDisplay()){
                 entity->setDisplay(false);
                 current_entity_list.push_back(entity);
            }
+           else if(entity->getDead()){
+               level->get_entity_list()->removeOne(entity);
+               delete entity;
+           }
+        }
+        else{
+            if(entity->getDisplay()){
+                 entity->setDisplay(false);
+                 current_entity_list.push_back(entity);
+            }
+            else{
+                 level->get_entity_list()->removeOne(entity);
+                 delete entity;
+            }
         }
     }
 
@@ -122,6 +151,7 @@ void Level_Controller::update_lvl()
     }
 
     update_view();
+
     collision_List =  game_view->get_list_collides();
     foreach(Entity *entity, collision_List.keys())
     {

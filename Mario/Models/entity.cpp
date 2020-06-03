@@ -17,3 +17,8 @@ void Entity::accept(Interface_Visitor *visitor) {
 
     visitor->paint(this);
 }
+
+Entity::~Entity()
+{
+
+}
