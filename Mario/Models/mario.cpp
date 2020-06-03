@@ -31,6 +31,10 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (Chateau).name() == typeid(*entity).name()) collisionSpec((Chateau*)entity, position);
     if (typeid (Trampoline).name() == typeid(*entity).name()) collisionSpec((Trampoline*)entity, position);
     if (typeid (spike).name() == typeid(*entity).name()) collisionSpec((spike*)entity, position);
+    if (typeid (mushroom).name() == typeid(*entity).name()) collisionSpec((mushroom*)entity, position);
+    if (typeid (lifeup).name() == typeid(*entity).name()) collisionSpec((lifeup*)entity, position);
+    if (typeid (star).name() == typeid(*entity).name()) collisionSpec((star*)entity, position);
+    if (typeid (flower).name() == typeid(*entity).name()) collisionSpec((flower*)entity, position);
 }
 
 void Mario::update()
@@ -91,6 +95,15 @@ void Mario::update()
     if(jump) move_to_down=false;
     this->move_to_left = true;
     this->move_to_up = true;
+
+    if(invincible){
+        if(getCptinvincible()<100){
+            setCptinvincible(getCptinvincible()+1);
+        }
+        if(getCptinvincible()==100){
+            setInvincible(false);
+        }
+    }
 }
 
 void Mario::collisionSpec(Block *entity, int position)
@@ -199,10 +212,10 @@ void Mario::collisionSpec(Goomba *entity, int position)
     move_to_down = false;
     switch (position) {
         case 0 :
-           state_dead = true;
+            if(!getInvincible()) state_dead = true;
             break;
         case 1:
-            state_dead = true;
+        if(!getInvincible()) state_dead = true;
             this->move_to_right = false;
             break;
         case 2:
@@ -210,7 +223,7 @@ void Mario::collisionSpec(Goomba *entity, int position)
         cptjump=0;
         break;
         case 3:
-            state_dead = true;
+            if(!getInvincible()) state_dead = true;
             this->move_to_left = false;
             break;
     }
@@ -220,10 +233,10 @@ void Mario::collisionSpec(bulletbill *entity, int position)
 {
     switch (position) {
         case 0 :
-           state_dead = true;
+            if(!getInvincible()) state_dead = true;
             break;
         case 1:
-            state_dead = true;
+            if(!getInvincible()) state_dead = true;
             this->move_to_right = false;
             break;
         case 2:
@@ -231,7 +244,7 @@ void Mario::collisionSpec(bulletbill *entity, int position)
             cptjump=0;
             break;
         case 3:
-            state_dead = true;
+            if(!getInvincible()) state_dead = true;
             this->move_to_left = false;
             break;
     }
@@ -243,10 +256,10 @@ void Mario::collisionSpec(Koopa *entity, int position)
     if(entity->getState() != 2){
         switch (position) {
             case 0 :
-               state_dead = true;
+                if(!getInvincible()) state_dead = true;
                 break;
             case 1:
-                state_dead = true;
+                if(!getInvincible()) state_dead = true;
                 this->move_to_right = false;
                 break;
             case 2:
@@ -254,7 +267,7 @@ void Mario::collisionSpec(Koopa *entity, int position)
                 cptjump=0;
                 break;
             case 3:
-                state_dead = true;
+                if(!getInvincible()) state_dead = true;
                 this->move_to_left = false;
                 break;
         }
@@ -263,17 +276,17 @@ void Mario::collisionSpec(Koopa *entity, int position)
 
 void Mario::collisionSpec(plante *entity, int position)
 {
-    state_dead = true;
+    if(!getInvincible()) state_dead = true;
 }
 
 void Mario::collisionSpec(flamme *entity, int position)
 {
-    state_dead = true;
+    if(!getInvincible()) state_dead = true;
 }
 
 void Mario::collisionSpec(spike *entity, int position)
 {
-    state_dead = true;
+    if(!getInvincible()) state_dead = true;
 }
 
 void Mario::collisionSpec(thwomp *entity, int position)
@@ -298,6 +311,26 @@ void Mario::collisionSpec(thwomp *entity, int position)
 }
 
 void Mario::collisionSpec(Piece *entity, int position)
+{
+
+}
+
+void Mario::collisionSpec(mushroom *entity, int position)
+{
+
+}
+
+void Mario::collisionSpec(lifeup *entity, int position)
+{
+
+}
+
+void Mario::collisionSpec(star *entity, int position)
+{
+    setInvincible(true);
+}
+
+void Mario::collisionSpec(flower *entity, int position)
 {
 
 }
@@ -335,4 +368,24 @@ bool Mario::getContact_trampoline() const
 void Mario::setContact_trampoline(bool value)
 {
     contact_trampoline = value;
+}
+
+bool Mario::getInvincible() const
+{
+    return invincible;
+}
+
+void Mario::setInvincible(bool value)
+{
+    invincible = value;
+}
+
+int Mario::getCptinvincible() const
+{
+    return cptinvincible;
+}
+
+void Mario::setCptinvincible(int value)
+{
+    cptinvincible = value;
 }

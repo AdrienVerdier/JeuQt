@@ -42,6 +42,7 @@ void Koopa::collision(Entity *entity, int position)
 
 void Koopa::collisionSpec(Mario *entity, int position)
 {
+    if(entity->getInvincible()) this->state_dead = true;
     if(state == 2 && position == 0){
         this->state_dead = true;
     }

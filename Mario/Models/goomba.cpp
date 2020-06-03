@@ -34,10 +34,11 @@ void Goomba::collision(Entity *entity, int position)
 
 void Goomba::collisionSpec(Mario *entity, int position)
 {
+
+    if(entity->getInvincible()) this->state_dead = true;
     if(position == 0) {
         this->state_dead = true;
-    } //TODO : le faire mourir
-       qInfo() << "collision";
+    }
 }
 
 void Goomba::update()
