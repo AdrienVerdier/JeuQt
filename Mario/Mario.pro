@@ -19,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     Controllers/global_views_controller.cpp \
     Controllers/level_controller.cpp \
+    Controllers/menu_controler.cpp \
     Main.cpp \
     Models/alive_entity.cpp \
     Models/billblaster.cpp \
@@ -55,12 +56,14 @@ SOURCES += \
     Views/game_view_entity.cpp \
     Views/game_view_factory.cpp \
     Views/global_view.cpp \
+    Views/menu_view.cpp \
     Views/viewtest.cpp
 
 
 HEADERS += \
     Controllers/global_views_controller.h \
     Controllers/level_controller.h \
+    Controllers/menu_controler.h \
     Models/alive_entity.h \
     Models/billblaster.h \
     Models/block.h \
@@ -96,6 +99,7 @@ HEADERS += \
     Views/game_view_entity.h \
     Views/game_view_factory.h \
     Views/global_view.h \
+    Views/menu_view.h \
     Views/viewtest.h
 
 FORMS += \

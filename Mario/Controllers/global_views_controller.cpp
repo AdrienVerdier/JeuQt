@@ -3,25 +3,49 @@
 
 Global_Views_Controller::Global_Views_Controller()
 {
-    view = new Global_View();
+    main_view->setScene(main_scene);
+
     level_controller = new Level_Controller(this);
+    menu_controler = new Menu_Controler();
     game_over_view = new Game_Over_View();
+
+    level_view_container->setFixedSize(1280,700);
+    level_view_container->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    level_view_container->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    menu_view_container->setFixedSize(300,300);
+    gameover_view_container->setFixedSize(300,300);
+
+    level_view_container->setScene(level_controller->getScene());
+    menu_view_container->setScene(menu_controler->getScene());
+    gameover_view_container->setScene(game_over_view);
+
+    qstack = new QStackedWidget;
+    main_scene->addWidget(qstack);
+    qstack->addWidget(menu_view_container);
+    qstack->addWidget(gameover_view_container);
+    qstack->addWidget(level_view_container);
+
+    level_view_container->hide();
+    menu_view_container->hide();
+    gameover_view_container->hide();
 
 }
 
 void Global_Views_Controller::display_Level(QString path)
 {
-    view->setScene(level_controller->getScene());
+    level_view_container->show();
+    level_view_container->setFocus();
     level_controller->NewLevel(path);
 }
 
 void Global_Views_Controller::display_GameOver()
 {
-    view->setScene(game_over_view);
+    gameover_view_container->show();
+
 }
 
 Global_View *Global_Views_Controller::getView() const
 {
-    return view;
+    return main_view;
 }
 

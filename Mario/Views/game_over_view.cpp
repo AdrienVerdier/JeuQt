@@ -23,7 +23,7 @@ Game_Over_View::Game_Over_View(QWidget *parent)
     this->addItem(proxy);
 
 
-    connect(bouton, SIGNAL (released()), this, SLOT (handleButton()));
+    //connect(bouton, SIGNAL (released()), this, SLOT (handleButton()));
 
 }
 
