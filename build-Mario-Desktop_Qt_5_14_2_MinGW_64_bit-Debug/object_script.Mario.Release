@@ -23,6 +23,7 @@ release/peach.o
 release/piece.o
 release/plante.o
 release/smoke.o
+release/spike.o
 release/star.o
 release/static_entity.o
 release/thwomp.o

@@ -67,20 +67,20 @@ void Game_View::reset(){
 }
 
 void Game_View::paint(Entity *entity){
-     updateB = true;
+
     if(Mx>=xLeftLimit) {
         x = entity->getCoordX()-(Mx-640);
         xLeftLimit = Mx;
     }
     else{
         x = entity->getCoordX()-(xLeftLimit-640);
-        if(!entity->getMove())updateB = false;
+
 
 
     }
     if(entity->getDisplay()){
         if (map_Entity_GameViewEntity.contains(entity)){
-            if(updateB)map_Entity_GameViewEntity[entity]->update_Img(x,entity->getCoordY(),entity->getState());
+          map_Entity_GameViewEntity[entity]->update_Img(x,entity->getCoordY(),entity->getState());
         }
         else{
            map_Entity_GameViewEntity[entity] = entity_factory.create(entity,x);
