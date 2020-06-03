@@ -94,6 +94,15 @@ void Game_View::paint(Entity *entity){
     if(entity->getDisplay()){
         if (map_Entity_GameViewEntity.contains(entity)){
           map_Entity_GameViewEntity[entity]->update_Img(x,entity->getCoordY(),entity->getState());
+          if(entity->getRefresh()){
+              this->removeItem(map_Entity_GameViewEntity[entity]);
+              delete map_Entity_GameViewEntity[entity];
+              map_Entity_GameViewEntity.remove(entity);
+              map_Entity_GameViewEntity[entity] = entity_factory.create(entity,x);
+              this->addItem(map_Entity_GameViewEntity[entity]);
+              entity->setRefresh(false);
+
+          }
         }
         else{
            map_Entity_GameViewEntity[entity] = entity_factory.create(entity,x);

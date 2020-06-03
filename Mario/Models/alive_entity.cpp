@@ -3,6 +3,7 @@
 Alive_Entity::Alive_Entity()
 {
     move = true;
+    refresh = false;
 }
 
 

@@ -45,8 +45,10 @@ void Level_Controller::select_display_element()
         if(distance < 650 && distance > -650){
 
             if(!entity->getDead()){
-                entity->setDisplay(true);
-                current_entity_list.push_back(entity);
+
+                     current_entity_list.push_back(entity);
+                        entity->setDisplay(true);
+
             }
             else if(entity->getDisplay()){
                 entity->setDisplay(false);
