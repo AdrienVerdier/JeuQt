@@ -12,8 +12,13 @@ Global_Views_Controller::Global_Views_Controller()
     level_view_container->setFixedSize(1280,700);
     level_view_container->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     level_view_container->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    menu_view_container->setFixedSize(300,300);
-    gameover_view_container->setFixedSize(300,300);
+
+    menu_view_container->setFixedSize(500,300);
+
+    gameover_view_container->setFixedSize(800,400);
+    gameover_view_container->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    gameover_view_container->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
 
     level_view_container->setScene(level_controller->getScene());
     menu_view_container->setScene(menu_controler->getScene());
@@ -24,6 +29,7 @@ Global_Views_Controller::Global_Views_Controller()
     qstack->addWidget(menu_view_container);
     qstack->addWidget(gameover_view_container);
     qstack->addWidget(level_view_container);
+
 
     level_view_container->hide();
     menu_view_container->hide();
@@ -41,6 +47,7 @@ void Global_Views_Controller::display_Level(QString path)
 void Global_Views_Controller::display_GameOver()
 {
     gameover_view_container->show();
+    qstack->widget(qstack->indexOf(gameover_view_container))->move(200,100);
 
 }
 
