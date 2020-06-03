@@ -29,7 +29,7 @@ Level::Level()
     level_img.load(":images/images/Niveau/Niv1.png");
 
 
-    for ( int row = 10; row < level_img.height(); row+=25 )
+    for ( int row = 10; row < 700; row+=25 )
         for ( int col = 10; col < level_img.width(); col+=25 )
         {
             QColor clrCurrent( level_img.pixel( col, row ) );
