@@ -30,6 +30,7 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (Tuyau).name() == typeid(*entity).name()) collisionSpec((Tuyau*)entity, position);
     if (typeid (Chateau).name() == typeid(*entity).name()) collisionSpec((Chateau*)entity, position);
     if (typeid (Trampoline).name() == typeid(*entity).name()) collisionSpec((Trampoline*)entity, position);
+    if (typeid (spike).name() == typeid(*entity).name()) collisionSpec((spike*)entity, position);
 }
 
 void Mario::update()
@@ -182,7 +183,7 @@ void Mario::collisionSpec(Trampoline *entity, int position)
             break;
         case 2:
             jump= true;
-            cptjump=0;
+            cptjump=-20;
             break;
         case 3:
             this->move_to_left = false;
@@ -263,6 +264,11 @@ void Mario::collisionSpec(plante *entity, int position)
 }
 
 void Mario::collisionSpec(flamme *entity, int position)
+{
+    state_dead = true;
+}
+
+void Mario::collisionSpec(spike *entity, int position)
 {
     state_dead = true;
 }

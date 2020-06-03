@@ -21,6 +21,7 @@
 #include "Models/flower.h"
 #include "Models/chateau.h"
 #include "Models/trampoline.h"
+#include "Models/spike.h"
 
 class Mario : public Alive_Entity
 {
@@ -42,6 +43,7 @@ public:
     void collisionSpec(Tuyau* entity, int position);
     void collisionSpec(Chateau* entity, int position);
     void collisionSpec(Trampoline* entity, int position);
+    void collisionSpec(spike* entity, int position);
 
     int getCptjump() const;
 
