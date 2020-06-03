@@ -5,6 +5,7 @@ release/alive_entity.o
 release/billblaster.o
 release/block.o
 release/bulletbill.o
+release/carapace.o
 release/chateau.o
 release/entity.o
 release/flamme.o

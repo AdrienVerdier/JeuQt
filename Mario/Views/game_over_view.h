@@ -9,6 +9,7 @@
 
 class Game_Over_View : public QGraphicsScene
 {
+
 public:
     Game_Over_View(QWidget *parent = 0 );
 
@@ -16,6 +17,9 @@ private:
     QLabel *text;
     QPushButton *bouton;
     QGraphicsProxyWidget *proxy;
+
+private slots:
+   void handleButton();
 };
 
 #endif // GAME_OVER_VIEW_H

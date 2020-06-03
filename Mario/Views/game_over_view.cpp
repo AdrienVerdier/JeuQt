@@ -1,6 +1,7 @@
 #include "game_over_view.h"
 
 #include <QLabel>
+ #include <QCoreApplication>
 
 Game_Over_View::Game_Over_View(QWidget *parent)
 {
@@ -22,6 +23,14 @@ Game_Over_View::Game_Over_View(QWidget *parent)
     this->addItem(proxy);
 
 
+    connect(bouton, SIGNAL (released()), this, SLOT (handleButton()));
 
+}
 
+void Game_Over_View::handleButton()
+{
+   // change the text
+   bouton->setText("Example");
+   // resize button
+   bouton->resize(100,100);
 }

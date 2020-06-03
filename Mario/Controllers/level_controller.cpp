@@ -146,6 +146,7 @@ void Level_Controller::NewLevel(QString path){
      game_view->reset();
     level->getPlayer()->setInputs(game_view->get_Keys());
     pause = false;
+    path_level_en_cours = path;
 
 }
 
@@ -161,9 +162,10 @@ void Level_Controller::update_lvl()
 
             }
             else{
-                level->SetNbVie(level->getNbVie()-1);
-                NewLevel("");
-                game_view->reset();
+                int vies = level->getNbVie()-1;
+                NewLevel(path_level_en_cours);
+                level->SetNbVie(vies);
+
             }
         }
 

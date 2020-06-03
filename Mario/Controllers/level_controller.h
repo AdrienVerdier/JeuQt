@@ -18,6 +18,7 @@ public:
     void NewLevel(QString path);
 
 private:
+    QString path_level_en_cours;
     Global_Views_Controller *pere;
     bool reset;
     Game_View *game_view;
