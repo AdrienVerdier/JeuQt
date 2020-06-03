@@ -43,11 +43,35 @@ Level::Level()
                 entity_list->push_back(new Tuyau());
                 entity_list->last()->setDisplay(true);
                 entity_list->last()->setCoordX(col-10);
-                entity_list->last()->setCoordY(row-14);
+                entity_list->last()->setCoordY(row-10);
                 entity_list->last()->setState(0);
             }
             if(clrCurrent.red() == 239 && clrCurrent.green()==228 &&clrCurrent.blue()==176){
                 entity_list->push_back(new mysteryblock());
+                entity_list->last()->setDisplay(true);
+                entity_list->last()->setCoordX(col-10);
+                entity_list->last()->setCoordY(row-10);
+                entity_list->last()->setState(0);
+
+            }
+            if(clrCurrent.red() == 112 && clrCurrent.green()==146 &&clrCurrent.blue()==190){
+                entity_list->push_back(new Chateau());
+                entity_list->last()->setDisplay(true);
+                entity_list->last()->setCoordX(col-10);
+                entity_list->last()->setCoordY(row-10);
+                entity_list->last()->setState(0);
+
+            }
+            if(clrCurrent.red() == 136 && clrCurrent.green()== 0 &&clrCurrent.blue()== 21){
+                entity_list->push_back(new Trampoline());
+                entity_list->last()->setDisplay(true);
+                entity_list->last()->setCoordX(col-10);
+                entity_list->last()->setCoordY(row-10);
+                entity_list->last()->setState(0);
+
+            }
+            if(clrCurrent.red() == 0 && clrCurrent.green()== 0 &&clrCurrent.blue()== 255){
+                entity_list->push_back(new spike());
                 entity_list->last()->setDisplay(true);
                 entity_list->last()->setCoordX(col-10);
                 entity_list->last()->setCoordY(row-10);
@@ -173,25 +197,7 @@ Level::Level()
                 alive_entity_list->last()->setState(0);
 
             }
-            if(clrCurrent.red() == 112 && clrCurrent.green()==146 &&clrCurrent.blue()==190){
-                alive_entity_list->push_back(new Chateau());
-                alive_entity_list->last()->setDisplay(true);
-                alive_entity_list->last()->setCoordX(col-10);
-                alive_entity_list->last()->setCoordY(row-14);
-                alive_entity_list->last()->setState(0);
-
-            }
-            if(clrCurrent.red() == 136 && clrCurrent.green()== 0 &&clrCurrent.blue()== 21){
-                alive_entity_list->push_back(new Trampoline());
-                alive_entity_list->last()->setDisplay(true);
-                alive_entity_list->last()->setCoordX(col-10);
-                alive_entity_list->last()->setCoordY(row-10);
-                alive_entity_list->last()->setState(0);
-
-            }
         }
-
-
 }
 
 QList<Entity *> *Level::get_entity_list()

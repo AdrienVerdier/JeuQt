@@ -94,6 +94,9 @@
         <file>images/powerup/mushroom.png</file>
         <file>images/powerup/star.png</file>
         <file>images/Chateau/Chateau.png</file>
-        <file>images/Trampoline/Trampoline.png</file>
+        <file>images/spike/spike.png</file>
+        <file>images/Trampoline/Trampoline1.png</file>
+        <file>images/Trampoline/Trampoline2.png</file>
+        <file>images/Trampoline/Trampoline3.png</file>
     </qresource>
 </RCC>

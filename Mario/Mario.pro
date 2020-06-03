@@ -42,6 +42,7 @@ SOURCES += \
     Models/piece.cpp \
     Models/plante.cpp \
     Models/smoke.cpp \
+    Models/spike.cpp \
     Models/star.cpp \
     Models/static_entity.cpp \
     Models/thwomp.cpp \
@@ -80,6 +81,7 @@ HEADERS += \
     Models/piece.h \
     Models/plante.h \
     Models/smoke.h \
+    Models/spike.h \
     Models/star.h \
     Models/static_entity.h \
     Models/thwomp.h \

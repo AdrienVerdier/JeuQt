@@ -67,6 +67,10 @@
                 "0" : [":images/images/Chateau/Chateau.png"]
         },
         "trampoline" :{
-                "0" : [":images/images/Trampoline/Trampoline.png"]
+                "0" : [":images/images/Trampoline/Trampoline1.png"],
+                "1" : [":images/images/Trampoline/Trampoline1.png",":images/images/Trampoline/Trampoline2.png",":images/images/Trampoline/Trampoline3.png",":images/images/Trampoline/Trampoline2.png",":images/images/Trampoline/Trampoline1.png"]
+        },
+        "spike" :{
+                "0" : [":images/images/spike/spike.png"]
         }
 }

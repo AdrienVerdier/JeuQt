@@ -29,6 +29,7 @@ Game_View_Entity *Game_View_Factory::create(Entity *e,int x)
     if (typeid (flower).name() == typeid(*e).name()) return create((flower*)e, x);
     if (typeid (Chateau).name() == typeid(*e).name()) return create((Chateau*)e, x);
     if (typeid (Trampoline).name() == typeid(*e).name()) return create((Trampoline*)e, x);
+    if (typeid (spike).name() == typeid(*e).name()) return create((spike*)e, x);
 }
 
 
@@ -112,7 +113,8 @@ Game_View_Entity* Game_View_Factory::create(Trampoline *t, int x){
           QJsonObject trampoline = value.toObject();
 
           map[0].push_back(trampoline["0"].toArray()[0].toString());
-
+          for(int i =0;i<5;i++)
+          map[1].push_back(trampoline["1"].toArray()[i].toString());
 
           Game_View_Entity *entity_view = new Game_View_Entity(map,x,t->getCoordY(),t->getState());
 
@@ -524,6 +526,33 @@ Game_View_Entity* Game_View_Factory::create(Chateau *c, int x){
           QJsonObject chateau = value.toObject();
 
           map[0].push_back(chateau["0"].toArray()[0].toString());
+
+
+          Game_View_Entity *entity_view = new Game_View_Entity(map,x,c->getCoordY(),c->getState());
+
+          return entity_view;
+
+}
+
+Game_View_Entity* Game_View_Factory::create(spike *c, int x){
+
+
+          QMap<int,QList<QString>> map;
+
+          QString val;
+          QFile file;
+          file.setFileName(":images/images/Characters_Animations_Pattern.json");
+          file.open(QIODevice::ReadOnly | QIODevice::Text);
+          val = file.readAll();
+          file.close();
+
+          QJsonDocument d = QJsonDocument::fromJson(val.toUtf8());
+          QJsonObject sett2 = d.object();
+          QJsonValue value = sett2.value(QString("spike"));
+
+          QJsonObject spike = value.toObject();
+
+          map[0].push_back(spike["0"].toArray()[0].toString());
 
 
           Game_View_Entity *entity_view = new Game_View_Entity(map,x,c->getCoordY(),c->getState());

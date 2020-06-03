@@ -30,6 +30,7 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (Tuyau).name() == typeid(*entity).name()) collisionSpec((Tuyau*)entity, position);
     if (typeid (Chateau).name() == typeid(*entity).name()) collisionSpec((Chateau*)entity, position);
     if (typeid (Trampoline).name() == typeid(*entity).name()) collisionSpec((Trampoline*)entity, position);
+    if (typeid (spike).name() == typeid(*entity).name()) collisionSpec((spike*)entity, position);
 }
 
 void Mario::update()
@@ -65,12 +66,14 @@ void Mario::update()
            if(input->left )state = 5;
            this->move_to_down = false;
            coord_y-=5;
+           if(contact_trampoline)coord_y-=5;
            cptjump++;
            if(cptjump <= 2){
                setOn_ground(false);
            }
            if(cptjump == 30){
                jump = false;
+               contact_trampoline = false;
            }
         }
         else{
@@ -174,6 +177,7 @@ void Mario::collisionSpec(smoke *entity, int position)
 void Mario::collisionSpec(Trampoline *entity, int position)
 {
     move_to_down = false;
+    setContact_trampoline(true);
     switch (position) {
         case 0 :
             break;
@@ -182,7 +186,7 @@ void Mario::collisionSpec(Trampoline *entity, int position)
             break;
         case 2:
             jump= true;
-            cptjump=0;
+            cptjump=5;
             break;
         case 3:
             this->move_to_left = false;
@@ -267,6 +271,11 @@ void Mario::collisionSpec(flamme *entity, int position)
     state_dead = true;
 }
 
+void Mario::collisionSpec(spike *entity, int position)
+{
+    state_dead = true;
+}
+
 void Mario::collisionSpec(thwomp *entity, int position)
 {
     setContact_thwomp(true);
@@ -316,4 +325,14 @@ bool Mario::getContact_thwomp() const
 void Mario::setContact_thwomp(bool value)
 {
     contact_thwomp = value;
+}
+
+bool Mario::getContact_trampoline() const
+{
+    return contact_trampoline;
+}
+
+void Mario::setContact_trampoline(bool value)
+{
+    contact_trampoline = value;
 }
