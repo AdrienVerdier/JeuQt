@@ -60,6 +60,7 @@ SOURCES += \
     Views/game_view_entity.cpp \
     Views/game_view_factory.cpp \
     Views/global_view.cpp \
+    Views/level_view_selection.cpp \
     Views/menu_view.cpp
 
 
@@ -106,6 +107,7 @@ HEADERS += \
     Views/game_view_entity.h \
     Views/game_view_factory.h \
     Views/global_view.h \
+    Views/level_view_selection.h \
     Views/menu_view.h
 
 FORMS += \

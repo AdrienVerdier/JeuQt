@@ -23,18 +23,24 @@ Global_Views_Controller::Global_Views_Controller()
     gameover_view_container->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     gameover_view_container->setStyleSheet("background: transparent");
 
+    select_level_view_container->setFixedSize(1280,700);
+    select_level_view_container->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    select_level_view_container->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    select_level_view_container->setStyleSheet("background: transparent");
 
     level_view_container->setScene(level_controller->getScene());
     menu_view_container->setScene(menu_controler->getScene());
     gameover_view_container->setScene(game_over_view);
 
-    main_scene->addWidget(level_view_container);
-    main_scene->addWidget(gameover_view_container);
-    main_scene->addWidget(menu_view_container);
+    main_scene->addWidget(level_view_container)->setPos(0,0);
+    main_scene->addWidget(gameover_view_container)->setPos(0,0);
+    main_scene->addWidget(menu_view_container)->setPos(0,0);
+    main_scene->addWidget(select_level_view_container)->setPos(0,0);
 
     level_view_container->hide();
     menu_view_container->hide();
     gameover_view_container->hide();
+    select_level_view_container->hide();
 
 }
 
