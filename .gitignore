@@ -1,4 +1,8 @@
 build-Mario-Desktop_x86_windows_msvc2019_pe_64bit-Debug/
+build-Mario-Desktop_Qt_5_14_1_MinGW_32_bit-Debug/
+build-Mario-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/
+build-Mario-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/
+build-Mario-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/
 # C++ objects and libs
 *.slo
 *.lo
