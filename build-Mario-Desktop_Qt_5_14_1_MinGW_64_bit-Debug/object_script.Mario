@@ -9,7 +9,6 @@ blockgrass.o
 bulletbill.o
 carapace.o
 chateau.o
-checkpoint.o
 entity.o
 flamme.o
 flower.o
