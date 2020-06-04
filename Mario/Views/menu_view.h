@@ -10,14 +10,12 @@ class Menu_View : public QGraphicsScene
 public:
     Menu_View();
 
-    QPushButton *getBouton_play() const;
-
-    QPushButton *getBouton_select() const;
-
-    QPushButton *getBouton_quit() const;
+    QPushButton *get_Bouton_play() ;
+    QPushButton *get_Bouton_select() ;
+    QPushButton *get_Bouton_quit();
 
 private:
-    QGraphicsProxyWidget *proxy = new QGraphicsProxyWidget();
+    QGraphicsProxyWidget *proxy;
     QPushButton *bouton_play = new QPushButton("Play");
     QPushButton *bouton_select = new QPushButton("Select Level");
     QPushButton *bouton_quit = new QPushButton("Exit");

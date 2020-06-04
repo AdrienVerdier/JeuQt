@@ -11,7 +11,7 @@
 Level_Controller::Level_Controller( Global_Views_Controller *p)
 {
 
-    game_view = new Game_View();
+    game_view = new Game_View(this);
     reset = false;
 
     pere = p;
@@ -157,6 +157,21 @@ void Level_Controller::NewLevel(QString path){
 
 }
 
+void Level_Controller::escape_key_pressed()
+{
+    pere->display_Menu();
+}
+
+bool Level_Controller::getPause() const
+{
+    return pause;
+}
+
+void Level_Controller::setPause(bool value)
+{
+    pause = value;
+}
+
 void Level_Controller::update_lvl()
 {
     if(! pause){
@@ -200,7 +215,7 @@ void Level_Controller::update_lvl()
              if(entity->getDisplay())entity->update();
         }
 
-        qDebug() << "The slow operation took" << timer.elapsed() << "milliseconds";
+        //qDebug() << "The slow operation took" << timer.elapsed() << "milliseconds";
     }
 
 

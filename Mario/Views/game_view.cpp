@@ -7,13 +7,15 @@
 #include "../Models/star.h"
 #include "../Models/mushroom.h"
 #include "../Models/flower.h"
+#include "../Controllers/level_controller.h"
 
 #include<QDebug>
 #include <QRectF>
 
 
-Game_View::Game_View(QWidget *parent)
+Game_View::Game_View(Level_Controller* parent)
 {
+    controler = parent;
 
     nbScore = 0;
     nbVies = 3;
@@ -149,7 +151,6 @@ QMap<Entity*, QMap<Entity*,int>> Game_View::get_list_collides( )
                         QRectF rect(map_Entity_GameViewEntity[collideswith]->x(),map_Entity_GameViewEntity[collideswith]->y(),map_Entity_GameViewEntity[collideswith]->boundingRect().width(),map_Entity_GameViewEntity[collideswith]->boundingRect().height());
 
                          if(rectHaut.intersects(rect)){
-                              qInfo() << "coucou";
                              list_collides[entity][collideswith] = 0;
                              list_collides[collideswith][entity] = 2;
                          }
@@ -251,6 +252,9 @@ void Game_View::keyPressEvent(QKeyEvent *keyEvent)
     if(keyEvent->key()== Qt::Key_Space && !keyEvent->isAutoRepeat())
     {
        controls->up = true;
+    }
+    if(keyEvent->key() == Qt::Key_Escape){
+        controler->escape_key_pressed();
     }
 }
 

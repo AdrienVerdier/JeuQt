@@ -14,12 +14,15 @@ public:
 
     void display_Level(QString path);
     void display_GameOver();
+    void display_Menu();
+    void hide_Menu();
+    void show_current_level();
 
     Global_View *getView() const;
 
 
 private:
-    Global_View * main_view = new Global_View;
+    Global_View * main_view = new Global_View(this);
     QGraphicsScene *main_scene = new QGraphicsScene;
 
     QGraphicsView *level_view_container = new QGraphicsView;
@@ -28,10 +31,7 @@ private:
 
     Level_Controller *level_controller;
     Menu_Controler *menu_controler;
-
     Game_Over_View *game_over_view;
-
-    QStackedWidget *qstack;
 };
 
 #endif // GLOBAL_VIEWS_CONTROLLER_H
