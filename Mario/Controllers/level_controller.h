@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QTimer>
 #include <QMap>
-
+#include <QMediaPlayer>
 
 class Game_View;
 class Global_Views_Controller;
@@ -27,11 +27,15 @@ private:
     QTimer *m_timer;
     QMap<Entity*, QMap<Entity*,int>> collision_List;
     bool pause;
+    QMediaPlayer * background_sound;
+    QMediaPlayer * mario_die_sound;
+    QMediaPlayer * game_over_sound;
 
     void update_view();
 
 public slots:
     void update_lvl();
+
 };
 
 #endif // LEVEL_CONTROLLER_H
