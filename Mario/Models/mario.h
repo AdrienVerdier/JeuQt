@@ -81,6 +81,9 @@ private:
     bool mort = false;
     int cptinvincible = 0;
     QMediaPlayer * jump_sound;
+    QMediaPlayer * coin_sound;
+    QMediaPlayer * lifeup_sound;
+    QMediaPlayer * powerup_sound;
 };
 
 #endif // MARIO_H

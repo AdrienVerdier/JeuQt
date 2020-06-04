@@ -23,8 +23,6 @@ void Piece::collisionSpec(Mario *entity, int position)
     this->state_dead = true;
     level->SetScore(level->getScore()+1);
 
-
-    qInfo() << "collision";
 }
 
 void Piece::update()

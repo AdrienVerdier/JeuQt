@@ -21,6 +21,7 @@ Level::Level(QString path)
     m->setCoordX(0);
     m->setCoordY(2);
     m->setState(1);
+    m->setLevel(this);
     player = m;
     coord_x_cp = 0;
     coord_y_cp = 2;
