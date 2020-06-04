@@ -7,6 +7,7 @@
 #include "level_controller.h"
 #include <QStackedWidget>
 
+class Menu_Controler;
 class Global_Views_Controller
 {
 public:
@@ -26,7 +27,7 @@ private:
     QGraphicsView *menu_view_container = new QGraphicsView;
     QGraphicsView *gameover_view_container = new QGraphicsView;
 
-    Level_Controller * level_controller;
+    Level_Controller *level_controller;
     Menu_Controler *menu_controler;
 
     Game_Over_View *game_over_view;
