@@ -234,6 +234,16 @@ Level::Level(QString path)
                 alive_entity_list->last()->setState(0);
 
             }
+
+
+            if(clrCurrent.red() == 218 && clrCurrent.green()==245 &&clrCurrent.blue()==63){
+                alive_entity_list->push_back(new GoalPole());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-10);
+                alive_entity_list->last()->setState(0);
+
+            }
         }
 }
 
@@ -280,4 +290,14 @@ int Level::getScore_cp() const
 void Level::setScore_cp(int value)
 {
     score_cp = value;
+}
+
+bool Level::getFin_level() const
+{
+    return fin_level;
+}
+
+void Level::setFin_level(bool value)
+{
+    fin_level = value;
 }

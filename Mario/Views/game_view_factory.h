@@ -23,6 +23,7 @@
 #include "../Models/spike.h"
 #include "../Models/carapace.h"
 #include "../Models/checkpoint.h"
+#include "../Models/goalpole.h"
 #include "game_view_entity.h"
 #include <QFile>
 #include <QJsonDocument>
@@ -50,6 +51,7 @@ public:
     Game_View_Entity* create(smoke *g,int x);
     Game_View_Entity* create(Tuyau *t, int x);
     Game_View_Entity* create(CheckPoint *t, int x);
+    Game_View_Entity* create(GoalPole *t, int x);
     Game_View_Entity* create(mysteryblock *t, int x);
     Game_View_Entity* create(star *t, int x);
     Game_View_Entity* create(mushroom *t, int x);

@@ -24,6 +24,7 @@ Game_View_Entity *Game_View_Factory::create(Entity *e,int x)
     if (typeid (smoke).name() == typeid(*e).name()) return create((smoke*)e, x);
     if (typeid (Tuyau).name() == typeid(*e).name()) return create((Tuyau*)e, x);
     if (typeid (CheckPoint).name() == typeid(*e).name()) return create((CheckPoint*)e, x);
+    if (typeid (GoalPole).name() == typeid(*e).name()) return create((GoalPole*)e, x);
     if (typeid (mysteryblock).name() == typeid(*e).name()) return create((mysteryblock*)e, x);
     if (typeid (lifeup).name() == typeid(*e).name()) return create((lifeup*)e, x);
     if (typeid (mushroom).name() == typeid(*e).name()) return create((mushroom*)e, x);
@@ -209,6 +210,35 @@ Game_View_Entity* Game_View_Factory::create(CheckPoint *t, int x){
           return entity_view;
 
 }
+
+Game_View_Entity* Game_View_Factory::create(GoalPole *t, int x){
+
+
+          QMap<int,QList<QString>> map;
+
+          QString val;
+          QFile file;
+          file.setFileName(":images/images/Characters_Animations_Pattern.json");
+          file.open(QIODevice::ReadOnly | QIODevice::Text);
+          val = file.readAll();
+          file.close();
+
+          QJsonDocument d = QJsonDocument::fromJson(val.toUtf8());
+          QJsonObject sett2 = d.object();
+          QJsonValue value = sett2.value(QString("goalpole"));
+
+          QJsonObject goalpole = value.toObject();
+
+          map[0].push_back(goalpole["0"].toArray()[0].toString());
+          //map[1].push_back(goalpole["1"].toArray()[0].toString());
+
+
+          Game_View_Entity *entity_view = new Game_View_Entity(map,x,t->getCoordY(),t->getState());
+
+          return entity_view;
+
+}
+
 
 Game_View_Entity *Game_View_Factory::create(Goomba *g,int x)
 {

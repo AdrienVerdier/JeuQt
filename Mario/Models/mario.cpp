@@ -60,11 +60,12 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (flower).name() == typeid(*entity).name()) collisionSpec((flower*)entity, position);
     if (typeid (carapace).name() == typeid(*entity).name()) collisionSpec((carapace*)entity, position);
     if (typeid (CheckPoint).name() == typeid(*entity).name()) collisionSpec((CheckPoint*)entity, position);
+    if (typeid (GoalPole).name() == typeid(*entity).name()) collisionSpec((GoalPole*)entity, position);
 }
 
 void Mario::update()
 {
-    if(!mort){
+    if(!mort && !goal){
 
         if(input->right && move_to_right) {
             state = 1;
@@ -134,7 +135,7 @@ void Mario::update()
         }
 
     }
-    else{
+    else if(mort){
         if(level->getNbVie()<=0){
             game_over_sound->play();
         }
@@ -152,6 +153,23 @@ void Mario::update()
         }
         cptmort ++;
 
+
+    }
+    else if(goal){
+        if (cptEnd == 0)  {
+            coord_x+=30;
+
+            state = 5;
+        }
+        else{
+            if (coord_y<625) coord_y+=1;
+            else{
+                state = 1;
+                coord_x+=1;
+            }
+
+        }
+        cptEnd++;
 
     }
 }
@@ -210,7 +228,10 @@ void Mario::collisionSpec(Chateau *entity, int position)
         case 3:
             this->move_to_left = false;
             break;
+
+
     }
+    level->setFin_level(true);
 }
 
 void Mario::collisionSpec(Tuyau *entity, int position)
@@ -373,6 +394,12 @@ void Mario::collisionSpec(CheckPoint *entity, int position)
     level->setCoord_y_cp(entity->getCoordY());
     level->setScore_cp(level->getScore());
 
+
+}
+
+void Mario::collisionSpec(GoalPole *entity, int position)
+{
+    goal = true;
 
 }
 

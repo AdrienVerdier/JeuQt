@@ -8,6 +8,13 @@
                  "5" : [":images/images/Mario/JumpMiroir.png"],
                  "6" : [":images/images/Mario/Dead.png"]
 	},
+        "bowser" :{
+                "0" : [":images/images/Bowser/Idle.png"],
+                "1" : [":images/images/Bowser/Walk1.png", ":images/images/Bowser/Walk2.png", ":images/images/Bowser/Walk3.png", ":images/images/Bowser/Walk4.png"],
+                "2" : [":images/images/Bowser/Shoot.png"],
+                "3" : [":images/images/Bowser/Jump.png"],
+                "4" : [":images/images/Bowser/Mort.png"]
+        }
 	"block" :{
 		"0" : [":images/images/Blocks/Block.png"]
         },
@@ -82,6 +89,10 @@
         "checkpoint":{
                 "0" :[":images/images/Checkpoints/CheckPointOK.png"],
                 "1" :[":images/images/Checkpoints/CheckPoint.png"]
+
+        },
+        "goalpole":{
+                "0" :[":images/images/Checkpoints/GoalPole.png"]
 
         }
 }
