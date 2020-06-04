@@ -23,6 +23,12 @@ Mario::Mario()
     powerup_sound = new QMediaPlayer();
     powerup_sound->setMedia(QUrl("qrc:/son/son/power_up.mp3"));
     powerup_sound->setVolume(30);
+    mario_die_sound = new QMediaPlayer();
+    mario_die_sound->setMedia(QUrl("qrc:/son/son/mario_die.mp3"));
+    mario_die_sound->setVolume(30);
+    game_over_sound = new QMediaPlayer();
+    game_over_sound->setMedia(QUrl("qrc:/son/son/game_over.mp3"));
+    game_over_sound->setVolume(30);
 }
 
 void Mario::setInputs(Controls *c)
@@ -79,7 +85,6 @@ void Mario::update()
 
         }
 
-
         if(input->up && cptjump ==0 && !move_to_down){
             jump = true;
             if(jump_sound->state() != QMediaPlayer::PlayingState)jump_sound->play();
@@ -129,6 +134,13 @@ void Mario::update()
 
     }
     else{
+        if(level->getNbVie()<=0){
+            game_over_sound->play();
+        }
+        else{
+            mario_die_sound->play();
+        }
+
         state = 6;
         if (cptmort >=60 )   coord_y+=5;
 

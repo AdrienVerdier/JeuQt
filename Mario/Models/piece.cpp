@@ -22,6 +22,10 @@ void Piece::collisionSpec(Mario *entity, int position)
 
     this->state_dead = true;
     level->SetScore(level->getScore()+1);
+    if(level->getScore()==100){
+        level->SetNbVie(level->getNbVie()+1);
+        level->SetScore(0);
+    }
 
 }
 

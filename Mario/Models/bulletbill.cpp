@@ -22,7 +22,7 @@ bulletbill::bulletbill(bool left)
 void bulletbill::collision(Entity *entity, int position)
 {
     if (typeid (Mario).name() == typeid(*entity).name()) collisionSpec((Mario*) entity, position);
-    if (typeid (carapace).name() == typeid(*entity).name() && entity->getState() == 1) this->state_dead = true;
+    if (typeid (carapace).name() == typeid(*entity).name() && entity->getState() == 1 && typeid (Piece).name() != typeid(*entity).name()) this->state_dead = true;
 }
 
 void bulletbill::collisionSpec(Mario *entity, int position)

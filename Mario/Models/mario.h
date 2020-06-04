@@ -86,6 +86,8 @@ private:
     QMediaPlayer * coin_sound;
     QMediaPlayer * lifeup_sound;
     QMediaPlayer * powerup_sound;
+    QMediaPlayer * mario_die_sound;
+    QMediaPlayer * game_over_sound;
 };
 
 #endif // MARIO_H
