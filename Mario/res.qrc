@@ -101,5 +101,7 @@
         <file>images/Trampoline/Trampoline3.png</file>
         <file>images/Tuyau/Tuyau2.png</file>
         <file>images/Mario/Dead.png</file>
+        <file>images/Niveau/Niv1_1.png</file>
+        <file>images/Niveau/Niv1_2.png</file>
     </qresource>
 </RCC>

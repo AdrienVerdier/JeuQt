@@ -26,7 +26,7 @@ Level::Level()
     coord_y_cp = 2;
 
     QImage level_img;
-    level_img.load(":images/images/Niveau/Niv1.png");
+    level_img.load(":images/images/Niveau/Niv1_2.png");
 
 
     for ( int row = 10; row < 700; row+=25 )
