@@ -21,6 +21,17 @@ Level_Controller::Level_Controller( Global_Views_Controller *p)
     m_timer->start(15);
     pause = true;
 
+
+    background_sound = new QMediaPlayer();
+    background_sound->setMedia(QUrl("qrc:/son/son/background.mp3"));
+    background_sound->setVolume(10);
+    mario_die_sound = new QMediaPlayer();
+    mario_die_sound->setMedia(QUrl("qrc:/son/son/mario_die.mp3"));
+    mario_die_sound->setVolume(30);
+    game_over_sound = new QMediaPlayer();
+    game_over_sound->setMedia(QUrl("qrc:/son/son/game_over.mp3"));
+    game_over_sound->setVolume(30);
+
 }
 
 Game_View *Level_Controller::getScene()
@@ -144,7 +155,7 @@ void Level_Controller::update_view()
 
 void Level_Controller::NewLevel(QString path){
 
-    level = new Level();
+    level = new Level(path);
      game_view->reset();
     level->getPlayer()->setInputs(game_view->get_Keys());
     pause = false;
@@ -155,19 +166,21 @@ void Level_Controller::NewLevel(QString path){
 void Level_Controller::update_lvl()
 {
     if(! pause){
+        if(background_sound->state() == QMediaPlayer::StoppedState)background_sound->play();
         QElapsedTimer timer;
           timer.start();
         if(level->getPlayer()->getDead()){
+            background_sound->stop();
             if(level->getNbVie()<=0){
                 pause = true;
                 pere->display_GameOver();
-
+                game_over_sound->play();
             }
             else{
                 int vies = level->getNbVie()-1;
                 NewLevel(path_level_en_cours);
                 level->SetNbVie(vies);
-
+                mario_die_sound->play();
             }
         }
 

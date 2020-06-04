@@ -4,6 +4,7 @@
 #include <QSound>
 #include <QMediaPlayer>
 #include <QSoundEffect>
+#include "level.h"
 Mario::Mario()
 {
     cptjump = 0;
@@ -13,9 +14,6 @@ Mario::Mario()
     jump_sound = new QMediaPlayer();
     jump_sound->setMedia(QUrl("qrc:/son/son/mario_jump.mp3"));
     jump_sound->setVolume(30);
-    background_sound = new QMediaPlayer();
-    background_sound->setMedia(QUrl("qrc:/son/son/background.mp3"));
-    background_sound->setVolume(10);
 }
 
 void Mario::setInputs(Controls *c)
@@ -46,12 +44,10 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (star).name() == typeid(*entity).name()) collisionSpec((star*)entity, position);
     if (typeid (flower).name() == typeid(*entity).name()) collisionSpec((flower*)entity, position);
     if (typeid (carapace).name() == typeid(*entity).name()) collisionSpec((carapace*)entity, position);
-    if(state_dead == true) background_sound->stop();
 }
 
 void Mario::update()
 {
-    if(background_sound->state() == QMediaPlayer::StoppedState)background_sound->play();
     if(!mort){
 
         if(input->right && move_to_right) {
@@ -136,7 +132,6 @@ void Mario::update()
 
 
     }
-    if(state_dead == true) background_sound->stop();
 }
 
 void Mario::collisionSpec(Block *entity, int position)

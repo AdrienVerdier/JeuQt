@@ -2,6 +2,11 @@
     <qresource prefix="/son">
         <file>son/background.mp3</file>
         <file>son/mario_jump.mp3</file>
+        <file>son/coin.mp3</file>
+        <file>son/game_over.mp3</file>
+        <file>son/lifeup.mp3</file>
+        <file>son/mario_die.mp3</file>
+        <file>son/power_up.mp3</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/Mario/Idle.png</file>
