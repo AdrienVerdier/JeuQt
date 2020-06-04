@@ -48,4 +48,6 @@ void Menu_Controler::level_selected()
     QString levelpath = level_selection_menu->getList_widget()->item(currentrow)->text();
     levelpath = ":images/images/Niveau/" + levelpath;
     parent->display_Level(levelpath);
+    parent->hide_Menu();
+    parent->getLevel_controller()->setPause(false);
 }
