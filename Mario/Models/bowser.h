@@ -12,6 +12,8 @@ public:
     void update() override;
 private:
     int cpt_frame;
+    bool dead = false;
+    int cpt_frame_dead=0;
     int life;
     int shoot=0;
     QMediaPlayer * bowser_fire_sound;

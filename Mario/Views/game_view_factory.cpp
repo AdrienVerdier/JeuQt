@@ -370,6 +370,7 @@ Game_View_Entity *Game_View_Factory::create(bowser *g, int x)
     map[2].push_back(bowser["2"].toArray()[0].toString());
     map[3].push_back(bowser["3"].toArray()[0].toString());
     map[4].push_back(bowser["4"].toArray()[0].toString());
+    map[5].push_back(bowser["5"].toArray()[0].toString());
 
     Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());
 

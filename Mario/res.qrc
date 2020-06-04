@@ -10,6 +10,7 @@
         <file>son/bill_blaster.mp3</file>
         <file>son/victory.mp3</file>
         <file>son/bowser_fire.mp3</file>
+        <file>son/star.mp3</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/Mario/Idle.png</file>
@@ -133,5 +134,6 @@
         <file>images/Niveau/NivTest.png</file>
         <file>images/Bowser/bowser_fire.png</file>
         <file>images/Bowser/bowser_fire2.png</file>
+        <file>images/Bowser/ShootUp.png</file>
     </qresource>
 </RCC>

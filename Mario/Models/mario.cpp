@@ -35,6 +35,9 @@ Mario::Mario()
     background_sound = new QMediaPlayer();
     background_sound->setMedia(QUrl("qrc:/son/son/background.mp3"));
     background_sound->setVolume(10);
+    star_sound = new QMediaPlayer();
+    star_sound->setMedia(QUrl("qrc:/son/son/star.mp3"));
+    star_sound->setVolume(30);
 }
 
 void Mario::setInputs(Controls *c)
@@ -149,11 +152,14 @@ void Mario::update()
             }
             if(getCptinvincible()==666){
                 setInvincible(false);
+                background_sound->setMuted(false);
+                star_sound->stop();
             }
         }
 
     }
     else if(mort){
+        star_sound->stop();
         background_sound->stop();
         if(level->getNbVie()<=0){
             game_over_sound->play();
@@ -177,7 +183,7 @@ void Mario::update()
     else if(goal){
         if (cptEnd == 0)  {
 
-
+            star_sound->stop();
             background_sound->stop();
             if(victory_sound->state() != QMediaPlayer::PlayingState)victory_sound->play();
             coord_x+=30;
@@ -514,6 +520,10 @@ void Mario::collisionSpec(lifeup *entity, int position)
 void Mario::collisionSpec(star *entity, int position)
 {
     setInvincible(true);
+    if(star_sound->state() == QMediaPlayer::PlayingState)star_sound->setPosition(0);
+    if(star_sound->state() == QMediaPlayer::StoppedState)star_sound->play();
+    background_sound->setMuted(true);
+    setCptinvincible(0);
 }
 
 void Mario::collisionSpec(flower *entity, int position)

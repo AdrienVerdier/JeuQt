@@ -100,6 +100,7 @@ private:
     QMediaPlayer * mario_die_sound;
     QMediaPlayer * game_over_sound;
     QMediaPlayer * victory_sound;
+    QMediaPlayer * star_sound;
 };
 
 #endif // MARIO_H

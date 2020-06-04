@@ -16,7 +16,7 @@ void thwomp::collision(Entity *entity, int position)
         move_to_up = true;
         state=1;
     }
-    if(position == 2 && typeid (Block).name() == typeid(*entity).name() && !getOn_block()){
+    if(position == 2 && (typeid (Block).name() == typeid(*entity).name() || typeid (BlockGrass).name() == typeid(*entity).name()) && !getOn_block()){
         move_to_down = false;
         move_to_up = false;
         setOn_block(true);

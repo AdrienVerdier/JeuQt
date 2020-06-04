@@ -14,10 +14,12 @@
                 "1" : [":images/images/Bowser/Walk1.png", ":images/images/Bowser/Walk2.png", ":images/images/Bowser/Walk3.png", ":images/images/Bowser/Walk4.png"],
                 "2" : [":images/images/Bowser/Shoot.png"],
                 "3" : [":images/images/Bowser/Jump.png"],
-                "4" : [":images/images/Bowser/Mort.png"]
+                "4" : [":images/images/Bowser/Mort.png"],
+                "5" : [":images/images/Bowser/ShootUp.png"]
         },
         "bowser_fire" :{
-                "0" : [":images/images/Bowser/bowser_fire.png"]
+                "0" : [":images/images/Bowser/bowser_fire.png"],
+                "1" : [":images/images/Bowser/bowser_fire2.png"]
         },
 	"block" :{
 		"0" : [":images/images/Blocks/Block.png"]
