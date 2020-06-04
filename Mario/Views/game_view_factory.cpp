@@ -64,6 +64,8 @@ Game_View_Entity* Game_View_Factory::create(Mario *m,int x){
           map[4].push_back(mario["4"].toArray()[i].toString());
           map[5].push_back(mario["5"].toArray()[0].toString());
           map[6].push_back(mario["6"].toArray()[0].toString());
+          for(int i =0;i<6;i++)
+          map[7].push_back(mario["7"].toArray()[i].toString());
 
           Game_View_Entity *entity_view = new Game_View_Entity(map,x,m->getCoordY(),m->getState());
 

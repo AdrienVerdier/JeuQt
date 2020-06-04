@@ -95,6 +95,7 @@ void Mario::update()
         if(jump){
 
             if(move_to_up){
+               state = 3;
                if(input->right )state = 3;
                if(input->left )state = 5;
                this->move_to_down = false;
@@ -127,6 +128,7 @@ void Mario::update()
 
         if(invincible){
             if(getCptinvincible()<666){
+                state = 7;
                 setCptinvincible(getCptinvincible()+1);
             }
             if(getCptinvincible()==666){

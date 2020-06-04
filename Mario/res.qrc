@@ -122,5 +122,11 @@
         <file>images/Bowser/Walk2.png</file>
         <file>images/Bowser/Walk3.png</file>
         <file>images/Bowser/Walk4.png</file>
+        <file>images/Mario/Walk1Star.png</file>
+        <file>images/Mario/Walk2Star.png</file>
+        <file>images/Mario/Walk3Star.png</file>
+        <file>images/Mario/Walk4Star.png</file>
+        <file>images/Mario/Walk5Star.png</file>
+        <file>images/Mario/Walk6Star.png</file>
     </qresource>
 </RCC>
