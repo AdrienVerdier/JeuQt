@@ -29,6 +29,9 @@ Mario::Mario()
     game_over_sound = new QMediaPlayer();
     game_over_sound->setMedia(QUrl("qrc:/son/son/game_over.mp3"));
     game_over_sound->setVolume(30);
+    victory_sound = new QMediaPlayer();
+    victory_sound->setMedia(QUrl("qrc:/son/son/victory.mp3"));
+    victory_sound->setVolume(30);
 }
 
 void Mario::setInputs(Controls *c)
@@ -38,6 +41,8 @@ void Mario::setInputs(Controls *c)
 
 void Mario::collision(Entity *entity, int position)
 {
+    if(!goal && !mort)
+    {
     if (typeid (Block).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
     if (typeid (BlockGrass).name() == typeid(*entity).name()) collisionSpec((BlockGrass*)entity, position);
     if (typeid (mysteryblock).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
@@ -62,6 +67,11 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (CheckPoint).name() == typeid(*entity).name()) collisionSpec((CheckPoint*)entity, position);
     if (typeid (GoalPole).name() == typeid(*entity).name()) collisionSpec((GoalPole*)entity, position);
     if (typeid (bowser).name() == typeid(*entity).name()) collisionSpec((bowser*)entity, position);
+    }
+    else{
+    if (typeid (Chateau).name() == typeid(*entity).name()) collisionSpec((Chateau*)entity, position);
+
+    }
 }
 
 void Mario::update()
@@ -160,6 +170,9 @@ void Mario::update()
     }
     else if(goal){
         if (cptEnd == 0)  {
+
+
+            if(victory_sound->state() != QMediaPlayer::PlayingState)victory_sound->play();
             coord_x+=30;
 
             state = 5;
