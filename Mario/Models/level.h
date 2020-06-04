@@ -10,7 +10,7 @@
 class Level
 {
 public:
-    Level();
+    Level(QString path);
     QList<Entity*> * get_entity_list();
     QList<Alive_Entity*> * get_alive_entity_list();
     Mario * getPlayer();

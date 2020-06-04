@@ -144,7 +144,7 @@ void Level_Controller::update_view()
 
 void Level_Controller::NewLevel(QString path){
 
-    level = new Level();
+    level = new Level(path);
      game_view->reset();
     level->getPlayer()->setInputs(game_view->get_Keys());
     pause = false;
