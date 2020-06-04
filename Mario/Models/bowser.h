@@ -13,6 +13,7 @@ public:
 private:
     int cpt_frame;
     int life;
+    int shoot=0;
     QMediaPlayer * bowser_fire_sound;
 };
 

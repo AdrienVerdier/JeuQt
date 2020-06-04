@@ -727,6 +727,7 @@ Game_View_Entity* Game_View_Factory::create(bowser_fire *g, int x){
           QJsonObject bowser_fire = value.toObject();
 
           map[0].push_back(bowser_fire["0"].toArray()[0].toString());
+          map[1].push_back(bowser_fire["1"].toArray()[0].toString());
 
 
           Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());

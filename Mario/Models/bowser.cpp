@@ -53,9 +53,18 @@ void bowser::update()
         bowser_fire * b = new bowser_fire();
         level->get_alive_entity_list()->push_back(b);
         b->setDisplay(true);
-        b->setCoordX(coord_x-30);;
-        b->setCoordY(coord_y+50);
-        b->setState(0);
+        if(shoot ==0){
+            shoot =1;
+            b->setCoordX(coord_x-30);;
+            b->setCoordY(coord_y+50);
+            b->setState(0);
+        }
+        else{
+            shoot =0;
+            b->setCoordX(coord_x+50);;
+            b->setCoordY(coord_y);
+            b->setState(1);
+        }
     }
     if (cpt_frame >= 75 && cpt_frame<90){
         coord_y +=4;

@@ -132,5 +132,6 @@
         <file>images/Mario/Walk6Star.png</file>
         <file>images/Niveau/NivTest.png</file>
         <file>images/Bowser/bowser_fire.png</file>
+        <file>images/Bowser/bowser_fire2.png</file>
     </qresource>
 </RCC>
