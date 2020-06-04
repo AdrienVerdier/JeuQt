@@ -171,8 +171,14 @@ void Level_Controller::update_lvl()
             }
             else{
                 int vies = level->getNbVie()-1;
+                int xx = level->getCoord_x_cp();
+                int yy = level->getCoord_y_cp();
+                int cc = level->getScore_cp();
                 NewLevel(path_level_en_cours);
                 level->SetNbVie(vies);
+                level->getPlayer()->setCoordX(xx);
+                level->getPlayer()->setCoordY(yy);
+                level->SetScore(cc);
             }
         }
 

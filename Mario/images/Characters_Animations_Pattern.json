@@ -78,5 +78,10 @@
         },
         "spike" :{
                 "0" : [":images/images/spike/spike.png"]
+        },
+        "checkpoint":{
+                "0" :[":images/images/Checkpoints/CheckPointOK.png"],
+                "1" :[":images/images/Checkpoints/CheckPoint.png"]
+
         }
 }

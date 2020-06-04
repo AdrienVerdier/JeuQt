@@ -28,6 +28,7 @@ SOURCES += \
     Models/bulletbill.cpp \
     Models/carapace.cpp \
     Models/chateau.cpp \
+    Models/checkpoint.cpp \
     Models/entity.cpp \
     Models/flamme.cpp \
     Models/flower.cpp \
@@ -72,6 +73,7 @@ HEADERS += \
     Models/bulletbill.h \
     Models/carapace.h \
     Models/chateau.h \
+    Models/checkpoint.h \
     Models/entity.h \
     Models/flamme.h \
     Models/flower.h \

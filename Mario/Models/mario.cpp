@@ -59,6 +59,7 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (star).name() == typeid(*entity).name()) collisionSpec((star*)entity, position);
     if (typeid (flower).name() == typeid(*entity).name()) collisionSpec((flower*)entity, position);
     if (typeid (carapace).name() == typeid(*entity).name()) collisionSpec((carapace*)entity, position);
+    if (typeid (CheckPoint).name() == typeid(*entity).name()) collisionSpec((CheckPoint*)entity, position);
 }
 
 void Mario::update()
@@ -78,7 +79,7 @@ void Mario::update()
         if(move_to_down) {
             coord_y+=5;
             if(coord_y>750){
-               state_dead = true;
+               mort = true;
 
             }
 
@@ -142,9 +143,9 @@ void Mario::update()
         }
 
         state = 6;
-        if (cptmort >=60 )   coord_y+=5;
+        if (cptmort >=120 )   coord_y+=5;
 
-        if(coord_y>750){
+        if(coord_y>800){
            state_dead = true;
 
 
@@ -364,6 +365,15 @@ void Mario::collisionSpec(carapace *entity, int position)
                 break;
         }
     }
+}
+
+void Mario::collisionSpec(CheckPoint *entity, int position)
+{
+    level->setCoord_x_cp(entity->getCoordX());
+    level->setCoord_y_cp(entity->getCoordY());
+    level->setScore_cp(level->getScore());
+
+
 }
 
 void Mario::collisionSpec(plante *entity, int position)
