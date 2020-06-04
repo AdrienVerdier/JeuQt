@@ -312,8 +312,8 @@ void Mario::collisionSpec(smoke *entity, int position)
 
 void Mario::collisionSpec(Trampoline *entity, int position)
 {
-    move_to_down = false;
-    setContact_trampoline(true);
+
+
     switch (position) {
         case 0 :
             break;
@@ -321,6 +321,8 @@ void Mario::collisionSpec(Trampoline *entity, int position)
             this->move_to_right = false;
             break;
         case 2:
+            move_to_down = false;
+            setContact_trampoline(true);
             jump= true;
             cptjump=5;
             break;
