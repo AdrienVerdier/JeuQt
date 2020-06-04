@@ -3,6 +3,11 @@
 #include "level.h"
 #include <typeinfo>
 #include <QDebug>
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 mysteryblock::mysteryblock()
 {
 
@@ -31,7 +36,17 @@ void mysteryblock::update()
         setMove_to_down(true);
         setCompteur(0);
         setState(1);
-        flower *c= new flower();
+
+
+
+        int r = rand()%(4-0) +0;
+        Alive_Entity *c;
+        if(r == 0)c= new flower();
+        if(r == 1)c= new mushroom();
+        if(r == 2)c= new lifeup();
+        if(r == 3)c= new star();
+
+
         level->get_alive_entity_list()->push_back(c);
         c->setDisplay(true);
         c->setCoordX(coord_x);
