@@ -28,6 +28,7 @@ private:
     QGraphicsView *level_view_container = new QGraphicsView;
     QGraphicsView *menu_view_container = new QGraphicsView;
     QGraphicsView *gameover_view_container = new QGraphicsView;
+    QGraphicsView *select_level_view_container = new QGraphicsView;
 
     Level_Controller *level_controller;
     Menu_Controler *menu_controler;
