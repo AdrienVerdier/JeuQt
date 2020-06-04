@@ -16,6 +16,8 @@ public:
 
     void connectslotlevel();
 
+    level_view_selection *getLevel_selection_menu() const;
+
 private:
     Global_Views_Controller *parent;
     Menu_View *menu_view;

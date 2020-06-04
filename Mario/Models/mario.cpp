@@ -193,8 +193,10 @@ void Mario::update()
         else{
             if (coord_y<625) coord_y+=1;
             else{
+                if(state != 1)refresh = true;
                 state = 1;
-                coord_x+=1;
+                 if(cptEnd < 10100)coord_x+=1;
+                 else if(cptEnd == 10100)level->setFin_level(true);
             }
 
         }
@@ -260,7 +262,9 @@ void Mario::collisionSpec(Chateau *entity, int position)
 
 
     }
-    level->setFin_level(true);
+
+    if(cptEnd<10000)cptEnd = 10000;
+     if(cptEnd==10070) entity->setRefresh(true);
 }
 
 void Mario::collisionSpec(Tuyau *entity, int position)

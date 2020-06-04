@@ -8,15 +8,21 @@ Menu_Controler::Menu_Controler(Global_Views_Controller *parent_obj)
 {
     this->parent = parent_obj;
     this->menu_view = new Menu_View();
-    this->level_selection_menu = new level_view_selection();
+    this->level_selection_menu = new level_view_selection(":/images/images/Niveau");
     connect(menu_view->get_Bouton_play(),SIGNAL(released()),this,SLOT(play()));
     connect(menu_view->get_Bouton_select(),SIGNAL(released()),this,SLOT(select_level()));
     connect(menu_view->get_Bouton_quit(),SIGNAL(released()),this,SLOT(quit()));
+    connect(level_selection_menu->getBouton(),SIGNAL(released()),this,SLOT(level_selected()));
 }
 
 Menu_View *Menu_Controler::getScene()
 {
     return menu_view;
+}
+
+level_view_selection *Menu_Controler::getLevel_selection_menu() const
+{
+    return level_selection_menu;
 }
 
 void Menu_Controler::play()
@@ -27,7 +33,7 @@ void Menu_Controler::play()
 
 void Menu_Controler::select_level()
 {
-
+    parent->display_Level_Menu();
 }
 
 void Menu_Controler::quit()
@@ -37,5 +43,9 @@ void Menu_Controler::quit()
 
 void Menu_Controler::level_selected()
 {
-
+    parent->hide_Level_Menu();
+    int currentrow = level_selection_menu->getList_widget()->currentRow();
+    QString levelpath = level_selection_menu->getList_widget()->item(currentrow)->text();
+    levelpath = ":images/images/Niveau/" + levelpath;
+    parent->display_Level(levelpath);
 }
