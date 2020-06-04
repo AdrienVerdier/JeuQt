@@ -103,5 +103,6 @@
         <file>images/Mario/Dead.png</file>
         <file>images/Niveau/Niv1_1.png</file>
         <file>images/Niveau/Niv1_2.png</file>
+        <file>images/BlockGrass/BlockGrass.png</file>
     </qresource>
 </RCC>

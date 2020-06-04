@@ -5,6 +5,7 @@ Main.o
 alive_entity.o
 billblaster.o
 block.o
+blockgrass.o
 bulletbill.o
 carapace.o
 chateau.o

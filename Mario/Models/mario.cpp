@@ -26,6 +26,7 @@ void Mario::setInputs(Controls *c)
 void Mario::collision(Entity *entity, int position)
 {
     if (typeid (Block).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
+    if (typeid (BlockGrass).name() == typeid(*entity).name()) collisionSpec((BlockGrass*)entity, position);
     if (typeid (mysteryblock).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
     if (typeid (Goomba).name() == typeid(*entity).name()) collisionSpec((Goomba*)entity, position);
     if (typeid (Piece).name() == typeid(*entity).name()) collisionSpec((Piece*)entity, position);
@@ -139,6 +140,25 @@ void Mario::update()
 }
 
 void Mario::collisionSpec(Block *entity, int position)
+{
+    switch (position) {
+        case 0 :
+            this->move_to_up = false;
+            break;
+        case 1:
+            this->move_to_right = false;
+            break;
+        case 2:
+            this->move_to_down = false;
+            setOn_ground(true);
+            break;
+        case 3:
+            this->move_to_left = false;
+            break;
+    }
+}
+
+void Mario::collisionSpec(BlockGrass *entity, int position)
 {
     switch (position) {
         case 0 :

@@ -4,6 +4,7 @@
 #include "alive_entity.h"
 #include "../Tools/controls.h"
 #include "Models/block.h"
+#include "Models/blockgrass.h"
 #include "Models/goomba.h"
 #include "Models/koopa.h"
 #include "Models/piece.h"
@@ -32,6 +33,7 @@ public:
     void collision(Entity* entity, int position)  override;
     void update() override;
     void collisionSpec(Block* entity, int position);
+    void collisionSpec(BlockGrass* entity, int position);
     void collisionSpec(Goomba* entity, int position);
     void collisionSpec(Piece* piece, int position);
     void collisionSpec(Koopa* entity, int position);
