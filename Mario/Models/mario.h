@@ -23,6 +23,7 @@
 #include "Models/trampoline.h"
 #include "Models/spike.h"
 #include "Models/carapace.h"
+#include "Models/checkpoint.h"
 #include <QMediaPlayer>
 class Mario : public Alive_Entity
 {

@@ -215,6 +215,16 @@ Level::Level(QString path)
                 alive_entity_list->last()->setLevel(this);
 
             }
+
+
+            if(clrCurrent.red() == 255 && clrCurrent.green()==174 &&clrCurrent.blue()==201){
+                alive_entity_list->push_back(new CheckPoint());
+                alive_entity_list->last()->setDisplay(true);
+                alive_entity_list->last()->setCoordX(col-10);
+                alive_entity_list->last()->setCoordY(row-10);
+                alive_entity_list->last()->setState(0);
+
+            }
         }
 }
 

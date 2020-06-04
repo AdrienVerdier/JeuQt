@@ -108,5 +108,7 @@
         <file>images/Mario/Dead.png</file>
         <file>images/Niveau/Niv1_1.png</file>
         <file>images/Niveau/Niv1_2.png</file>
+        <file>images/Checkpoints/CheckPoint.png</file>
+        <file>images/Checkpoints/CheckPointOK.png</file>
     </qresource>
 </RCC>
