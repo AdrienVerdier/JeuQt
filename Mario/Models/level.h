@@ -42,6 +42,9 @@ public:
     int getScore_cp() const;
     void setScore_cp(int value);
 
+    bool getFin_level() const;
+    void setFin_level(bool value);
+
 private:
     Mario * player;
     QList<Entity*> * entity_list;
@@ -51,6 +54,7 @@ private:
     int coord_x_cp;
     int coord_y_cp;
     int score_cp = 0;
+    bool fin_level = false;
 };
 
 #endif // LEVEL_H

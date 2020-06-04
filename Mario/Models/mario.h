@@ -25,6 +25,7 @@
 #include "Models/spike.h"
 #include "Models/carapace.h"
 #include "Models/checkpoint.h"
+#include "Models/goalpole.h"
 #include <QMediaPlayer>
 class Mario : public Alive_Entity
 {
@@ -54,6 +55,7 @@ public:
     void collisionSpec(flower* entity, int position);
     void collisionSpec(carapace* entity, int position);
     void collisionSpec(CheckPoint* entity, int position);
+    void collisionSpec(GoalPole* entity, int position);
 
     int getCptjump() const;
 
@@ -77,12 +79,14 @@ private:
     Controls *input;
     int cptjump;
     int cptmort =0;
+    int cptEnd =0;
     bool jump;
     bool on_ground;
     bool contact_thwomp;
     bool contact_trampoline=false;
     bool invincible = false;
     bool mort = false;
+    bool goal = false;
     int cptinvincible = 0;
     QMediaPlayer * jump_sound;
     QMediaPlayer * coin_sound;

@@ -7,6 +7,7 @@
         <file>son/lifeup.mp3</file>
         <file>son/mario_die.mp3</file>
         <file>son/power_up.mp3</file>
+        <file>son/bill_blaster.mp3</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/Mario/Idle.png</file>
@@ -111,6 +112,7 @@
         <file>images/Checkpoints/CheckPoint.png</file>
         <file>images/Checkpoints/CheckPointOK.png</file>
         <file>images/BlockGrass/BlockGrass.png</file>
+        <file>images/Checkpoints/GoalPole.png</file>
         <file>images/Niveau/Niv1_3.png</file>
         <file>images/Bowser/Idle.png</file>
         <file>images/Bowser/Jump.png</file>

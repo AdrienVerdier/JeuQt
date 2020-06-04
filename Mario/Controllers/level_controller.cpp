@@ -181,6 +181,10 @@ void Level_Controller::update_lvl()
                 level->SetScore(cc);
             }
         }
+        if(level->getFin_level()){
+            pause = true;
+            pere->display_GameOver();
+        }
 
         update_view();
 

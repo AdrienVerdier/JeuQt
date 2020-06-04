@@ -32,6 +32,7 @@ SOURCES += \
     Models/entity.cpp \
     Models/flamme.cpp \
     Models/flower.cpp \
+    Models/goalpole.cpp \
     Models/goomba.cpp \
     Models/ground.cpp \
     Models/interface_visitable.cpp \
@@ -77,6 +78,7 @@ HEADERS += \
     Models/entity.h \
     Models/flamme.h \
     Models/flower.h \
+    Models/goalpole.h \
     Models/goomba.h \
     Models/ground.h \
     Models/interface_visitable.h \
