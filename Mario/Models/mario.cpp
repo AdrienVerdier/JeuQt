@@ -125,10 +125,10 @@ void Mario::update()
         this->move_to_up = true;
 
         if(invincible){
-            if(getCptinvincible()<100){
+            if(getCptinvincible()<666){
                 setCptinvincible(getCptinvincible()+1);
             }
-            if(getCptinvincible()==100){
+            if(getCptinvincible()==666){
                 setInvincible(false);
             }
         }
