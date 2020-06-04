@@ -112,5 +112,13 @@
         <file>images/Checkpoints/CheckPointOK.png</file>
         <file>images/BlockGrass/BlockGrass.png</file>
         <file>images/Niveau/Niv1_3.png</file>
+        <file>images/Bowser/Idle.png</file>
+        <file>images/Bowser/Jump.png</file>
+        <file>images/Bowser/Mort.png</file>
+        <file>images/Bowser/Shoot.png</file>
+        <file>images/Bowser/Walk1.png</file>
+        <file>images/Bowser/Walk2.png</file>
+        <file>images/Bowser/Walk3.png</file>
+        <file>images/Bowser/Walk4.png</file>
     </qresource>
 </RCC>
