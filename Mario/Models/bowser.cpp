@@ -28,19 +28,26 @@ void bowser::collision(Entity *entity, int position)
 
 void bowser::update()
 {
+
     if(state == 0)state = 1;
     if(state == 2 && cpt_frame==10)state = 0;
+    if (cpt_frame >= 0 && cpt_frame <30){
+        coord_x +=1;
+    }
+    if (cpt_frame >= 30 && cpt_frame <60){
+        coord_x -=1;
+    }
     if (cpt_frame == 60){
         state = 3;
     }
-    if(state==3 && cpt_frame<70){
-        coord_y -=5;
+    if(state==3 && cpt_frame<75){
+        coord_y -=4;
     }
-    if (cpt_frame >= 70 && cpt_frame<80){
-        coord_y +=5;
+    if (cpt_frame >= 75 && cpt_frame<90){
+        coord_y +=4;
     }
-    if (cpt_frame == 70){
-        state = 1;;
+    if (cpt_frame == 90){
+        state = 1;
     }
     if (cpt_frame == 120){
         state = 2;
