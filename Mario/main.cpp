@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     global_controller = new Global_Views_Controller();
     global_controller->display_Level(":images/images/Niveau/Niv1.png");
     global_controller->getView()->show();
+    global_controller->display_Menu();
 
     return a.exec();
 }

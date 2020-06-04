@@ -19,7 +19,7 @@ Level_Controller::Level_Controller( Global_Views_Controller *p)
     m_timer = new QTimer(this);
     QObject::connect(m_timer,SIGNAL(timeout()),this,SLOT(update_lvl()));
     m_timer->start(15);
-    pause = true;
+    pause = false;
 }
 
 Game_View *Level_Controller::getScene()
