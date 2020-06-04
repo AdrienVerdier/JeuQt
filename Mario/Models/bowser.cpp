@@ -46,8 +46,8 @@ void bowser::update()
     if (cpt_frame >= 75 && cpt_frame<90){
         coord_y +=4;
     }
-    if (cpt_frame == 70){
-        state = 1;;
+    if (cpt_frame == 90){
+        state = 1;
     }
     if (cpt_frame == 120){
         state = 2;
