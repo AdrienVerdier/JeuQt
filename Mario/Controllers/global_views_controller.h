@@ -16,8 +16,11 @@ public:
     void display_GameOver();
     void display_Menu();
     void display_Level_Menu();
+    void display_level_completed();
+    void hide_GameOver();
     void hide_Menu();
     void hide_Level_Menu();
+    void hide_level_completed();
     void show_current_level();
 
     Global_View *getView() const;
@@ -33,6 +36,7 @@ private:
     QGraphicsView *menu_view_container = new QGraphicsView;
     QGraphicsView *gameover_view_container = new QGraphicsView;
     QGraphicsView *select_level_view_container = new QGraphicsView;
+    QGraphicsView *level_completed_view_container = new QGraphicsView;
 
     Level_Controller *level_controller;
     Menu_Controler *menu_controler;

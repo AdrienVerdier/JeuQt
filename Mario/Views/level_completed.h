@@ -1,17 +1,15 @@
-#ifndef GAME_OVER_VIEW_H
-#define GAME_OVER_VIEW_H
+#ifndef LEVEL_COMPLETED_H
+#define LEVEL_COMPLETED_H
 
 #include <QGraphicsScene>
 #include <QLabel>
 #include <QPushButton>
 #include <QGraphicsProxyWidget>
 
-
-class Game_Over_View : public QGraphicsScene
+class level_completed: public QGraphicsScene
 {
-
 public:
-    Game_Over_View(QWidget *parent = 0 );
+    level_completed();
 
     QPushButton *getBouton() const;
 
@@ -24,4 +22,4 @@ private:
     QGraphicsProxyWidget *proxy;
 };
 
-#endif // GAME_OVER_VIEW_H
+#endif // LEVEL_COMPLETED_H

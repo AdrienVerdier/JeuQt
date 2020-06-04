@@ -171,6 +171,11 @@ QString Level_Controller::getPath_level_en_cours() const
     return path_level_en_cours;
 }
 
+void Level_Controller::setPath_level_en_cours(const QString &value)
+{
+    path_level_en_cours = value;
+}
+
 void Level_Controller::update_lvl()
 {
     if(! pause){
@@ -195,7 +200,7 @@ void Level_Controller::update_lvl()
         }
         if(level->getFin_level()){
             pause = true;
-            pere->display_GameOver();
+            pere->display_level_completed();
         }
 
         update_view();

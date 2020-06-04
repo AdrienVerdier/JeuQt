@@ -22,6 +22,7 @@ public:
     void setPause(bool value);
 
     QString getPath_level_en_cours() const;
+    void setPath_level_en_cours(const QString &value);
 
 private:
     QString path_level_en_cours;
