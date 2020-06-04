@@ -39,6 +39,9 @@ public:
     int getCoord_y_cp() const;
     void setCoord_y_cp(int value);
 
+    int getScore_cp() const;
+    void setScore_cp(int value);
+
 private:
     Mario * player;
     QList<Entity*> * entity_list;
@@ -47,6 +50,7 @@ private:
     int nbVie;
     int coord_x_cp;
     int coord_y_cp;
+    int score_cp = 0;
 };
 
 #endif // LEVEL_H

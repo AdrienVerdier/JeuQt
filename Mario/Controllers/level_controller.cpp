@@ -25,12 +25,6 @@ Level_Controller::Level_Controller( Global_Views_Controller *p)
     background_sound = new QMediaPlayer();
     background_sound->setMedia(QUrl("qrc:/son/son/background.mp3"));
     background_sound->setVolume(10);
-    mario_die_sound = new QMediaPlayer();
-    mario_die_sound->setMedia(QUrl("qrc:/son/son/mario_die.mp3"));
-    mario_die_sound->setVolume(30);
-    game_over_sound = new QMediaPlayer();
-    game_over_sound->setMedia(QUrl("qrc:/son/son/game_over.mp3"));
-    game_over_sound->setVolume(30);
 
 }
 
@@ -174,16 +168,17 @@ void Level_Controller::update_lvl()
             if(level->getNbVie()<=0){
                 pause = true;
                 pere->display_GameOver();
-                game_over_sound->play();
             }
             else{
                 int vies = level->getNbVie()-1;
                 int xx = level->getCoord_x_cp();
                 int yy = level->getCoord_y_cp();
+                int cc = level->getScore_cp();
                 NewLevel(path_level_en_cours);
                 level->SetNbVie(vies);
                 level->getPlayer()->setCoordX(xx);
                 level->getPlayer()->setCoordY(yy);
+                level->SetScore(cc);
             }
         }
 

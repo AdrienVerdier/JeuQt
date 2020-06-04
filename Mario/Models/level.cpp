@@ -271,3 +271,13 @@ void Level::setCoord_y_cp(int value)
 {
     coord_y_cp = value;
 }
+
+int Level::getScore_cp() const
+{
+    return score_cp;
+}
+
+void Level::setScore_cp(int value)
+{
+    score_cp = value;
+}

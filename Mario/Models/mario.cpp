@@ -23,6 +23,12 @@ Mario::Mario()
     powerup_sound = new QMediaPlayer();
     powerup_sound->setMedia(QUrl("qrc:/son/son/power_up.mp3"));
     powerup_sound->setVolume(30);
+    mario_die_sound = new QMediaPlayer();
+    mario_die_sound->setMedia(QUrl("qrc:/son/son/mario_die.mp3"));
+    mario_die_sound->setVolume(30);
+    game_over_sound = new QMediaPlayer();
+    game_over_sound->setMedia(QUrl("qrc:/son/son/game_over.mp3"));
+    game_over_sound->setVolume(30);
 }
 
 void Mario::setInputs(Controls *c)
@@ -73,13 +79,12 @@ void Mario::update()
         if(move_to_down) {
             coord_y+=5;
             if(coord_y>750){
-               state_dead = true;
+               mort = true;
 
             }
 
 
         }
-
 
         if(input->up && cptjump ==0 && !move_to_down){
             jump = true;
@@ -130,10 +135,17 @@ void Mario::update()
 
     }
     else{
-        state = 6;
-        if (cptmort >=60 )   coord_y+=5;
+        if(level->getNbVie()<=0){
+            game_over_sound->play();
+        }
+        else{
+            mario_die_sound->play();
+        }
 
-        if(coord_y>750){
+        state = 6;
+        if (cptmort >=120 )   coord_y+=5;
+
+        if(coord_y>800){
            state_dead = true;
 
 
@@ -359,6 +371,7 @@ void Mario::collisionSpec(CheckPoint *entity, int position)
 {
     level->setCoord_x_cp(entity->getCoordX());
     level->setCoord_y_cp(entity->getCoordY());
+    level->setScore_cp(level->getScore());
 
 
 }
