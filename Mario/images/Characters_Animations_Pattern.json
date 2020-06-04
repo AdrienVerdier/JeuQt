@@ -16,6 +16,9 @@
                 "3" : [":images/images/Bowser/Jump.png"],
                 "4" : [":images/images/Bowser/Mort.png"]
         },
+        "bowser_fire" :{
+                "0" : [":images/images/Bowser/bowser_fire.png"]
+        },
 	"block" :{
 		"0" : [":images/images/Blocks/Block.png"]
         },

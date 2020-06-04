@@ -67,6 +67,7 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (CheckPoint).name() == typeid(*entity).name()) collisionSpec((CheckPoint*)entity, position);
     if (typeid (GoalPole).name() == typeid(*entity).name()) collisionSpec((GoalPole*)entity, position);
     if (typeid (bowser).name() == typeid(*entity).name()) collisionSpec((bowser*)entity, position);
+    if (typeid (bowser_fire).name() == typeid(*entity).name()) collisionSpec((bowser_fire*)entity, position);
     }
     else{
     if (typeid (Chateau).name() == typeid(*entity).name()) collisionSpec((Chateau*)entity, position);
@@ -454,6 +455,11 @@ void Mario::collisionSpec(flamme *entity, int position)
 }
 
 void Mario::collisionSpec(spike *entity, int position)
+{
+    if(!getInvincible()) mort = true;
+}
+
+void Mario::collisionSpec(bowser_fire *entity, int position)
 {
     if(!getInvincible()) mort = true;
 }

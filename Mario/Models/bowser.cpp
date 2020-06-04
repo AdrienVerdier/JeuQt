@@ -9,6 +9,9 @@ bowser::bowser()
 {
     cpt_frame = 0;
     life=2;
+    bowser_fire_sound = new QMediaPlayer();
+    bowser_fire_sound->setMedia(QUrl("qrc:/son/son/bowser_fire.mp3"));
+    bowser_fire_sound->setVolume(30);
 }
 
 void bowser::collision(Entity *entity, int position)
@@ -43,6 +46,17 @@ void bowser::update()
     if(state==3 && cpt_frame<75){
         coord_y -=4;
     }
+    if (cpt_frame == 75 ){
+        if(bowser_fire_sound->state() == QMediaPlayer::PlayingState)bowser_fire_sound->setPosition(0);
+        if(bowser_fire_sound->state() == QMediaPlayer::StoppedState)bowser_fire_sound->play();
+        state = 2;
+        bowser_fire * b = new bowser_fire();
+        level->get_alive_entity_list()->push_back(b);
+        b->setDisplay(true);
+        b->setCoordX(coord_x-30);;
+        b->setCoordY(coord_y+50);
+        b->setState(0);
+    }
     if (cpt_frame >= 75 && cpt_frame<90){
         coord_y +=4;
     }
@@ -50,8 +64,10 @@ void bowser::update()
         state = 1;
     }
     if (cpt_frame == 120){
+        if(bowser_fire_sound->state() == QMediaPlayer::PlayingState)bowser_fire_sound->setPosition(0);
+        if(bowser_fire_sound->state() == QMediaPlayer::StoppedState)bowser_fire_sound->play();
         state = 2;
-        bulletbill * b = new bulletbill(true);
+        bowser_fire * b = new bowser_fire();
         level->get_alive_entity_list()->push_back(b);
         b->setDisplay(true);
         b->setCoordX(coord_x-30);;
