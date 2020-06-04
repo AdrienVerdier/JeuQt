@@ -28,8 +28,6 @@ private:
     QMap<Entity*, QMap<Entity*,int>> collision_List;
     bool pause;
     QMediaPlayer * background_sound;
-    QMediaPlayer * mario_die_sound;
-    QMediaPlayer * game_over_sound;
 
     void update_view();
 

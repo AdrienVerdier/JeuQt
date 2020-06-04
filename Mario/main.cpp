@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     global_controller = new Global_Views_Controller();
-    global_controller->display_Level(":images/images/Niveau/Niv1.png");
+    global_controller->display_Level(":images/images/Niveau/Niv1_2.png");
     global_controller->getView()->show();
 
     return a.exec();
