@@ -23,6 +23,8 @@ public:
     Global_View *getView() const;
 
 
+    Level_Controller *getLevel_controller() const;
+
 private:
     Global_View * main_view = new Global_View(this);
     QGraphicsScene *main_scene = new QGraphicsScene;

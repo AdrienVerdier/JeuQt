@@ -21,6 +21,8 @@ public:
     bool getPause() const;
     void setPause(bool value);
 
+    QString getPath_level_en_cours() const;
+
 private:
     QString path_level_en_cours;
     Global_Views_Controller *pere;

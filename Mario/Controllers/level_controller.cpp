@@ -166,11 +166,16 @@ void Level_Controller::setPause(bool value)
     pause = value;
 }
 
+QString Level_Controller::getPath_level_en_cours() const
+{
+    return path_level_en_cours;
+}
+
 void Level_Controller::update_lvl()
 {
     if(! pause){
         QElapsedTimer timer;
-          timer.start();
+        timer.start();
         if(level->getPlayer()->getDead()){
             if(level->getNbVie()<=0){
                 pause = true;

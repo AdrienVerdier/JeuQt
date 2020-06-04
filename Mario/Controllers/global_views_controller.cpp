@@ -96,3 +96,8 @@ Global_View *Global_Views_Controller::getView() const
     return main_view;
 }
 
+Level_Controller *Global_Views_Controller::getLevel_controller() const
+{
+    return level_controller;
+}
+
