@@ -178,9 +178,12 @@ void Level_Controller::update_lvl()
             }
             else{
                 int vies = level->getNbVie()-1;
+                int xx = level->getCoord_x_cp();
+                int yy = level->getCoord_y_cp();
                 NewLevel(path_level_en_cours);
                 level->SetNbVie(vies);
-                mario_die_sound->play();
+                level->getPlayer()->setCoordX(xx);
+                level->getPlayer()->setCoordY(yy);
             }
         }
 

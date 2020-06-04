@@ -53,6 +53,7 @@ public:
     void collisionSpec(star* entity, int position);
     void collisionSpec(flower* entity, int position);
     void collisionSpec(carapace* entity, int position);
+    void collisionSpec(CheckPoint* entity, int position);
 
     int getCptjump() const;
 
