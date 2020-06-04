@@ -16,6 +16,10 @@ public:
     Game_View * getScene();
     void select_display_element();
     void NewLevel(QString path);
+    void escape_key_pressed();
+
+    bool getPause() const;
+    void setPause(bool value);
 
 private:
     QString path_level_en_cours;

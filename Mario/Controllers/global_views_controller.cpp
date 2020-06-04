@@ -13,23 +13,24 @@ Global_Views_Controller::Global_Views_Controller()
     level_view_container->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     level_view_container->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    menu_view_container->setFixedSize(500,300);
+    menu_view_container->setFixedSize(1280,700);
+    menu_view_container->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    menu_view_container->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    menu_view_container->setStyleSheet("background: transparent");
 
-    gameover_view_container->setFixedSize(800,400);
+    gameover_view_container->setFixedSize(1280,700);
     gameover_view_container->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     gameover_view_container->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    gameover_view_container->setStyleSheet("background: transparent");
 
 
     level_view_container->setScene(level_controller->getScene());
     menu_view_container->setScene(menu_controler->getScene());
     gameover_view_container->setScene(game_over_view);
 
-    qstack = new QStackedWidget;
-    main_scene->addWidget(qstack);
-    qstack->addWidget(menu_view_container);
-    qstack->addWidget(gameover_view_container);
-    qstack->addWidget(level_view_container);
-
+    main_scene->addWidget(level_view_container);
+    main_scene->addWidget(gameover_view_container);
+    main_scene->addWidget(menu_view_container);
 
     level_view_container->hide();
     menu_view_container->hide();
@@ -39,6 +40,7 @@ Global_Views_Controller::Global_Views_Controller()
 
 void Global_Views_Controller::display_Level(QString path)
 {
+    level_controller->setPause(false);
     level_view_container->show();
     level_view_container->setFocus();
     level_controller->NewLevel(path);
@@ -47,8 +49,28 @@ void Global_Views_Controller::display_Level(QString path)
 void Global_Views_Controller::display_GameOver()
 {
     gameover_view_container->show();
-    qstack->widget(qstack->indexOf(gameover_view_container))->move(200,100);
+    gameover_view_container->setFocus();
+}
 
+void Global_Views_Controller::display_Menu()
+{
+    if(!menu_view_container->isVisible()){
+        level_controller->setPause(true);
+        menu_view_container->show();
+        menu_view_container->setFocus();
+    }
+}
+
+void Global_Views_Controller::hide_Menu()
+{
+    menu_view_container->hide();
+}
+
+void Global_Views_Controller::show_current_level()
+{
+    level_controller->setPause(false);
+    level_view_container->show();
+    level_view_container->setFocus();
 }
 
 Global_View *Global_Views_Controller::getView() const
