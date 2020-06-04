@@ -61,6 +61,7 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (carapace).name() == typeid(*entity).name()) collisionSpec((carapace*)entity, position);
     if (typeid (CheckPoint).name() == typeid(*entity).name()) collisionSpec((CheckPoint*)entity, position);
     if (typeid (GoalPole).name() == typeid(*entity).name()) collisionSpec((GoalPole*)entity, position);
+    if (typeid (bowser).name() == typeid(*entity).name()) collisionSpec((bowser*)entity, position);
 }
 
 void Mario::update()
@@ -298,6 +299,30 @@ void Mario::collisionSpec(Trampoline *entity, int position)
 }
 
 void Mario::collisionSpec(Goomba *entity, int position)
+{
+    move_to_down = false;
+    switch (position) {
+        case 0 :
+            if(!getInvincible())mort = true;
+
+            break;
+        case 1:
+        if(!getInvincible())mort = true;
+
+            this->move_to_right = false;
+            break;
+        case 2:
+        jump= true;
+        cptjump=0;
+        break;
+        case 3:
+            if(!getInvincible()) mort = true;
+            this->move_to_left = false;
+            break;
+    }
+}
+
+void Mario::collisionSpec(bowser *entity, int position)
 {
     move_to_down = false;
     switch (position) {

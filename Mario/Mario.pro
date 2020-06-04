@@ -25,6 +25,7 @@ SOURCES += \
     Models/billblaster.cpp \
     Models/block.cpp \
     Models/blockgrass.cpp \
+    Models/bowser.cpp \
     Models/bulletbill.cpp \
     Models/carapace.cpp \
     Models/chateau.cpp \
@@ -71,6 +72,7 @@ HEADERS += \
     Models/billblaster.h \
     Models/block.h \
     Models/blockgrass.h \
+    Models/bowser.h \
     Models/bulletbill.h \
     Models/carapace.h \
     Models/chateau.h \

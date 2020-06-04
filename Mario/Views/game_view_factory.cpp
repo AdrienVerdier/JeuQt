@@ -34,6 +34,7 @@ Game_View_Entity *Game_View_Factory::create(Entity *e,int x)
     if (typeid (Trampoline).name() == typeid(*e).name()) return create((Trampoline*)e, x);
     if (typeid (spike).name() == typeid(*e).name()) return create((spike*)e, x);
     if (typeid (carapace).name() == typeid(*e).name()) return create((carapace*)e, x);
+    if (typeid (bowser).name() == typeid(*e).name()) return create((bowser*)e, x);
 }
 
 
@@ -341,6 +342,35 @@ Game_View_Entity *Game_View_Factory::create(carapace *g,int x)
         Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());
 
         return entity_view;
+}
+
+Game_View_Entity *Game_View_Factory::create(bowser *g, int x)
+{
+    QMap<int,QList<QString>> map;
+
+    QString val;
+    QFile file;
+    file.setFileName(":images/images/Characters_Animations_Pattern.json");
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+
+    QJsonDocument d = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject sett2 = d.object();
+
+    QJsonValue value = sett2.value(QString("bowser"));
+
+    QJsonObject bowser = value.toObject();
+    map[0].push_back(bowser["0"].toArray()[0].toString());
+    for(int i =0;i<4;i++)
+    map[1].push_back(bowser["1"].toArray()[i].toString());
+    map[2].push_back(bowser["2"].toArray()[0].toString());
+    map[3].push_back(bowser["3"].toArray()[0].toString());
+    map[4].push_back(bowser["4"].toArray()[0].toString());
+
+    Game_View_Entity *entity_view = new Game_View_Entity(map,x,g->getCoordY(),g->getState());
+
+    return entity_view;
 }
 
 Game_View_Entity *Game_View_Factory::create(plante *g,int x)

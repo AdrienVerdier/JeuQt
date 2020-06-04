@@ -26,6 +26,7 @@
 #include "Models/carapace.h"
 #include "Models/checkpoint.h"
 #include "Models/goalpole.h"
+#include "Models/bowser.h"
 #include <QMediaPlayer>
 class Mario : public Alive_Entity
 {
@@ -56,6 +57,7 @@ public:
     void collisionSpec(carapace* entity, int position);
     void collisionSpec(CheckPoint* entity, int position);
     void collisionSpec(GoalPole* entity, int position);
+    void collisionSpec(bowser* entity, int position);
 
     int getCptjump() const;
 
