@@ -15,7 +15,9 @@ public:
     void display_Level(QString path);
     void display_GameOver();
     void display_Menu();
+    void display_Level_Menu();
     void hide_Menu();
+    void hide_Level_Menu();
     void show_current_level();
 
     Global_View *getView() const;
