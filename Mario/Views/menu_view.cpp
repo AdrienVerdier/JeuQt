@@ -8,7 +8,6 @@ Menu_View::Menu_View()
     QRectF *rect = new QRectF(0,0,400,400);
     QPen *pen = new QPen(Qt::green, 3, Qt::DashDotLine, Qt::RoundCap, Qt::RoundJoin);
     QPainter painter;
-    painter.setBrush(green70);
     painter.fillRect(*rect,Qt::Dense4Pattern);
     green70.setAlphaF( 0.4 );
     addRect(*rect,*pen,green70);

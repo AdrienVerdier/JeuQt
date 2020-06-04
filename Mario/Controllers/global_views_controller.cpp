@@ -30,7 +30,9 @@ Global_Views_Controller::Global_Views_Controller()
 
     level_view_container->setScene(level_controller->getScene());
     menu_view_container->setScene(menu_controler->getScene());
+    select_level_view_container->setScene(menu_controler->getLevel_selection_menu());
     gameover_view_container->setScene(game_over_view);
+
 
     main_scene->addWidget(level_view_container)->setPos(0,0);
     main_scene->addWidget(gameover_view_container)->setPos(0,0);
@@ -46,7 +48,7 @@ Global_Views_Controller::Global_Views_Controller()
 
 void Global_Views_Controller::display_Level(QString path)
 {
-    level_controller->setPause(false);
+    level_controller->setPause(true);
     level_view_container->show();
     level_view_container->setFocus();
     level_controller->NewLevel(path);
@@ -67,9 +69,19 @@ void Global_Views_Controller::display_Menu()
     }
 }
 
+void Global_Views_Controller::display_Level_Menu()
+{
+    select_level_view_container->show();
+}
+
 void Global_Views_Controller::hide_Menu()
 {
     menu_view_container->hide();
+}
+
+void Global_Views_Controller::hide_Level_Menu()
+{
+    select_level_view_container->hide();
 }
 
 void Global_Views_Controller::show_current_level()
