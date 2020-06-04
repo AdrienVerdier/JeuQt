@@ -2,6 +2,7 @@
 #define BOWSER_H
 
 #include "alive_entity.h"
+#include "QMediaPlayer"
 
 class bowser  : public Alive_Entity
 {
@@ -12,6 +13,7 @@ public:
 private:
     int cpt_frame;
     int life;
+    QMediaPlayer * bowser_fire_sound;
 };
 
 #endif // BOWSER_H
