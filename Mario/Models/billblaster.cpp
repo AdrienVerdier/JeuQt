@@ -7,7 +7,9 @@
 billblaster::billblaster()
 {
     cpt_frame = 0;
-
+    bill_blaster_sound = new QMediaPlayer();
+    bill_blaster_sound->setMedia(QUrl("qrc:/son/son/bill_blaster.mp3"));
+    bill_blaster_sound->setVolume(30);
 }
 
 void billblaster::collision(Entity *entity, int position)
@@ -18,7 +20,10 @@ void billblaster::collision(Entity *entity, int position)
 
 void billblaster::update()
 {
+
     if (cpt_frame == 120){
+        if(bill_blaster_sound->state() == QMediaPlayer::PlayingState)bill_blaster_sound->setPosition(0);
+        if(bill_blaster_sound->state() == QMediaPlayer::StoppedState)bill_blaster_sound->play();
         smoke * s = new smoke();
         level->get_alive_entity_list()->push_back(s);
         s->setDisplay(true);
