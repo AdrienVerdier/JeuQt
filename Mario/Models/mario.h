@@ -92,6 +92,7 @@ private:
     bool mort = false;
     bool goal = false;
     int cptinvincible = 0;
+    QMediaPlayer * background_sound;
     QMediaPlayer * jump_sound;
     QMediaPlayer * coin_sound;
     QMediaPlayer * lifeup_sound;

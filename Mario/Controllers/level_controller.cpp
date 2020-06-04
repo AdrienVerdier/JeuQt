@@ -20,12 +20,6 @@ Level_Controller::Level_Controller( Global_Views_Controller *p)
     QObject::connect(m_timer,SIGNAL(timeout()),this,SLOT(update_lvl()));
     m_timer->start(15);
     pause = true;
-
-
-    background_sound = new QMediaPlayer();
-    background_sound->setMedia(QUrl("qrc:/son/son/background.mp3"));
-    background_sound->setVolume(10);
-
 }
 
 Game_View *Level_Controller::getScene()
@@ -175,11 +169,9 @@ void Level_Controller::setPause(bool value)
 void Level_Controller::update_lvl()
 {
     if(! pause){
-        if(background_sound->state() == QMediaPlayer::StoppedState)background_sound->play();
         QElapsedTimer timer;
           timer.start();
         if(level->getPlayer()->getDead()){
-            background_sound->stop();
             if(level->getNbVie()<=0){
                 pause = true;
                 pere->display_GameOver();

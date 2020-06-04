@@ -31,8 +31,6 @@ private:
     QTimer *m_timer;
     QMap<Entity*, QMap<Entity*,int>> collision_List;
     bool pause;
-    QMediaPlayer * background_sound;
-
     void update_view();
 
 public slots:

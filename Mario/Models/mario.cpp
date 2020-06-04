@@ -32,6 +32,9 @@ Mario::Mario()
     victory_sound = new QMediaPlayer();
     victory_sound->setMedia(QUrl("qrc:/son/son/victory.mp3"));
     victory_sound->setVolume(30);
+    background_sound = new QMediaPlayer();
+    background_sound->setMedia(QUrl("qrc:/son/son/background.mp3"));
+    background_sound->setVolume(10);
 }
 
 void Mario::setInputs(Controls *c)
@@ -77,6 +80,7 @@ void Mario::collision(Entity *entity, int position)
 
 void Mario::update()
 {
+    if(background_sound->state() == QMediaPlayer::StoppedState && !goal)background_sound->play();
     if(!mort && !goal){
 
         if(input->right && move_to_right) {
@@ -150,6 +154,7 @@ void Mario::update()
 
     }
     else if(mort){
+        background_sound->stop();
         if(level->getNbVie()<=0){
             game_over_sound->play();
         }
@@ -173,6 +178,7 @@ void Mario::update()
         if (cptEnd == 0)  {
 
 
+            background_sound->stop();
             if(victory_sound->state() != QMediaPlayer::PlayingState)victory_sound->play();
             coord_x+=30;
 

@@ -16,7 +16,7 @@ void Koopa::collision(Entity *entity, int position)
 
     if (typeid (Mario).name() == typeid(*entity).name()) collisionSpec((Mario*) entity, position);
     if (typeid (carapace).name() == typeid(*entity).name() && entity->getState() == 1) this->state_dead = true;
-    if (typeid (bulletbill).name() != typeid(*entity).name() && typeid (Piece).name() != typeid(*entity).name()) {
+    if (typeid (bulletbill).name() != typeid(*entity).name() && typeid (Piece).name() != typeid(*entity).name()&& typeid (bowser_fire).name() != typeid(*entity).name()) {
         if(position == 2){
             move_to_down = false;
         }

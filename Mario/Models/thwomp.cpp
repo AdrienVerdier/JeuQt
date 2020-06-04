@@ -11,7 +11,7 @@ thwomp::thwomp()
 
 void thwomp::collision(Entity *entity, int position)
 {
-    if(position == 2 && typeid (Block).name() != typeid(*entity).name() && position == 2 && typeid (Piece).name() != typeid(*entity).name() && typeid (bulletbill).name() != typeid(*entity).name() && typeid (Mario).name() != typeid(*entity).name() && !getOn_block()){
+    if(position == 2 && typeid (Block).name() != typeid(*entity).name() && typeid (bowser_fire).name() != typeid(*entity).name() && position == 2 && typeid (Piece).name() != typeid(*entity).name() && typeid (bulletbill).name() != typeid(*entity).name() && typeid (Mario).name() != typeid(*entity).name() && !getOn_block()){
         move_to_down = false;
         move_to_up = true;
         state=1;
