@@ -7,7 +7,6 @@
 #include "level_controller.h"
 #include <QStackedWidget>
 
-class Menu_Controler;
 class Global_Views_Controller
 {
 public:

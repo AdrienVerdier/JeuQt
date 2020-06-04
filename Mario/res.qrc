@@ -110,5 +110,6 @@
         <file>images/Niveau/Niv1_2.png</file>
         <file>images/Checkpoints/CheckPoint.png</file>
         <file>images/Checkpoints/CheckPointOK.png</file>
+        <file>images/BlockGrass/BlockGrass.png</file>
     </qresource>
 </RCC>

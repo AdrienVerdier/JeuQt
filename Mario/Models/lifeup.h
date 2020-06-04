@@ -9,7 +9,6 @@ class lifeup : public mushroom
 {
 public:
     lifeup();
-
 };
 
 #endif // LIFEUP_H

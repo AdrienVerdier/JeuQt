@@ -1,4 +1,5 @@
 #include "menu_controler.h"
+#include "global_views_controller.h"
 
 Menu_Controler::Menu_Controler(Global_Views_Controller *parent_obj)
 {

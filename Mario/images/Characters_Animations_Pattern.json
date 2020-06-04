@@ -11,6 +11,9 @@
 	"block" :{
 		"0" : [":images/images/Blocks/Block.png"]
         },
+        "blockGrass" :{
+                "0" : [":images/images/BlockGrass/BlockGrass.png"]
+        },
         "mysteryblock" :{
                 "0" : [":images/images/Blocks/mysteryblock1.jpg"],
                 "1" : [":images/images/Blocks/mysteryblock2.jpg"]

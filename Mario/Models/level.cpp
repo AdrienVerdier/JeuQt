@@ -21,6 +21,7 @@ Level::Level(QString path)
     m->setCoordX(0);
     m->setCoordY(2);
     m->setState(1);
+    m->setLevel(this);
     player = m;
     coord_x_cp = 0;
     coord_y_cp = 2;
@@ -35,6 +36,14 @@ Level::Level(QString path)
             QColor clrCurrent( level_img.pixel( col, row ) );
             if(clrCurrent.red() == 185 && clrCurrent.green()==122 &&clrCurrent.blue()==87){
                 entity_list->push_back(new Block());
+                entity_list->last()->setDisplay(true);
+                entity_list->last()->setCoordX(col-10);
+                entity_list->last()->setCoordY(row-10);
+                entity_list->last()->setState(0);
+
+            }
+            if(clrCurrent.red() == 128 && clrCurrent.green()== 0 &&clrCurrent.blue()== 255){
+                entity_list->push_back(new BlockGrass());
                 entity_list->last()->setDisplay(true);
                 entity_list->last()->setCoordX(col-10);
                 entity_list->last()->setCoordY(row-10);

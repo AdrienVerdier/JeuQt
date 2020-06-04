@@ -24,6 +24,7 @@ SOURCES += \
     Models/alive_entity.cpp \
     Models/billblaster.cpp \
     Models/block.cpp \
+    Models/blockgrass.cpp \
     Models/bulletbill.cpp \
     Models/carapace.cpp \
     Models/chateau.cpp \
@@ -68,6 +69,7 @@ HEADERS += \
     Models/alive_entity.h \
     Models/billblaster.h \
     Models/block.h \
+    Models/blockgrass.h \
     Models/bulletbill.h \
     Models/carapace.h \
     Models/chateau.h \

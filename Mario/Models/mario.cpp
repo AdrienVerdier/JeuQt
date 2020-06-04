@@ -14,6 +14,15 @@ Mario::Mario()
     jump_sound = new QMediaPlayer();
     jump_sound->setMedia(QUrl("qrc:/son/son/mario_jump.mp3"));
     jump_sound->setVolume(30);
+    lifeup_sound = new QMediaPlayer();
+    lifeup_sound->setMedia(QUrl("qrc:/son/son/lifeup.mp3"));
+    lifeup_sound->setVolume(30);
+    coin_sound = new QMediaPlayer();
+    coin_sound->setMedia(QUrl("qrc:/son/son/coin.mp3"));
+    coin_sound->setVolume(30);
+    powerup_sound = new QMediaPlayer();
+    powerup_sound->setMedia(QUrl("qrc:/son/son/power_up.mp3"));
+    powerup_sound->setVolume(30);
 }
 
 void Mario::setInputs(Controls *c)
@@ -24,6 +33,7 @@ void Mario::setInputs(Controls *c)
 void Mario::collision(Entity *entity, int position)
 {
     if (typeid (Block).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
+    if (typeid (BlockGrass).name() == typeid(*entity).name()) collisionSpec((BlockGrass*)entity, position);
     if (typeid (mysteryblock).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
     if (typeid (Goomba).name() == typeid(*entity).name()) collisionSpec((Goomba*)entity, position);
     if (typeid (Piece).name() == typeid(*entity).name()) collisionSpec((Piece*)entity, position);
@@ -134,6 +144,25 @@ void Mario::update()
 }
 
 void Mario::collisionSpec(Block *entity, int position)
+{
+    switch (position) {
+        case 0 :
+            this->move_to_up = false;
+            break;
+        case 1:
+            this->move_to_right = false;
+            break;
+        case 2:
+            this->move_to_down = false;
+            setOn_ground(true);
+            break;
+        case 3:
+            this->move_to_left = false;
+            break;
+    }
+}
+
+void Mario::collisionSpec(BlockGrass *entity, int position)
 {
     switch (position) {
         case 0 :
@@ -363,17 +392,22 @@ void Mario::collisionSpec(thwomp *entity, int position)
 
 void Mario::collisionSpec(Piece *entity, int position)
 {
+    if(coin_sound->state() == QMediaPlayer::PlayingState)coin_sound->setPosition(0);
+    if(coin_sound->state() == QMediaPlayer::StoppedState)coin_sound->play();
 
 }
 
 void Mario::collisionSpec(mushroom *entity, int position)
 {
-
+    if(powerup_sound->state() == QMediaPlayer::PlayingState)powerup_sound->setPosition(0);
+    if(powerup_sound->state() == QMediaPlayer::StoppedState)powerup_sound->play();
 }
 
 void Mario::collisionSpec(lifeup *entity, int position)
 {
-
+    if(lifeup_sound->state() == QMediaPlayer::PlayingState)lifeup_sound->setPosition(0);
+    if(lifeup_sound->state() == QMediaPlayer::StoppedState)lifeup_sound->play();
+    level->SetNbVie(level->getNbVie()+1);
 }
 
 void Mario::collisionSpec(star *entity, int position)
@@ -383,7 +417,8 @@ void Mario::collisionSpec(star *entity, int position)
 
 void Mario::collisionSpec(flower *entity, int position)
 {
-
+    if(powerup_sound->state() == QMediaPlayer::PlayingState)powerup_sound->setPosition(0);
+    if(powerup_sound->state() == QMediaPlayer::StoppedState)powerup_sound->play();
 }
 
 int Mario::getCptjump() const
