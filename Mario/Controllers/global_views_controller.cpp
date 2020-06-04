@@ -6,7 +6,7 @@ Global_Views_Controller::Global_Views_Controller()
     main_view->setScene(main_scene);
 
     level_controller = new Level_Controller(this);
-    menu_controler = new Menu_Controler();
+    menu_controler = new Menu_Controler(this);
     game_over_view = new Game_Over_View();
 
     level_view_container->setFixedSize(1280,700);
