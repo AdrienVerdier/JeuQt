@@ -2,7 +2,6 @@
 #define MENU_CONTROLER_H
 
 #include "../Views/menu_view.h"
-#include "global_views_controller.h"
 
 class Global_Views_Controller;
 class Menu_Controler :  QObject
