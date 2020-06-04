@@ -83,5 +83,9 @@
                 "0" :[":images/images/Checkpoints/CheckPointOK.png"],
                 "1" :[":images/images/Checkpoints/CheckPoint.png"]
 
+        },
+        "goalpole":{
+                "0" :[":images/images/Checkpoints/GoalPole.png"]
+
         }
 }
