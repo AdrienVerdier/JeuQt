@@ -42,6 +42,14 @@ Level::Level(QString path)
                 entity_list->last()->setState(0);
 
             }
+            if(clrCurrent.red() == 128 && clrCurrent.green()== 0 &&clrCurrent.blue()== 255){
+                entity_list->push_back(new BlockGrass());
+                entity_list->last()->setDisplay(true);
+                entity_list->last()->setCoordX(col-10);
+                entity_list->last()->setCoordY(row-10);
+                entity_list->last()->setState(0);
+
+            }
             if(clrCurrent.red() == 0 && clrCurrent.green()==162 &&clrCurrent.blue()==232){
                 alive_entity_list->push_back(new Tuyau());
                 alive_entity_list->last()->setDisplay(true);
