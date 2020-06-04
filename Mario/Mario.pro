@@ -25,6 +25,7 @@ SOURCES += \
     Models/billblaster.cpp \
     Models/block.cpp \
     Models/blockgrass.cpp \
+    Models/bowser.cpp \
     Models/bulletbill.cpp \
     Models/carapace.cpp \
     Models/chateau.cpp \
@@ -59,8 +60,7 @@ SOURCES += \
     Views/game_view_entity.cpp \
     Views/game_view_factory.cpp \
     Views/global_view.cpp \
-    Views/menu_view.cpp \
-    Views/viewtest.cpp
+    Views/menu_view.cpp
 
 
 HEADERS += \
@@ -71,6 +71,7 @@ HEADERS += \
     Models/billblaster.h \
     Models/block.h \
     Models/blockgrass.h \
+    Models/bowser.h \
     Models/bulletbill.h \
     Models/carapace.h \
     Models/chateau.h \
@@ -105,8 +106,7 @@ HEADERS += \
     Views/game_view_entity.h \
     Views/game_view_factory.h \
     Views/global_view.h \
-    Views/menu_view.h \
-    Views/viewtest.h
+    Views/menu_view.h
 
 FORMS += \
 

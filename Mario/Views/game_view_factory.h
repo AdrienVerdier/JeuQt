@@ -24,6 +24,7 @@
 #include "../Models/carapace.h"
 #include "../Models/checkpoint.h"
 #include "../Models/goalpole.h"
+#include "../Models/bowser.h"
 #include "game_view_entity.h"
 #include <QFile>
 #include <QJsonDocument>
@@ -61,6 +62,7 @@ public:
     Game_View_Entity* create(Trampoline *t, int x);
     Game_View_Entity* create(spike *t, int x);
     Game_View_Entity* create(carapace *t, int x);
+    Game_View_Entity* create(bowser *t, int x);
 };
 
 #endif // GAME_VIEW_FACTORY_H

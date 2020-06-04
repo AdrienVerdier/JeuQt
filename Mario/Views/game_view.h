@@ -9,10 +9,11 @@
 #include "../Tools/controls.h"
 #include <QLabel>
 
+class Level_Controller;
 class Game_View : public QGraphicsScene, public Interface_Visitor
 {
     public:
-        Game_View(QWidget *parent = 0 );
+        Game_View(Level_Controller* parent);
         void paint(Entity *entity);
         QMap<Entity*, QMap<Entity*,int>> get_list_collides();
         void keyPressEvent(QKeyEvent * keyEvent);
@@ -26,6 +27,7 @@ class Game_View : public QGraphicsScene, public Interface_Visitor
         void setXLeftLimit(int value);
 
 private :
+        Level_Controller *controler;
         Game_View_Factory entity_factory;
         QMap<Entity*, Game_View_Entity*> map_Entity_GameViewEntity;
         Controls *controls;

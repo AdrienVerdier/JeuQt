@@ -6,7 +6,7 @@
 Game_Over_View::Game_Over_View(QWidget *parent)
 {
 
-    setSceneRect(0,0,800,400);
+    setSceneRect(200,100,800,400);
 
    QFont f( "Arial", 50, QFont::Bold);
     text =  new QLabel();
