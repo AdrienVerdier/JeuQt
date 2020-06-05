@@ -74,7 +74,7 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (smoke).name() == typeid(*entity).name()) collisionSpec((smoke*)entity, position);
     if (typeid (Tuyau).name() == typeid(*entity).name()) collisionSpec((Tuyau*)entity, position);
     if (typeid (Chateau).name() == typeid(*entity).name()) collisionSpec((Chateau*)entity, position);
-    if (typeid (Trampoline).name() == typeid(*entity).name()) collisionSpec((Trampoline*)entity, position);
+
     if (typeid (spike).name() == typeid(*entity).name()) collisionSpec((spike*)entity, position);
     if (typeid (mushroom).name() == typeid(*entity).name()) collisionSpec((mushroom*)entity, position);
     if (typeid (lifeup).name() == typeid(*entity).name()) collisionSpec((lifeup*)entity, position);
@@ -92,6 +92,7 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (CheckPoint).name() == typeid(*entity).name()) collisionSpec((CheckPoint*)entity, position);
     if (typeid (Piece).name() == typeid(*entity).name()) collisionSpec((Piece*)entity, position);
     if (typeid (Chateau).name() == typeid(*entity).name()) collisionSpec((Chateau*)entity, position);
+    if (typeid (Trampoline).name() == typeid(*entity).name()) collisionSpec((Trampoline*)entity, position);
 
 
 }
