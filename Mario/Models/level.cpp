@@ -257,6 +257,14 @@ Level::Level(QString path)
         }
 }
 
+Level::~Level()
+{
+    delete player;
+   delete entity_list;
+    delete alive_entity_list;
+
+}
+
 QList<Entity *> *Level::get_entity_list()
 {
     return entity_list;

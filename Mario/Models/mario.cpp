@@ -40,6 +40,19 @@ Mario::Mario()
     star_sound->setVolume(30);
 }
 
+Mario::~Mario()
+{
+    delete background_sound;
+    delete jump_sound;
+    delete coin_sound;
+    delete lifeup_sound;
+    delete powerup_sound;
+    delete mario_die_sound;
+    delete game_over_sound;
+    delete victory_sound;
+    delete star_sound;
+}
+
 void Mario::setInputs(Controls *c)
 {
     input = c;
@@ -450,7 +463,7 @@ void Mario::collisionSpec(carapace *entity, int position)
 void Mario::collisionSpec(CheckPoint *entity, int position)
 {
     level->setCoord_x_cp(entity->getCoordX());
-    level->setCoord_y_cp(entity->getCoordY());
+    level->setCoord_y_cp(entity->getCoordY()-3);
     level->setScore_cp(level->getScore());
 
 

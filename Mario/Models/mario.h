@@ -33,6 +33,7 @@ class Mario : public Alive_Entity
 {
 public:
     Mario();
+    ~Mario();
     void setInputs(Controls *c);
     void collision(Entity* entity, int position)  override;
     void update() override;
@@ -78,6 +79,7 @@ public:
 
     int getCptinvincible() const;
     void setCptinvincible(int value);
+
 
 private:
     Controls *input;

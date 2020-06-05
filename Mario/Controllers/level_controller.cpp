@@ -13,6 +13,7 @@ Level_Controller::Level_Controller( Global_Views_Controller *p)
 
     game_view = new Game_View(this);
     reset = false;
+    level = nullptr;
 
     pere = p;
 
@@ -143,6 +144,9 @@ void Level_Controller::update_view()
 
 void Level_Controller::NewLevel(QString path){
 
+    if (level!=nullptr){
+        delete level;
+    }
     level = new Level(path);
      game_view->reset();
     level->getPlayer()->setInputs(game_view->get_Keys());
