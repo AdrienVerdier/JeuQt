@@ -39,6 +39,9 @@ Mario::Mario()
     star_sound = new QMediaPlayer();
     star_sound->setMedia(QUrl("qrc:/son/son/star.mp3"));
     star_sound->setVolume(30);
+    hit_sound = new QMediaPlayer();
+    hit_sound->setMedia(QUrl("qrc:/son/son/hit.mp3"));
+    hit_sound->setVolume(30);
 }
 
 Mario::~Mario()
@@ -52,6 +55,7 @@ Mario::~Mario()
     delete game_over_sound;
     delete victory_sound;
     delete star_sound;
+    delete hit_sound;
 }
 
 void Mario::setInputs(Controls *c)
@@ -198,6 +202,7 @@ void Mario::update()
     }
     else if(mort){
         if(grand){
+            if(hit_sound->state() != QMediaPlayer::PlayingState)hit_sound->play();
             grand = false;
             mort = false;
             cptPetit=0;

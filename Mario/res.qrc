@@ -11,6 +11,7 @@
         <file>son/victory.mp3</file>
         <file>son/bowser_fire.mp3</file>
         <file>son/star.mp3</file>
+        <file>son/hit.mp3</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/Mario/Idle.png</file>
