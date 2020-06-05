@@ -70,22 +70,24 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (flamme).name() == typeid(*entity).name()) collisionSpec((flamme*)entity, position);
     if (typeid (thwomp).name() == typeid(*entity).name()) collisionSpec((thwomp*)entity, position);
     if (typeid (bulletbill).name() == typeid(*entity).name()) collisionSpec((bulletbill*)entity, position);
-    if (typeid (billblaster).name() == typeid(*entity).name()) collisionSpec((billblaster*)entity, position);
     if (typeid (smoke).name() == typeid(*entity).name()) collisionSpec((smoke*)entity, position);
-    if (typeid (Tuyau).name() == typeid(*entity).name()) collisionSpec((Tuyau*)entity, position);
     if (typeid (Chateau).name() == typeid(*entity).name()) collisionSpec((Chateau*)entity, position);
 
     if (typeid (spike).name() == typeid(*entity).name()) collisionSpec((spike*)entity, position);
-    if (typeid (mushroom).name() == typeid(*entity).name()) collisionSpec((mushroom*)entity, position);
-    if (typeid (lifeup).name() == typeid(*entity).name()) collisionSpec((lifeup*)entity, position);
-    if (typeid (star).name() == typeid(*entity).name()) collisionSpec((star*)entity, position);
-    if (typeid (flower).name() == typeid(*entity).name()) collisionSpec((flower*)entity, position);
+
+
     if (typeid (carapace).name() == typeid(*entity).name()) collisionSpec((carapace*)entity, position);
-    if (typeid (GoalPole).name() == typeid(*entity).name()) collisionSpec((GoalPole*)entity, position);
     if (typeid (bowser).name() == typeid(*entity).name()) collisionSpec((bowser*)entity, position);
     if (typeid (bowser_fire).name() == typeid(*entity).name()) collisionSpec((bowser_fire*)entity, position);
     }
 
+    if (typeid (GoalPole).name() == typeid(*entity).name()) collisionSpec((GoalPole*)entity, position);
+    if (typeid (mushroom).name() == typeid(*entity).name()) collisionSpec((mushroom*)entity, position);
+    if (typeid (billblaster).name() == typeid(*entity).name()) collisionSpec((billblaster*)entity, position);
+    if (typeid (Tuyau).name() == typeid(*entity).name()) collisionSpec((Tuyau*)entity, position);
+    if (typeid (lifeup).name() == typeid(*entity).name()) collisionSpec((lifeup*)entity, position);
+    if (typeid (star).name() == typeid(*entity).name()) collisionSpec((star*)entity, position);
+    if (typeid (flower).name() == typeid(*entity).name()) collisionSpec((flower*)entity, position);
     if (typeid (mysteryblock).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
     if (typeid (Block).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
     if (typeid (BlockGrass).name() == typeid(*entity).name()) collisionSpec((BlockGrass*)entity, position);
