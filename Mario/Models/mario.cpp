@@ -586,6 +586,7 @@ void Mario::collisionSpec(star *entity, int position)
     if(star_sound->state() == QMediaPlayer::StoppedState)star_sound->play();
     background_sound->setMuted(true);
     setCptinvincible(0);
+    if(!grand)coord_y-=10;
 }
 
 void Mario::collisionSpec(flower *entity, int position)
