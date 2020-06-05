@@ -135,5 +135,22 @@
         <file>images/Bowser/bowser_fire.png</file>
         <file>images/Bowser/bowser_fire2.png</file>
         <file>images/Bowser/ShootUp.png</file>
+        <file>images/Mario/Idle_littleMiroir.png</file>
+        <file>images/Mario/Idle_little.png</file>
+        <file>images/Mario/Jump_Little.png</file>
+        <file>images/Mario/Jump_LittleMiroir.png</file>
+        <file>images/Mario/Walk1_Little.png</file>
+        <file>images/Mario/Walk1_LittleMiroir.png</file>
+        <file>images/Mario/Walk2_Little.png</file>
+        <file>images/Mario/Walk2_LittleMiroir.png</file>
+        <file>images/Mario/Walk3_Little.png</file>
+        <file>images/Mario/Walk3_LittleMiroir.png</file>
+        <file>images/Mario/Walk4_Little.png</file>
+        <file>images/Mario/Walk4_LittleMiroir.png</file>
+        <file>images/Mario/Walk5_Little.png</file>
+        <file>images/Mario/Walk5_LittleMiroir.png</file>
+        <file>images/Mario/Walk6_Little.png</file>
+        <file>images/Mario/Walk6_LittleMiroir.png</file>
+        <file>images/Mario/Empty_Little_Mario.png</file>
     </qresource>
 </RCC>

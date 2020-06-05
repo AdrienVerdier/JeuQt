@@ -7,7 +7,14 @@
                  "4" : [":images/images/Mario/Walk1Miroir.png",":images/images/Mario/Walk2Miroir.png",":images/images/Mario/Walk3Miroir.png",":images/images/Mario/Walk4Miroir.png",":images/images/Mario/Walk5Miroir.png",":images/images/Mario/Walk6Miroir.png"],
                  "5" : [":images/images/Mario/JumpMiroir.png"],
                  "6" : [":images/images/Mario/Dead.png"],
-                 "7":  [":images/images/Mario/Walk1Star.png",":images/images/Mario/Walk2Star.png",":images/images/Mario/Walk3Star.png",":images/images/Mario/Walk4Star.png",":images/images/Mario/Walk5Star.png",":images/images/Mario/Walk6Star.png"]
+                 "7":  [":images/images/Mario/Walk1Star.png",":images/images/Mario/Walk2Star.png",":images/images/Mario/Walk3Star.png",":images/images/Mario/Walk4Star.png",":images/images/Mario/Walk5Star.png",":images/images/Mario/Walk6Star.png"],
+                 "8": [":images/images/Mario/Idle_little.png"],
+                 "9": [":images/images/Mario/Walk1_Little.png",":images/images/Mario/Walk2_Little.png",":images/images/Mario/Walk3_Little.png",":images/images/Mario/Walk4_Little.png",":images/images/Mario/Walk5_Little.png",":images/images/Mario/Walk6_Little.png"],
+                 "10":[":images/images/Mario/Empty_Little_Mario.png"],
+                 "11":[":images/images/Mario/Jump_Little.png"],
+                 "12":[":images/images/Mario/Walk1_LittleMiroir.png",":images/images/Mario/Walk2_LittleMiroir.png",":images/images/Mario/Walk3_LittleMiroir.png",":images/images/Mario/Walk4_LittleMiroir.png",":images/images/Mario/Walk5_LittleMiroir.png",":images/images/Mario/Walk6_LittleMiroir.png"],
+                 "13":[":images/images/Mario/Jump_LittleMiroir.png"]
+
 	},
         "bowser" :{
                 "0" : [":images/images/Bowser/Idle.png"],

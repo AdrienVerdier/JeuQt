@@ -95,7 +95,8 @@ private:
     bool mort = false;
     bool goal = false;
     int cptinvincible = 0;
-    int cptPetit =0;
+    int cptPetit =90;
+    int cptClign = 0;
     QMediaPlayer * background_sound;
     QMediaPlayer * jump_sound;
     QMediaPlayer * coin_sound;
