@@ -60,13 +60,10 @@ void Mario::setInputs(Controls *c)
 
 void Mario::collision(Entity *entity, int position)
 {
-    if(!goal && !mort)
+    if(!goal && !mort &&(cptPetit<=80 && !grand))
     {
-    if (typeid (Block).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
-    if (typeid (BlockGrass).name() == typeid(*entity).name()) collisionSpec((BlockGrass*)entity, position);
-    if (typeid (mysteryblock).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
+
     if (typeid (Goomba).name() == typeid(*entity).name()) collisionSpec((Goomba*)entity, position);
-    if (typeid (Piece).name() == typeid(*entity).name()) collisionSpec((Piece*)entity, position);
     if (typeid (Koopa).name() == typeid(*entity).name()) collisionSpec((Koopa*)entity, position);
     if (typeid (plante).name() == typeid(*entity).name()) collisionSpec((plante*)entity, position);
     if (typeid (flamme).name() == typeid(*entity).name()) collisionSpec((flamme*)entity, position);
@@ -83,12 +80,16 @@ void Mario::collision(Entity *entity, int position)
     if (typeid (star).name() == typeid(*entity).name()) collisionSpec((star*)entity, position);
     if (typeid (flower).name() == typeid(*entity).name()) collisionSpec((flower*)entity, position);
     if (typeid (carapace).name() == typeid(*entity).name()) collisionSpec((carapace*)entity, position);
-    if (typeid (CheckPoint).name() == typeid(*entity).name()) collisionSpec((CheckPoint*)entity, position);
     if (typeid (GoalPole).name() == typeid(*entity).name()) collisionSpec((GoalPole*)entity, position);
     if (typeid (bowser).name() == typeid(*entity).name()) collisionSpec((bowser*)entity, position);
     if (typeid (bowser_fire).name() == typeid(*entity).name()) collisionSpec((bowser_fire*)entity, position);
     }
     else{
+    if (typeid (mysteryblock).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
+    if (typeid (Block).name() == typeid(*entity).name()) collisionSpec((Block*)entity, position);
+    if (typeid (BlockGrass).name() == typeid(*entity).name()) collisionSpec((BlockGrass*)entity, position);
+    if (typeid (CheckPoint).name() == typeid(*entity).name()) collisionSpec((CheckPoint*)entity, position);
+    if (typeid (Piece).name() == typeid(*entity).name()) collisionSpec((Piece*)entity, position);
     if (typeid (Chateau).name() == typeid(*entity).name()) collisionSpec((Chateau*)entity, position);
 
     }
@@ -152,11 +153,18 @@ void Mario::update()
             if(cptjump>0) cptjump--;
         }
 
+
         this->move_to_right = true;
         this->move_to_down = true;
         if(jump) move_to_down=false;
         this->move_to_left = true;
         this->move_to_up = true;
+
+        if(!grand) {
+            state+=8;
+            if(cptPetit<=80) cptPetit++;
+
+        }
 
         if(invincible){
             if(getCptinvincible()<666){
@@ -170,26 +178,37 @@ void Mario::update()
             }
         }
 
+
+
     }
     else if(mort){
-        star_sound->stop();
-        background_sound->stop();
-        if(level->getNbVie()<=0){
-            game_over_sound->play();
+        if(grand){
+            grand = false;
+            mort = false;
+            cptPetit=0;
         }
         else{
-            mario_die_sound->play();
+            star_sound->stop();
+            background_sound->stop();
+            if(level->getNbVie()<=0){
+                game_over_sound->play();
+            }
+            else{
+                mario_die_sound->play();
+            }
+
+            state = 6;
+            if (cptmort >=120 )   coord_y+=5;
+
+            if(coord_y>800){
+               state_dead = true;
+
+
+            }
+            cptmort ++;
+
         }
 
-        state = 6;
-        if (cptmort >=120 )   coord_y+=5;
-
-        if(coord_y>800){
-           state_dead = true;
-
-
-        }
-        cptmort ++;
 
 
     }
@@ -527,6 +546,7 @@ void Mario::collisionSpec(mushroom *entity, int position)
 {
     if(powerup_sound->state() == QMediaPlayer::PlayingState)powerup_sound->setPosition(0);
     if(powerup_sound->state() == QMediaPlayer::StoppedState)powerup_sound->play();
+    grand = true;
 }
 
 void Mario::collisionSpec(lifeup *entity, int position)
